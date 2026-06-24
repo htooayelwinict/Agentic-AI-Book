@@ -1,2 +1,13 @@
 models
 prompts
+
+*.pdf
+repo_sources/
+.DS_Store
+**/.DS_Store
+tmp/
+output/
+.venv/
+__pycache__/
+*.pyc
+agent_harness_vs_loop_report*.md
