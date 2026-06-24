@@ -18,8 +18,22 @@
 
 ### ဤစာအုပ်အား ရေးသားရာတွင်အသုံးပြုသော အရာများ
 
-LLM models : 
+`Softwares and Applications :`  
 
+```
+codex cli 
+codex desktop 
+opencode cli 
+Orca "https://www.onorca.dev"
+Yay app "https://yay.myanmars.app"
+Docker Desktop
+```
+
+
+
+`LLM models :` 
+
+```
 gemini-3-flash-preview 
 
 gemini-3-flash-lite 
@@ -33,3 +47,5 @@ gpt-5.3-codex-spark xhigh
 gpt-5.5 high
 
 gpt-5.5 xhigh
+```
+
