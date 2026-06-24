@@ -16,9 +16,9 @@
 
 Chatbot တစ်ခုသည်စာပြန်သည်။ Browser agent တစ်ခုသည်မြို့ထဲဝင်သွားသည်။ လမ်းပေါ်ရှိဆိုင်းဘုတ်များကိုဖတ်သည်။ တံခါးများကိုမြင်သည်။ Button များကိုနှိပ်နိုင်သည်။ Form များကိုဖြည့်နိုင်သည်။ Session ရှိလျှင်အရင်ကဖွင့်ထားသောအခန်းထဲအထိဝင်နိုင်သည်။ ဤသည်မှာ browser agent ၏အလှလည်းဖြစ်သည်။ အန္တရာယ်လည်းဖြစ်သည်။
 
-ဤ chapter ကိုဖတ်ရာတွင် အရေးကြီးဆုံးအချက်တစ်ခုကိုအစကတည်းကမှတ်ထားပါ။ BrowserSurfer Bot ကို platform သုံးနည်းသင်ခန်းစာအဖြစ်မဖတ်သင့်ချေ။ ဤစာအုပ်သည် “ဘယ် website ပေါ်မှာ ဘယ် button ကိုနှိပ်” ဆိုသောလမ်းညွှန်မဟုတ်။ Browser ကို Agent ၏လက်ဖြစ်အောင်ပေးလိုက်သောအခါ runtime, state, tools, memory, planning, security boundary များမည်သို့ပြဿနာဖြစ်လာသနည်းကိုဖွင့်ပြသော case study ဖြစ်သည်။
+ဤ chapter ကိုဖတ်ရာတွင် အရေးကြီးဆုံးအချက်တစ်ခုကို အစကတည်းက မှတ်ထားပါ။ BrowserSurfer Bot ကို platform သုံးနည်းသင်ခန်းစာအဖြစ်မဖတ်သင့်ချေ။ ဤစာအုပ်သည် “ဘယ် website ပေါ်မှာ ဘယ် button ကိုနှိပ်” ဆိုသော လမ်းညွှန်မဟုတ်။ Browser ကို Agent ၏ လက် ဖြစ်အောင် ပေးလိုက်သောအခါ runtime, state, tools, memory, planning, security boundary များ မည်သို့ပြဿနာဖြစ်လာသနည်းကို ဖွင့်ပြသော case study ဖြစ်သည်။
 
-Repo ထဲတွင် `FacebookSurferAgent` ဟူသော class name ကိုတွေ့ရမည်။ ထိုနာမည်သည် internal codename ဖြစ်သည်။ Public-facing chapter တွင် BrowserSurfer Bot ဟုခေါ်မည်။ Internal codename ကိုဖော်ပြရခြင်းမှာ source file ကိုဖတ်သောအခါ reader မလမ်းပျောက်ရန်သာဖြစ်သည်။
+Repo ထဲတွင် `FacebookSurferAgent` ဟူသော class name ကိုတွေ့ရမည်။ ထိုနာမည်သည် internal codename ဖြစ်သည်။ chapter title တွင် BrowserSurfer Bot ဟုခေါ်ဆိုထားသည်။ Internal codename ကိုဖော်ပြရခြင်းမှာ source file ကိုဖတ်သောအခါ reader မလမ်းပျောက်ရန်သာဖြစ်သည်။ chapter title တွင် နာမည်ပြောင်းထားရခြင်းမှာ မလိုလားအပ်သော ကိစ္စရပ်များကို သွယ်ဝှိုက်၍ကာကွယ်ထားခြင်း ဖြစ်ကြောင်း နားလည်စေချင်ပါသည်။ 
 
 ### အဓိကရုပ်သွင် — Agent တစ်ကောင်မဟုတ်၊ အလုပ်ခန်းများစွာ
 
@@ -57,13 +57,13 @@ MetricsMiddleware -> scoring -> PII redaction -> ReflectionAgent -> Qdrant
 
 ဤပုံတွင်အဓိကသင်ခန်းစာမှာ BrowserSurfer သည် browser tool တစ်ခုတည်းမဟုတ်ခြင်းဖြစ်သည်။ Facade ရှိသည်။ Planner ရှိသည်။ Tool registry ရှိသည်။ Checkpointer ရှိသည်။ Memory store ရှိနိုင်သည်။ Skills middleware ရှိသည်။ Browser session ရှိသည်။ Trajectory observer ရှိသည်။ Metrics processor ရှိသည်။ Reflection နှင့် Qdrant storage ရှိသည်။
 
-နောက်တစ်နည်းပြောရလျှင် စာရေးတော်တစ်ဦးကို browser မြို့ထဲလွှတ်လိုက်ခြင်းမဟုတ်။ စာရေးတော်ကိုမြို့ထဲလွှတ်သောအခါ တံခါးစောင့်၊ လက်နက်စာရင်း၊ မှတ်တမ်းရေးသူ၊ လမ်းကြောင်းအကြံပေးသူ၊ အမှိုက်စစ်သူ၊ အတွေ့အကြုံသိမ်းသူတို့ပါအတူလိုက်ရခြင်းဖြစ်သည်။
+နောက်တစ်နည်းပြောရလျှင် စာရေးတော်တစ်ဦးကို browser မြို့ထဲလွှတ်လိုက်ခြင်းမဟုတ်။ စာရေးတော် ကိုမြို့ထဲလွှတ်သောအခါ တံခါးစောင့်၊ လက်နက်စာရင်း၊ မှတ်တမ်းရေးသူ၊ လမ်းကြောင်းအကြံပေးသူ၊ အမှိုက်စစ်သူ၊ အတွေ့အကြုံသိမ်းသူတို့ပါ အတူလိုက်ရခြင်းဖြစ်သည်။
 
 ### `FacebookSurferAgent` — ဆိုင်မျက်နှာစာနှင့် အတွင်းစက်ခန်း
 
-`src/agents/facebook_surfer.py` ထဲမှ `FacebookSurferAgent` သည် BrowserSurfer Bot ၏ facade/orchestrator ဖြစ်သည်။ Facade ဆိုသည်မှာဆိုင်မျက်နှာစာနှင့်တူသည်။ Customer သည်ဆိုင်ထဲရှိသိုလှောင်ခန်း၊ မီးဖိုခန်း၊ ငွေရှင်းခန်း၊ ပစ္စည်းတင်ခန်းအားလုံးကိုမမြင်ရ။ Counter တစ်ခုကိုသာမြင်သည်။ BrowserSurfer ၏ caller သည်လည်း `invoke`, `stream`, `stream_events`, `get_state`, `update_state` စသော method များကိုမြင်သည်။ အတွင်းဘက်တွင်ဘာတွေချိတ်ထားသနည်းဆိုတာကို facade ကဖုံးပေးထားသည်။
+`src/agents/facebook_surfer.py` ထဲမှ `FacebookSurferAgent` သည် BrowserSurfer Bot ၏ facade/orchestrator ဖြစ်သည်။ Facade ဆိုသည်မှာ ဆိုင်မျက်နှာစာနှင့် တူသည်။ Customer သည် ဆိုင်ထဲရှိ သိုလှောင်ခန်း၊ မီးဖိုခန်း၊ ငွေရှင်းခန်း၊ ပစ္စည်းတင်ခန်းအားလုံးကို မမြင်ရ။ Counter တစ်ခုကိုသာ မြင်သည်။ BrowserSurfer ၏ caller သည်လည်း `invoke`, `stream`, `stream_events`, `get_state`, `update_state` စသော method များကို မြင်သည်။ အတွင်းဘက်တွင် ဘာတွေချိတ်ထားသနည်းဆိုတာကို facade က ဖုံးပေးထားသည်။
 
-သို့သော် facade သည်အဖုံးကောင်းရုံဖြစ်သည်။ အဖုံးအောက်ကစက်ခန်းကိုမဖတ်လျှင်အန္တရာယ်မမြင်ရ။ Constructor ထဲတွင် အောက်ပါအရာများကိုစတင်တည်ဆောက်ထားသည်။
+သို့သော် facade သည် အဖုံးတခု မျှသာ ဖြစ်သည်။ အဖုံးအောက်က စက်ခန်းကိုမဖတ်ကြည့်လျှင် အန္တရာယ်ကိုမမြင်ရ။ Constructor ထဲတွင် အောက်ပါအရာများကိုစတင်တည်ဆောက်ထားသည်။
 
 - `register_all_tools()` ဖြင့် ToolRegistry ထဲမှ tools များကိုယူသည်။
 - `InMemoryStore()` ကို memory ဖွင့်ထားလျှင်သုံးနိုင်သည်။
@@ -72,11 +72,11 @@ MetricsMiddleware -> scoring -> PII redaction -> ReflectionAgent -> Qdrant
 - Planning ဖွင့်ထားလျှင် `PlanningAgent` ကိုတည်ဆောက်သည်။
 - System prompt ကိုတည်ဆောက်ပြီး `create_deep_agent(...)` ဖြင့် DeepAgents runtime ဖန်တီးသည်။
 
-ဤနေရာတွင် design pattern သင်ခန်းစာရှိသည်။ `FacebookSurferAgent` သည် caller အတွက် interface ကိုရိုးရှင်းစေသည်။ သို့သော် dependency များကို constructor injection ဖြင့်အပြင်ကထည့်သွင်းထားခြင်းထက် internal construction များရှိသောကြောင့် testability tradeoff ရှိသည်။ Beginner အတွက်ဆိုလျှင် “class တစ်ခုထဲမှာအရာအားလုံးချိတ်ထားတာပဲ” ဟုသာမမြင်ပါနှင့်။ Engineer အတွက်မေးခွန်းမှာ “ဒီ facade အောက်က dependencies ကို test မှာဘယ်လိုလဲလှယ်မလဲ” ဖြစ်သည်။
+ဤနေရာတွင် design pattern သင်ခန်းစာရှိသည်။ `FacebookSurferAgent` သည် caller အတွက် interface ကိုရိုးရှင်းစေသည်။ သို့သော် dependency များကို constructor injection ဖြင့် အပြင်က ထည့်သွင်းထားခြင်းထက် internal construction များရှိသောကြောင့် testability tradeoff ရှိသည်။ Beginner အတွက်ဆိုလျှင် “class တစ်ခုထဲမှာ အရာအားလုံးချိတ်ထားတာပဲ” ဟုသာမမြင်ပါနှင့်။ Engineer အတွက် မေးခွန်းမှာ “ဒီ facade အောက်က dependencies ကို test မှာ ဘယ်လိုလဲလှယ်မလဲ” ဖြစ်သည်။
 
 ### DeepAgents သည် LangGraph ကိုဖုံးထားသောအလွှာ
 
-CHAPTER-7.md ၏အဓိကသင်ခန်းစာတစ်ခုမှာ DeepAgents ကိုသုံးထားသော်လည်း graph thinking ပျောက်မသွားရခြင်းဖြစ်သည်။ BrowserSurfer source ထဲတွင် raw `StateGraph` node/edge code များကိုအများကြီးမတွေ့ရနိုင်။ အကြောင်းမှာ `create_deep_agent(...)` က LangGraph-style runtime skeleton ကို abstraction အဖြစ်ဖန်တီးပေးထားသောကြောင့်ဖြစ်သည်။
+CHAPTER-7.md ၏ အဓိကသင်ခန်းစာတစ်ခုမှာ DeepAgents ကိုသုံးထားသော်လည်း graph thinking ပျောက်မသွားရခြင်းဖြစ်သည်။ BrowserSurfer source ထဲတွင် raw `StateGraph` node/edge code များကို အများကြီးမတွေ့ရနိုင်။ အကြောင်းမှာ `create_deep_agent(...)` က LangGraph-style runtime skeleton ကို abstraction အဖြစ် ဖန်တီးပေးထားသောကြောင့်ဖြစ်သည်။
 
 Beginner အတွက်ရိုးရိုးပြောလျှင် DeepAgents သည် “ကြိုတင်ဆောက်ထားသောအလုပ်ရုံ” ဖြစ်သည်။ သင်သည် model, tools, checkpointer, store, middleware, system prompt တို့ကိုပေးလိုက်သည်။ DeepAgents က LangGraph execution engine တစ်ခုကိုအောက်တွင်ဖန်တီးပေးသည်။ ထိုကြောင့် graph code မမြင်ရသော်လည်း graph behavior မရှိဟုမဆိုနိုင်။
 
@@ -108,7 +108,7 @@ BrowserSurfer demo screenshots များထဲတွင် live browser UI, c
 
 **ပုံ ၁၄-၁ — စာရေးတော်သည် စာရွက်မဟုတ်၊ မျက်နှာပြင်ကိုထိနေပြီ**
 
-ဤပုံကိုကြည့်လိုက်လျှင် BrowserSurfer ၏အချိုးအကွေ့ကိုချက်ချင်းခံစားရသည်။ Agent သည် chat box ထဲတွင်အကြံပေးနေသူမဟုတ်တော့။ Browser dialog တစ်ခုထဲတွင်စာသားရှိသည်။ Account context ရှိသည်။ Audience state ရှိသည်။ Control များရှိသည်။ စာရေးတော်၏လက်သည်စာရွက်ပေါ်မှတက်ပြီး မျက်နှာပြင်ပေါ်သို့ရောက်လာသည်။
+ဤပုံကိုကြည့်လိုက်လျှင် BrowserSurfer ၏အချိုးအကွေ့ကိုချက်ချင်းခံစားရသည်။ Agent သည် chat box ထဲတွင်အကြံပေးနေသူမဟုတ်တော့။ Browser dialog တစ်ခုထဲတွင်စာသားရှိသည်။ Account context ရှိသည်။ Audience state ရှိသည်။ Control များရှိသည်။ စာရေးတော် ၏လက်သည်စာရွက်ပေါ်မှတက်ပြီး မျက်နှာပြင်ပေါ်သို့ရောက်လာသည်။
 
 ဤအချိန်သည် developer အတွက်အလှဆုံးလည်းဖြစ်သည်။ အန္တရာယ်အရှိဆုံးလည်းဖြစ်သည်။ Model ကရေးသောစာသည် UI ထဲရောက်သွားသည်နှင့် “အဖြေ” မဟုတ်တော့။ Mutatable state ဖြစ်သွားသည်။ ပုံထဲတွင် “Only me” demo ဖြစ်နေသော်လည်း engineering lesson မပြောင်းပါ။ Model output သည် UI state ဖြစ်လာသည့်အခါ approval boundary ကိုဘယ်နေရာတွင်ထားမလဲဆိုသောမေးခွန်းဖြစ်သည်။
 
