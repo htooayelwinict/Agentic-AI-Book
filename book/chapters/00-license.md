@@ -1,4 +1,4 @@
-# လိုင်စင်
+# 00-license
 
 © 2026 Htoo Aye Lwin. Member of [FOSSMYANMAR](https://fossmyanmar.org)
 

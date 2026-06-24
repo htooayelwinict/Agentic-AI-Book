@@ -1,4 +1,4 @@
-# ၁၆။ DevOps Agent Thinking — Cloud နန်းတော်ထဲသို့ မျက်စိမှိတ် မဝင်စေရန်
+# 16-devops-agent-thinking
 
 ### Cloud သည် ကစားကွင်းမဟုတ်
 

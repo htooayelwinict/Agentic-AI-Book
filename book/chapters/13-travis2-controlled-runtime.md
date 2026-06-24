@@ -1,4 +1,4 @@
-# ၁၃။ Travis-2 — model ရေးသော Playwright code ကို Runtime ထဲတွင် ထိန်းမောင်းခြင်း
+# 13-travis2-controlled-runtime
 
 > **ဤ runtime က ဘာကိုပြသသလဲ**  
 > Travis-2 သည် model-generated TypeScript Playwright code ကို `run_playwright_code` tool မှတစ်ဆင့် bounded execution interface ထဲတွင်မောင်းနှင်သော controlled runtime ဖြစ်သည်။ အဓိက lesson သည် code generation မဟုတ်။ Generated code execution ကို isolation, validation, result-quality semantics, state routing, middleware policy plane တို့ဖြင့်ထိန်းခြင်းဖြစ်သည်။

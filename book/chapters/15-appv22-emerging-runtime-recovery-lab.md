@@ -1,4 +1,4 @@
-# ၁၅။ appv22 — Pi နှင့် Hermes ကို Python ဘက်သို့ စမ်းသပ် port လုပ်ခြင်း
+# 15-appv22-emerging-runtime-recovery-lab
 
 > **ဤ project က ဘာကိုပြသသလဲ**  
 > appv22 သည် စာရေးသူက Pi နှင့် Hermes တို့မှ runtime idea များကို Python ဘက်သို့ prototype အဖြစ် port လုပ်စမ်းထားသော agent-runtime research workspace ဖြစ်သည်။ Agent loop, coding tools, provider boundary, session persistence, context compaction, terminal UI, recovery test များကို တစ်နေရာတည်းတွင်စမ်းထားသည်။

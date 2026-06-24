@@ -1,4 +1,4 @@
-# ၁၄။ BrowserSurfer Bot — Agent ကိုလက်ပေးသင်သောအခါ
+# 14-browsersurfer-browser-tool-agent-security
 
 > **ဤ browser agent က ဘာကိုပြသသလဲ**  
 > BrowserSurfer Bot သည် DeepAgents abstraction အောက်တွင် LangGraph-style runtime, LangChain StructuredTool registry, Playwright browser tools, thread state, trajectory memory, RAG planning, reflection, metrics စသည်တို့ကိုပေါင်းထားသော browser-agent prototype ဖြစ်သည်။

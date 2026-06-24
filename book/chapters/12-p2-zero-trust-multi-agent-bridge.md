@@ -1,4 +1,4 @@
-# ၁၂။ P-2 — လျှို့ဝှက်ခန်းနှင့် ဧည့်ခန်းကြားရှိ တံတား
+# 12-p2-zero-trust-multi-agent-bridge
 
 > **ဤ project က ဘာကိုပြသသလဲ**  
 > P-2 သည် high privilege Supervisor Agent နှင့် low privilege Customer Agent ကြားတွင် full state မပေးဘဲ minimum safe instruction သာဖြတ်သန်းစေသော zero-trust multi-agent bridge ကိုပြသည်။
