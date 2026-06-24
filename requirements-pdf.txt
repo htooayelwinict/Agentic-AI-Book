@@ -1,0 +1,5 @@
+markdown==3.9
+playwright==1.60.0
+pillow==11.3.0
+pypdf==6.14.2
+pdfplumber==0.11.8
