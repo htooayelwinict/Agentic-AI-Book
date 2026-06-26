@@ -15,6 +15,7 @@ This page is for acknowledgement only. It does not change manuscript ownership o
 | Contributor | Contribution |
 |---|---|
 | [@maki-sam](https://github.com/maki-sam) | Reported accepted typo/wording issues in [#8](https://github.com/htooayelwinict/Agentic-AI-Book/issues/8) and [#9](https://github.com/htooayelwinict/Agentic-AI-Book/issues/9) |
+| [@HtetLinLinNaing](https://github.com/HtetLinLinNaing) | Submitted accepted spelling correction in [#10](https://github.com/htooayelwinict/Agentic-AI-Book/pull/10) |
 
 ## Note
 
