@@ -17,6 +17,7 @@ This page is for acknowledgement only. It does not change manuscript ownership o
 | [@maki-sam](https://github.com/maki-sam) | Reported accepted typo/wording issues in [#8](https://github.com/htooayelwinict/Agentic-AI-Book/issues/8) and [#9](https://github.com/htooayelwinict/Agentic-AI-Book/issues/9) |
 | [@HtetLinLinNaing](https://github.com/HtetLinLinNaing) | Submitted accepted spelling correction in [#10](https://github.com/htooayelwinict/Agentic-AI-Book/pull/10) |
 | [@Wint-Theingi-Aung](https://github.com/Wint-Theingi-Aung) | Reported accepted Burmese spelling corrections in the manuscript preface and Chapter 01 |
+| [@waisihnyun](https://github.com/waisihnyun) | Suggested accepted Burmese wording clarification for Chapter 07 in [#11](https://github.com/htooayelwinict/Agentic-AI-Book/issues/11) |
 
 ## Note
 
