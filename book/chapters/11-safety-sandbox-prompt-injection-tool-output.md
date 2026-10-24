@@ -18,7 +18,7 @@ Untrusted data ကို instruction အဖြစ်မယူပါနှင့�
 
 ### Prompt Injection
 
-Prompt injection သည် စာရွက်ထဲ ခိုနေသော အမိန့်အတု ဖြစ်သည်။ Prompt injection ဆိုသည်မှာ model context ထဲသို့မလိုလားသော instruction ထည့်ပြီး model behavior ကိုလမ်းလွဲစေခြင်းဖြစ်သည်။ Direct injection တွင် user ကိုယ်တိုင်မလိုလားသောအမိန့်ရေးနိုင်သည်။ Indirect injection တွင် webpage, email, document, tool output, browser snapshot ထဲမှစာသားက model context ထဲဝင်လာသည်။
+Prompt injection ဆိုသည်မှာ စာရွက်ထဲ ခိုနေသော အမိန့်အတု ဖြစ်သည်။ Model context ထဲသို့ မလိုလားသော instruction ထည့်ပြီး model behavior ကို လမ်းလွဲစေခြင်း ဖြစ်သည်။ Direct injection တွင် user ကိုယ်တိုင်မလိုလားသောအမိန့်ရေးနိုင်သည်။ Indirect injection တွင် webpage, email, document, tool output, browser snapshot ထဲမှစာသားက model context ထဲဝင်လာသည်။
 
 Chatbot တစ်ခုတွင် prompt injection ဖြစ်လျှင်အဖြေမှားနိုင်သည်။ Agent တစ်ခုတွင် prompt injection ဖြစ်လျှင် tool ခေါ်ခြင်း၊ file ဖတ်ခြင်း၊ browser action လုပ်ခြင်း၊ external system ကို ထိခြင်းအထိ ဖြစ်နိုင်သည်။ ထို့ကြောင့် Agentic AI တွင် prompt injection သည် capability ပြဿနာ ဖြစ်သည်။ အဖြေမှားရုံထက် များစွာ ပိုသက်ရောက်သည်။
 
@@ -56,7 +56,7 @@ BrowserSurfer repo ၏ထို security helper များသည် browser ag
 
 ### Sandbox
 
-Sandbox သည် Agent အလုပ်လုပ်ခွင့် ရှိသော ခြံစည်းရိုး ဖြစ်သည်။ Sandbox ဆိုသည်မှာ Agent tool execution ကိုကန့်သတ်ထားသောနေရာဖြစ်သည်။ Filesystem, network, browser session, process, environment, cloud access စသည်တို့ကိုဘောင်ခတ်ခြင်းဖြစ်သည်။
+Sandbox ဆိုသည်မှာ Agent tool execution ကို ကန့်သတ်ထားသော ခြံစည်းရိုး ဖြစ်သည်။ Filesystem, network, browser session, process, environment, cloud access စသည်တို့ကိုဘောင်ခတ်ခြင်းဖြစ်သည်။
 
 Sandbox များသည်တစ်မျိုးတည်းမဟုတ်။
 
@@ -125,7 +125,7 @@ State schema mismatch သည် bug မဟုတ်။ Security feature ဖြ�
 
 ### Loop Safety
 
-မူးနေသော ကပ္ပတိန်ကို ထိန်းရန် runtime guardrail လိုသည်။ Agent loop သည် repeated tool calls, empty result, cost runaway, infinite retries, context overflow ဖြစ်နိုင်သည်။ Prompt ထဲတွင် "ထပ်ခါထပ်ခါ မလုပ်ပါနှင့်" ဟု ရေးရုံဖြင့် loop ကို မထိန်းနိုင်။ Runtime guardrail လိုသည်။
+မူးနေသော ကပ္ပတိန်ကို ထိန်းရန် runtime guardrail လိုသည်။ Agent loop သည် repeated tool calls, empty result, cost runaway, infinite retries, context overflow ဖြစ်နိုင်သည်။ Prompt ထဲတွင် "ထပ်ခါထပ်ခါ မလုပ်ပါနှင့်" ဟု ရေးရုံဖြင့် loop ကို မထိန်းနိုင်။
 
 Travis-2 တွင် SemanticLoopDetectionMiddleware နှင့် ModelCallLimitMiddleware များသည် loop governance ကိုသင်ပေးသည်။ appv22 တွင် tool-loop guardrails, overflow/output-cap recovery, compaction timing idea များသည် runtime recovery အတွက်အသုံးဝင်သောလေ့လာစရာဖြစ်သည်။ သို့သော် appv22 သည် very new recovery lab ဖြစ်ပြီး final worker kernel မဟုတ်ကြောင်းအမြဲသတိထားရမည်။
 

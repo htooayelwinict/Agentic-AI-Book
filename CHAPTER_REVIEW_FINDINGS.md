@@ -68,7 +68,7 @@ Three observations:
 | 7 | Broken back-reference: `07:132` cites "အခန်း ၀၃" for embeddings/attention; ch03 has none. | `07:132` |
 | 8 | Node name mismatch: `run_worker` vs `run_agent` (ch13 and Travis-2 use `run_agent`). | `08:104` vs `08:146`, `13:7` |
 | 9 | Dangling `n8n` reference, never introduced anywhere else in the book. | `18:17` |
-| 10 | Spelling: `ပက်သက်`→`ပတ်သက်`; `အကြမ်းဖျဥ်း`/`အကြမ်းဖျဉ်း`→`အကြမ်းဖျင်း`; `လက်ဆွဲစာအုပ်`→`လက်စွဲစာအုပ်`; `လျင်`→`လျှင်`; `တခု`→`တစ်ခု`. | `05:54`, `06:85`, `07:109`, `15:142` |
+| 10 | Spelling: `ပက်သက်`→`ပတ်သက်`; `အကြမ်းဖျဉ်း`/`အကြမ်းဖျဉ်း`→`အကြမ်းဖျင်း`; `လက်ဆွဲစာအုပ်`→`လက်စွဲစာအုပ်`; `လျင်`→`လျှင်`; `တခု`→`တစ်ခု`. | `05:54`, `06:85`, `07:109`, `15:142` |
 | 11 | Bare-line "lists" written as separate paragraphs with no `-`. | `09:83-93`, `10:45-53`, `10:81-89`, `11:84-98`, `11:134-148` |
 | 12 | `CITATION_VERIFICATION_MAP.md:66` points to a non-existent `book/CITATION_VERIFICATION_TODO.md`. | support file |
 | 13 | References hygiene: missing OpenClaw `THIRD_PARTY_NOTICES.md` URL (relied on at `15:13,138,193`); orphan "Shwe U Daung" entry cited nowhere; private draft filenames listed without saying they are unpublished; duplicated license block; MCP spec pinned to `2025-06-18` with a newer revision available. | `19-references.md` |
@@ -168,7 +168,7 @@ Pick the owner, keep a one-line pointer elsewhere.
 | Controlled runtime | Controlled Runtime; ထိန်းထားသော runtime; controlled-runtime | one |
 | Memory | Memory; မှတ်ဉာဏ် | `Memory` (guide) |
 | Agent counter | Agent တစ်ခု / Agent တစ်ယောက် (within ch12) | `ခု` unless metaphor is live |
-| Spelling | ပက်သက်/ပတ်သက်; အကြမ်းဖျဥ်း/အကြမ်းဖျဉ်း/အကြမ်းဖျင်း; လက်ဆွဲ/လက်စွဲ | correct forms |
+| Spelling | ပက်သက်/ပတ်သက်; အကြမ်းဖျဉ်း/အကြမ်းဖျဉ်း/အကြမ်းဖျင်း; လက်ဆွဲ/လက်စွဲ | correct forms |
 
 ### 1.7 Suggested order of work
 
@@ -371,7 +371,7 @@ Technical accuracy.
 - `05:15` DeepAgents needs a one-word gloss.
 - `05:54` "vibe code ထားသော" undercuts trust in a chapter about discipline.
 
-Language (worst): `05:5` one 60-word sentence → "အရင်အခန်းတွေမှာ LLM (စာရေးတော်)၊ သူ့လက်ဖြစ်တဲ့ Tool Calling၊ ပြီးတော့ အဲ့ဒီလက်တွေနဲ့ အလုပ်ကို အဆင့်ဆင့်လုပ်တဲ့ Agent Loop ကို လေ့လာခဲ့ပြီ။"; `05:17` → "Harness ဆိုတာ ပစ္စည်းစုထားတာ မဟုတ်ဘူး။ ဆုံးဖြတ်ချက်တွေ စုထားတာ။"; `05:54` two spelling errors (ပက်သက်, အကြမ်းဖျဥ်း), run-on, "sdk" casing; `05:78` "စာရွက်" for a script file, "တံခါးစောင့်ဖြတ်သည်" unnatural; `05:142` harsh image.
+Language (worst): `05:5` one 60-word sentence → "အရင်အခန်းတွေမှာ LLM (စာရေးတော်)၊ သူ့လက်ဖြစ်တဲ့ Tool Calling၊ ပြီးတော့ အဲ့ဒီလက်တွေနဲ့ အလုပ်ကို အဆင့်ဆင့်လုပ်တဲ့ Agent Loop ကို လေ့လာခဲ့ပြီ။"; `05:17` → "Harness ဆိုတာ ပစ္စည်းစုထားတာ မဟုတ်ဘူး။ ဆုံးဖြတ်ချက်တွေ စုထားတာ။"; `05:54` two spelling errors (ပက်သက်, အကြမ်းဖျဉ်း), run-on, "sdk" casing; `05:78` "စာရွက်" for a script file, "တံခါးစောင့်ဖြတ်သည်" unnatural; `05:142` harsh image.
 
 Consistency: Harness glossed as control layer / policy plane / ထိန်းကျောင်းမှုစနစ် / ထိန်းကျောင်းရေးစနစ်. `05:112` is ch11's lesson; add pointer.
 

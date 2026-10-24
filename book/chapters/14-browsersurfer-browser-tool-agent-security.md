@@ -251,7 +251,7 @@ Plan
 
 Source ထဲတွင် `enable_hitl` သည် default false ဖြစ်သည်ဟုတွေ့ရသည်။ ဖွင့်ထားလျှင် high-risk tools အချို့အတွက် `interrupt_on` config ထည့်ထားသည်။ ဥပမာ navigation, form submission, browser close, browser evaluate စသည့် tool များကို approve/edit/reject decision လိုသောအရာများအဖြစ်သတ်မှတ်နိုင်သည်။
 
-ဒါပေမယ့် `facebook_surfer.py` ထဲက list ကို သေသေချာချာ ကြည့်ပါ။ `browser_evaluate`, `browser_navigate`, `browser_submit_form` ကို approval မေးပေမယ့် `browser_click` နဲ့ `browser_type` ကို မမေးပါဘူး။ ဒီအခန်းမှာ "settings click တစ်ချက်လည်း mutation ပါ" လို့ ပြောထားတာနဲ့ ဒီ list က ကိုက်မကိုက် ဖတ်သူ ကိုယ်တိုင် စဥ်းစားကြည့်ပါ။ ဒါက ဒီ repo မှာ သိထားရမယ့် gap တစ်ခုပါ။ Lab ထဲမှာ `browser_click` ကို `interrupt_on` ထဲ ထပ်ထည့်ကြည့်ပြီး ဘာကွာသွားလဲ ကြည့်ပါ။
+ဒါပေမယ့် `facebook_surfer.py` ထဲက list ကို သေသေချာချာ ကြည့်ပါ။ `browser_evaluate`, `browser_navigate`, `browser_submit_form` ကို approval မေးပေမယ့် `browser_click` နဲ့ `browser_type` ကို မမေးပါဘူး။ ဒီအခန်းမှာ "settings click တစ်ချက်လည်း mutation ပါ" လို့ ပြောထားတာနဲ့ ဒီ list က ကိုက်မကိုက် ဖတ်သူ ကိုယ်တိုင် စဉ်းစားကြည့်ပါ။ ဒါက ဒီ repo မှာ သိထားရမယ့် gap တစ်ခုပါ။ Lab ထဲမှာ `browser_click` ကို `interrupt_on` ထဲ ထပ်ထည့်ကြည့်ပြီး ဘာကွာသွားလဲ ကြည့်ပါ။
 
 HITL config ရှိခြင်းနှင့် HITL enforce ဖြစ်ခြင်း ကွာသည်။ မေးရမည့်မေးခွန်းမှာ “approval မရလျှင် tool တကယ်ရပ်သလား” ဖြစ်သည်။ Enforce ဖြစ်သော HITL တွင် user-facing approval UI ရှိသည်၊ reject လုပ်လျှင် tool မပြေးဘဲရပ်သည်၊ approval မရလျှင် fail-closed ဖြစ်သည်၊ thread resume မှန်သည်၊ audit log ထဲတွင် approval decision သိမ်းသည်။ ဒီအချက်များ မပြည့်မီ “HITL ပါတယ်” ဟု မပြောသင့်။
 

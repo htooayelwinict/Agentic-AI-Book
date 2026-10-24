@@ -10,7 +10,7 @@ Tool Broker ဆိုသည်မှာ Agent နှင့် Tool များ�
 
 ### Permission သည် စာချုပ်ဖြစ်သည်
 
-Beginner များသည် permission ကို "Agent ကိုယုံ/မယုံ" အဖြစ်တွေးတတ်သည်။ အမှန်မှာ permission သည်ယုံကြည်မှုမဟုတ်။ Contract ဖြစ်သည်။ Agent တစ်ခုသည် read-only tool သုံးခွင့် ရှိနိုင်သော်လည်း write tool သုံးခွင့် မရှိနိုင်။ Browser navigate လုပ်ခွင့် ရှိနိုင်သော်လည်း form submit ခွင့်နှင့် shell command run ခွင့် မရှိနိုင်။
+Beginner များသည် permission ကို "Agent ကိုယုံ/မယုံ" အဖြစ်တွေးတတ်သည်။ အမှန်မှာ permission သည်ယုံကြည်မှုမဟုတ်။ Contract ဖြစ်သည်။ Agent တစ်ခုသည် read-only tool သုံးခွင့် ရှိပြီး write tool သုံးခွင့် မရှိဘဲ ဖြစ်နိုင်သည်။ Browser navigate လုပ်ခွင့် ရှိပြီး form submit ခွင့်နှင့် shell command run ခွင့် မရှိဘဲ ဖြစ်နိုင်သည်။
 
 Permission ကိုသုံးမျိုးခွဲစဉ်းစားနိုင်သည်။
 

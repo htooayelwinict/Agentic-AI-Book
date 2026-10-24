@@ -4,7 +4,7 @@
 
 Agentic AI ကို DevOps ထဲသုံးမည်ဆိုလျှင်စိတ်လှုပ်ရှားစရာများစွာရှိသည်။ Agent သည် CI logs ကို ဖတ်နိုင်သည်၊ Terraform plan ကို ရှင်းပြနိုင်သည်၊ CloudWatch log အရှည်ကြီးကို အကျဉ်းချုပ်နိုင်သည်၊ runbook ဖတ်ပြီး next step အကြံပြုနိုင်သည်၊ pull request failure ကို file/line ဖြင့် ချိတ်နိုင်သည်၊ cost anomaly အကြောင်း report ထုတ်နိုင်သည်။
 
-သို့သော် DevOps ထဲတွင် ကစားကွင်းလို စမ်းလို့မရ။ Terraform apply မှားလျှင် ပိုက်ဆံ မလိုလားအပ်သောနေရာများအတွက် ကုန်သွားနိုင်သည်။ AWS permission မှားလျှင် resource leak ဖြစ်နိုင်သည်။ CI log ထဲမှ secret ထွက်သွားနိုင်သည်။ Production database ကိုမတော်တဆထိနိုင်သည်။ DNS record တစ်ကြောင်းမှားလျှင် service တစ်ခုလုံးပျောက်နိုင်သည်။
+သို့သော် DevOps ထဲတွင် ကစားကွင်းလို စမ်း၍ မရ။ Terraform apply မှားလျှင် ပိုက်ဆံ မလိုလားအပ်သောနေရာများအတွက် ကုန်သွားနိုင်သည်။ AWS permission မှားလျှင် resource leak ဖြစ်နိုင်သည်။ CI log ထဲမှ secret ထွက်သွားနိုင်သည်။ Production database ကိုမတော်တဆထိနိုင်သည်။ DNS record တစ်ကြောင်းမှားလျှင် service တစ်ခုလုံးပျောက်နိုင်သည်။
 
 ထို့ကြောင့် DevOps Agent Thinking ဆိုတာ Agent ကို cloud tool မပေးမီ permission, read/write separation, human approval, audit log, rollback, blast radius, source evidence တို့ကို အရင် စဉ်းစားခြင်း ဖြစ်ပါသည်။
 
@@ -162,7 +162,7 @@ Agent သည် plan ကိုရှင်းပြနိုင်သည်။ A
 
 ### AWS Agent Thinking
 
-AWS tools ကို Agent ပေးမည်ဆိုပါက IAM scope ကို အရင် ကျဉ်းပါ။ Full admin credential မပေးပါနှင့်။ Read-only role မှစပါ။ Service-specific policy သုံးပါ။ Session duration ကန့်သတ်ပါ။ CloudTrail audit log သုံးပါ။
+AWS tools ကို Agent ပေးမည်ဆိုပါက IAM scope ကို အရင် ကျဉ်းအောင် ကန့်သတ်ပါ။ Full admin credential မပေးပါနှင့်။ Read-only role မှစပါ။ Service-specific policy သုံးပါ။ Session duration ကန့်သတ်ပါ။ CloudTrail audit log သုံးပါ။
 
 Read-only AWS tasks:
 

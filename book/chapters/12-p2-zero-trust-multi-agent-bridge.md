@@ -154,7 +154,7 @@ Execution plane ထဲတွင် model မှားသော်လည်း co
 
 ### Scoped Filesystem
 
-Worker နှစ်ခုလုံး `/` ကို မြင်သော်လည်း ကမ္ဘာ မတူ။ P-2 တွင် DeepAgents filesystem backends ကို virtual mode ဖြင့် scoped လုပ်ထားသည်။ Supervisor worker အတွက် real `./admin` directory ကို virtual `/` အဖြစ်မြင်စေသည်။ Customer worker အတွက် real `./docs` directory ကို virtual `/` အဖြစ်မြင်စေသည်။
+P-2 တွင် DeepAgents filesystem backends ကို virtual mode ဖြင့် scoped လုပ်ထားသည်။ Supervisor worker အတွက် real `./admin` directory ကို virtual `/` အဖြစ်မြင်စေသည်။ Customer worker အတွက် real `./docs` directory ကို virtual `/` အဖြစ်မြင်စေသည်။
 
 Agent နှစ်ခုလုံးက `/` ဟုမြင်နိုင်သည်။ သို့သော်တကယ်မြင်သောကမ္ဘာကွဲသည်။ Supervisor ၏ `/` သည် admin scope ဖြစ်သည်။ Customer ၏ `/` သည် public docs scope ဖြစ်သည်။
 

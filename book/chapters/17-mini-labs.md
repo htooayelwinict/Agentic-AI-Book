@@ -2,7 +2,7 @@
 
 ### စာဖတ်ပြီးရပ်လျှင် စာရေးတော်၏လက်ကို မမြင်ရ
 
-Agentic AI ကို စာအုပ်ဖတ်ရုံဖြင့်မကျွမ်းကျင်နိုင်ပါ။ Code ရေးကြည့်ရမယ်၊ tool boundary စမ်းရမယ်၊ prompt injection test ထည့်ကြည့်ရမယ်၊ memory leak ဘယ်လို ဖြစ်နိုင်သလဲ မြင်ရမယ်၊ replan loop ကို ကိုယ်တိုင် လက်ဖြင့် မြင်ရပါမည်။ ဒါပေမဲ့ beginner အနေဖြင့် real browser account, real cloud account, production secrets များနှင့်မစသင့်ပါ။ Local safe lab များမှစပါ။
+Agentic AI ကို စာအုပ်ဖတ်ရုံဖြင့်မကျွမ်းကျင်နိုင်ပါ။ Code ရေးကြည့်ရမယ်၊ tool boundary စမ်းရမယ်၊ prompt injection test ထည့်ကြည့်ရမယ်၊ memory leak ဘယ်လို ဖြစ်နိုင်သလဲ မြင်ရမယ်၊ replan loop ကို ကိုယ်တိုင် လက်ဖြင့် မြင်ရမယ်။ ဒါပေမဲ့ beginner အနေဖြင့် real browser account, real cloud account, production secrets များနှင့်မစသင့်ပါ။ Local safe lab များမှစပါ။
 
 ဒီ lab များသည် သင်ခန်းစာ အတွက်သာ ရေးထားပါသည်။ Lab တစ်ခုစီတွင် pattern တစ်ခုသာ မှတ်ပါ။
 

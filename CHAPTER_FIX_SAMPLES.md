@@ -93,7 +93,7 @@ Companion to `CHAPTER_REVIEW_FINDINGS.md`. Each sample shows the current text, t
 
 > ဒါကြောင့် "အရက်မူးနေတဲ့ ကပ္ပတိန်" ကို ထိန်းဖို့ "သင်္ဘောသား" တွေနဲ့ "မြေပုံ" တွေ ကြိုပြင်ထားရပါတယ်။ ဒီလို ဘောင်ခတ်တာကို **Guardrails** (Constraints) လို့ ခေါ်ပါတယ်။ Agent က ကိုယ့်ဘာသာ ဆုံးဖြတ်နိုင်ပေမယ့် ကျွန်တော်တို့ သတ်မှတ်ထားတဲ့ ဘောင်ထဲမှာပဲ ဆုံးဖြတ်ရပါမယ်။ ဥပမာ - "ကြိုက်သလို ဆုံးဖြတ်လို့ရတယ်၊ ဒါပေမဲ့ ငွေ တစ်သောင်းထက် ပိုသုံးမယ်ဆိုရင် ငါ့ကို အရင်မေး" ဆိုတာမျိုးပါ။
 >
-> **Orchestration** ကတော့ တစ်ခြား အရာပါ။ Agent, Tool, Memory, Human approval စတဲ့ အစိတ်အပိုင်းတွေကို ဘယ်အစီအစဥ်နဲ့ ဘယ်သူက ဘာလုပ်မလဲ ချိတ်ဆက် စီစဥ်ပေးတာကို ပြောတာပါ။ Guardrail က "ဘာ မလုပ်ရ" ကို သတ်မှတ်တယ်။ Orchestration က "ဘယ်လို အလုပ်လုပ်မလဲ" ကို စီစဥ်တယ်။ အခန်း ၃ မှာ Orchestration ကို ဒီအဓိပ္ပာယ်နဲ့ ဆက်သုံးသွားမှာပါ။
+> **Orchestration** ကတော့ တစ်ခြား အရာပါ။ Agent, Tool, Memory, Human approval စတဲ့ အစိတ်အပိုင်းတွေကို ဘယ်အစီအစဉ်နဲ့ ဘယ်သူက ဘာလုပ်မလဲ ချိတ်ဆက် စီစဉ်ပေးတာကို ပြောတာပါ။ Guardrail က "ဘာ မလုပ်ရ" ကို သတ်မှတ်တယ်။ Orchestration က "ဘယ်လို အလုပ်လုပ်မလဲ" ကို စီစဉ်တယ်။ အခန်း ၃ မှာ Orchestration ကို ဒီအဓိပ္ပာယ်နဲ့ ဆက်သုံးသွားမှာပါ။
 
 **What changed:** Guardrails and Orchestration separated. Chapter 03 already uses Orchestration correctly, so this fix also removes a contradiction between two chapters.
 
@@ -170,7 +170,7 @@ Prompt   = user က ရွေးတယ်       (ဘယ် template သုံး
 
 **Proposed addition to the HITL section**
 
-> BrowserSurfer က HITL ဖွင့်ထားရင် `browser_evaluate`, `browser_navigate`, `browser_submit_form` ကို approval မေးပါတယ်။ ဒါပေမယ့် `browser_click` နဲ့ `browser_type` ကို မမေးပါဘူး။ ဒီအခန်းမှာ "settings click တစ်ချက်လည်း mutation ပါ" လို့ ပြောထားတာနဲ့ ဒီ list က ကိုက်မကိုက် ဖတ်သူ ကိုယ်တိုင် စဥ်းစားကြည့်ပါ။ ဒါက ဒီ repo မှာ သိထားရမယ့် gap တစ်ခုပါ။ Lab ထဲမှာ `browser_click` ကို `interrupt_on` ထဲ ထပ်ထည့်ကြည့်ပြီး ဘာကွာသွားလဲ ကြည့်ပါ။
+> BrowserSurfer က HITL ဖွင့်ထားရင် `browser_evaluate`, `browser_navigate`, `browser_submit_form` ကို approval မေးပါတယ်။ ဒါပေမယ့် `browser_click` နဲ့ `browser_type` ကို မမေးပါဘူး။ ဒီအခန်းမှာ "settings click တစ်ချက်လည်း mutation ပါ" လို့ ပြောထားတာနဲ့ ဒီ list က ကိုက်မကိုက် ဖတ်သူ ကိုယ်တိုင် စဉ်းစားကြည့်ပါ။ ဒါက ဒီ repo မှာ သိထားရမယ့် gap တစ်ခုပါ။ Lab ထဲမှာ `browser_click` ကို `interrupt_on` ထဲ ထပ်ထည့်ကြည့်ပြီး ဘာကွာသွားလဲ ကြည့်ပါ။
 
 **Proposed addition to the sandbox section**
 

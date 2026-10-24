@@ -51,7 +51,7 @@ User Request
 ```
 
 ### repo ဥပမာများ
-အောက်ဖော်ပြပါ ဥပမာများသည် ကျွန်ုပ်စာရေးသူကိုယ်တိုင်တည်ဆောက်ထားသော (vibe code ထားသော) program repo များဖြစ်သည်။ ယင်းတို့ကိုအသုံးပြုပြီး Agentic AI နှင့်ပက်သက်သော အစိတ်အပိုင်းများ မည်သို့မည်ပုံ အကြမ်းဖျဥ်းတည်ဆောက်ထားပုံ လိုအပ်သော sdk နှင့် modules များအသုံးပြုထားပုံတို့ကို တတ်နိုင်သလောက် ရှေ့ဆက်အခန်းများတွင် ဆက်လက်ရှင်းပြသွားမည်ဖြစ်သည်။ 
+အောက်ဖော်ပြပါ ဥပမာများသည် ကျွန်ုပ်စာရေးသူကိုယ်တိုင်တည်ဆောက်ထားသော (vibe code ထားသော) program repo များဖြစ်သည်။ ယင်းတို့ကိုအသုံးပြုပြီး Agentic AI နှင့်ပက်သက်သော အစိတ်အပိုင်းများ မည်သို့မည်ပုံ အကြမ်းဖျဉ်းတည်ဆောက်ထားပုံ လိုအပ်သော sdk နှင့် modules များအသုံးပြုထားပုံတို့ကို တတ်နိုင်သလောက် ရှေ့ဆက်အခန်းများတွင် ဆက်လက်ရှင်းပြသွားမည်ဖြစ်သည်။ 
 
 > Beginner အနေနှင့် ဒီ repo examples တွေကိုဖတ်ရာတွင် class name, tool name, middleware name, module name တွေကို အလွတ်မှတ်ရန်မလိုပါ။ "ဒီ Harness က ဘာကိုထိန်းထားတာလဲ၊ ဘယ် risk ကိုကာထားတာလဲ၊ Model ကို ဘယ်ဘောင်ထဲမှာ အလုပ်လုပ်စေတာလဲ" ဆိုတဲ့မေးခွန်းတွေကိုပဲ အရင်လိုက်ပါ။
 
@@ -75,7 +75,7 @@ Customer / UnsafeState
 
 ### Travis-2 ထဲက Harness
 
-Travis-2 တွင် Harness ကို graph တစ်ခုတည်းအဖြစ်မမြင်သင့်။ အဓိကစက်ခန်းမှာ `run_playwright_code` tool ဖြစ်ပြီး graph သည် ထိုစက်ခန်းကို ပတ်လည်မှ ထိန်းသော ဘောင်သာ ဖြစ်သည်။ Agent ရေးသော TypeScript Playwright စာရွက်ကို workspace ထဲရေးသည်။ လိုအပ်လျှင် AST validation တံခါးစောင့်ဖြတ်သည်။ ထို့နောက် host runner သို့မဟုတ် Docker sandbox runner ထဲတွင် run စေပြီး structured result ပြန်ယူသည်။ Outer LangGraph StateGraph နှင့် middleware stack သည် ထိုစက်ခန်းကိုပတ်လည်မှထိန်းသောဘောင်များဖြစ်သည်။
+Travis-2 တွင် Harness ကို graph တစ်ခုတည်းအဖြစ်မမြင်သင့်။ အဓိကစက်ခန်းမှာ `run_playwright_code` tool ဖြစ်သည်။ Agent ရေးသော TypeScript Playwright စာရွက်ကို workspace ထဲရေးသည်။ လိုအပ်လျှင် AST validation တံခါးစောင့်ဖြတ်သည်။ ထို့နောက် host runner သို့မဟုတ် Docker sandbox runner ထဲတွင် run စေပြီး structured result ပြန်ယူသည်။ Outer LangGraph StateGraph နှင့် middleware stack သည် ထိုစက်ခန်းကိုပတ်လည်မှထိန်းသောဘောင်များဖြစ်သည်။
 
 > အဓိကမှတ်ရန် — Travis-2 မှာ Harness ဆိုတာ graph တစ်ခုတည်းမဟုတ်ပါ။ Tool runner, validation, sandbox, state, middleware, budget, telemetry စတာတွေကို ပေါင်းပြီး Agent ကို ဘယ်လိုအလုပ်လုပ်ခွင့်ပေးမလဲ၊ ဘယ်အချိန်ရပ်မလဲ၊ ဘယ်လိုပြန်စစ်မလဲ ဆိုတာကို ထိန်းသော control layer ဖြစ်သည်။
 

@@ -10,7 +10,7 @@
 > Prompt ထဲတွင်သတိပေးထားရုံဖြင့် runtime ကိုမထိန်းနိုင်ပါ။ Travis-2 တွင် model-call limit, semantic loop detection, context editing, summarization, tool-output sanitization, skills injection/signing စသည်တို့ကို middleware အဖြစ်တပ်ထားသည်။ Policy ကို model response ထဲမှာမထားဘဲ execution path ထဲမှာထားရန်ကြိုးစားထားခြင်းပါ။
 >
 > **ဒီအခန်းတွင် မထည့်သည့်အရာ**
-> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ပြောတဲ့အခါ "default ဖွင့်လား ပိတ်လား" ကို ထည့်ပြောသွားပါမယ်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို ဒီအခန်းတွင် မထည့်ပါ။
+> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ဖတ်တဲ့အခါ default ဖွင့်လား ပိတ်လား ကို `.env.example` ထဲမှာ ပြန်စစ်ပါ။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို ဒီအခန်းတွင် မထည့်ပါ။
 
 ### ဒီ case study ကို လက်တွေ့လိုက်ဖတ်နည်း
 
@@ -248,7 +248,7 @@ TRAVIS2_CODE_VALIDATION_ENABLED=true
 
 AST validation သည် configurable gate ဖြစ်သည်။ အမြဲ active ဖြစ်သည်ဟု မရေးသင့်ချေ။
 
-AST validation က code မ run ခင် ပိတ်ထားတဲ့ syntax pattern တွေကို ရှာပေးပါတယ်။ String matching ထက် ပိုကောင်းပါတယ်။ ဒါပေမယ့် run လိုက်ရင် ဘာဖြစ်မလဲ ဆိုတာကိုတော့ မသိနိုင်ပါဘူး။ Remote page က ဘာပြန်လာမလဲ၊ network response ထဲ ဘာပါမလဲ၊ ဒါတွေ code ဖတ်ရုံနဲ့ မမြင်ရပါဘူး။ ဒါကြောင့် AST validation တစ်ခုတည်းနဲ့ မလုံလောက်ဘဲ sandbox, middleware policy, stdout review တွေနဲ့ တွဲသုံးရပါတယ်။
+AST validation က code မ run ခင် ပိတ်ထားတဲ့ syntax pattern တွေကို ရှာပေးပါတယ်။ String matching ထက် ပိုကောင်းပါတယ်။ ဒါပေမယ့် run လိုက်ရင် ဘာဖြစ်မလဲ ဆိုတာကိုတော့ မသိနိုင်ပါဘူး။ Remote page က ဘာပြန်လာမလဲ၊ network response ထဲ ဘာပါမလဲ၊ ဒါတွေ code ဖတ်ရုံနဲ့ မမြင်ရပါဘူး။ ဒါကြောင့် AST validation တစ်ခုတည်းနဲ့ မလုံလောက်ဘဲ sandbox, middleware policy, structured result ပြန်ဖတ်ခြင်း, stdout review တွေနဲ့ တွဲသုံးရပါတယ်။
 
 ### Websearch နှင့် Playwright Skills
 
@@ -291,7 +291,7 @@ Skills များသည် tool generation မတိုင်မီ model beha
 
 ### Reducer-safe message sync
 
-ဤအပိုင်း၏ ရည်ရွယ်ချက်မှာ စာဟောင်း မပွားစေရန် ဖြစ်သည်။ LangGraph သည် `messages` အတွက် reducer semantics ကိုသုံးသည်။ Travis-2 သည် `add_messages` ကိုသုံးသောကြောင့် node outputs များသည် state ကိုအစားထိုးခြင်းမဟုတ်ဘဲ merge လုပ်ခြင်းဖြစ်သည်။
+Reducer-safe message sync ၏ ရည်ရွယ်ချက်မှာ စာဟောင်း မပွားစေရန် ဖြစ်သည်။ LangGraph သည် `messages` အတွက် reducer semantics ကိုသုံးသည်။ Travis-2 သည် `add_messages` ကိုသုံးသောကြောင့် node outputs များသည် state ကိုအစားထိုးခြင်းမဟုတ်ဘဲ merge လုပ်ခြင်းဖြစ်သည်။
 
 `src/travis_2/utils/nodes.py` implements `_calculate_message_delta(...)`:
 
