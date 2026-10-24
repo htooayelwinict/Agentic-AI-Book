@@ -67,6 +67,36 @@ Before: လုပ်ငန်းစဉ်သည် အောင်မြင်�
 After: Task ပြီးပြီလို့ မပြောခင် result ကို verify လုပ်ရမယ်။
 ```
 
+## Register: Conversational For Explanation
+
+The book keeps the literary register (`သည်။`, `၏`, `ဤ`, `၎င်း`, `ချေ`) for chapter openers, metaphors, and the preface. Every definitional or technical sentence uses the plain developer register (`တယ်။` / `ပါတယ်။` for statements, `ပါ။` for instructions), the same register as the "After" examples in this guide and the `Beginner အနေနှင့်…` asides.
+
+Chapter 04 is the reference chapter for this register.
+
+| Pattern to avoid in technical prose | Use instead | Why |
+|---|---|---|
+| `…သည်။` on every sentence | `…တယ်။` / `…ပါတယ်။` (statements), `…ပါ။` (instructions) | Matches how the guide's own examples read |
+| `၎င်း` | `သူ` (agent / person), `ဒါ` (thing / idea), or repeat the noun | Ambiguous after two sentences |
+| `ဤ` | `ဒီ` | Register |
+| `ဟူသော` / `ဟု` | `ဆိုတဲ့` / `လို့` | Register |
+| `…မဟုတ်ချေ` / `…မရှိပေ` | `…မဟုတ်ပါဘူး` / `…မရှိပါဘူး` | `ချေ/ပေ` is archaic |
+| `X ခြင်းသည် Y ခြင်းဖြစ်သည်` | `X ရင် Y တယ်` or `X တာက Y ပါ` | Nominalised chains read as translation |
+| `အကောင်အထည်ဖော်` for *run / execute* | `run တယ်` or `လုပ်တယ်` | Calque of "implement" |
+| `ဖန်တီး` for *create code* | `ဆောက်တယ်` / `ရေးတယ်` | `ဖန်တီး` is artistic creation |
+| Four-syllable compounds (`ထုတ်ဖော်ပြောဆိုခိုင်းခြင်း`) | Two syllables (`ထုတ်ပြောခိုင်းတာ`) | Shorter reads as human |
+| Unspaced chains over ~40 characters | Space between word groups | Line breaking on phones |
+| Six same-ending sentences in a row | Vary length; one idea per sentence | Rhythm |
+| Burmese gloss after an English term on every use | Gloss once in parentheses, then English only | See "Terms To Keep In English" |
+
+Before / after:
+
+```text
+Before: ၎င်းကို Software Engineering တွင် "Non-deterministic" ဟု ခေါ်သည်။ ဆိုလိုသည်မှာ တူညီသော မေးခွန်းကို မေးသော်လည်း အဖြေမှာ တစ်ခါနှင့်တစ်ခါ မတူဘဲ ပြောင်းလဲနေခြင်း ဖြစ်သည်။
+After: ဒါကို Software Engineering မှာ Non-deterministic လို့ ခေါ်ပါတယ်။ မေးခွန်း တစ်ခုတည်းကို ထပ်မေးရင် အဖြေ တစ်ခါနဲ့ တစ်ခါ မတူဘူး ဆိုတဲ့ သဘောပါ။
+```
+
+Pronoun: `ကျွန်တော်တို့` is the default in technical prose. If a chapter already uses `ကျွန်ုပ်တို့` throughout, keep it consistent within that chapter.
+
 ## Suggesting Chapter Edits
 
 The author voice matters. For large prose changes:

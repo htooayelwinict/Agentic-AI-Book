@@ -10,7 +10,7 @@
 > Prompt ထဲတွင်သတိပေးထားရုံဖြင့် runtime ကိုမထိန်းနိုင်ပါ။ Travis-2 တွင် model-call limit, semantic loop detection, context editing, summarization, tool-output sanitization, skills injection/signing စသည်တို့ကို middleware အဖြစ်တပ်ထားသည်။ Policy ကို model response ထဲမှာမထားဘဲ execution path ထဲမှာထားရန်ကြိုးစားထားခြင်းပါ။
 >
 > **ဒီအခန်းတွင် မထည့်သည့်အရာ**
-> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool sanitization, safe summarization, skill signing တို့သည် configuration ပေါ်မူတည်သော controls များဖြစ်သည်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို v0.2 တွင်ဆက်ချဲ့မည်။
+> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ပြောတဲ့အခါ "default ဖွင့်လား ပိတ်လား" ကို ထည့်ပြောသွားပါမယ်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို v0.2 တွင်ဆက်ချဲ့မည်။
 
 ### ဒီ case study ကို လက်တွေ့လိုက်ဖတ်နည်း
 
@@ -248,7 +248,7 @@ TRAVIS2_CODE_VALIDATION_ENABLED=true
 
 ဤအချက်သည် accuracy အတွက်အရေးကြီးသည်။ AST validation သည်အမြဲ active ဖြစ်သည်ဟုမရေးသင့်ချေ။ ၎င်းသည် configurable gate ဖြစ်သည်။
 
-AST validation သည် execution မလုပ်မီ banned syntax pattern များကိုရှာနိုင်သည်။ Plain string matching ထက်ပိုကောင်းသော်လည်း runtime behavior လုံခြုံကြောင်းသက်သေမပြနိုင်။ Dynamic behavior, remote page content, network response, data relevance တို့အားလုံးကိုအပြည့်မသိနိုင်။ ထို့ကြောင့် sandboxing, structured result interpretation, middleware policy, stdout relevance review တို့နှင့်တွဲသုံးရသည်။
+AST validation က code မ run ခင် ပိတ်ထားတဲ့ syntax pattern တွေကို ရှာပေးပါတယ်။ String matching ထက် ပိုကောင်းပါတယ်။ ဒါပေမယ့် run လိုက်ရင် ဘာဖြစ်မလဲ ဆိုတာကိုတော့ မသိနိုင်ပါဘူး။ Remote page က ဘာပြန်လာမလဲ၊ network response ထဲ ဘာပါမလဲ၊ ဒါတွေ code ဖတ်ရုံနဲ့ မမြင်ရပါဘူး။ ဒါကြောင့် AST validation တစ်ခုတည်းနဲ့ မလုံလောက်ဘဲ sandbox, middleware policy, stdout review တွေနဲ့ တွဲသုံးရပါတယ်။
 
 ### Websearch နှင့် Playwright Skills
 

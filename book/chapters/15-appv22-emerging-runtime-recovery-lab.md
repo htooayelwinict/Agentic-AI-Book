@@ -127,7 +127,7 @@ appv22 README က reference copies of upstream `hermes-agent/` and `pi/` codebas
 
 ဤအချက်သည် beginner များအတွက်လည်းတန်ဖိုးရှိသည်။ Inspiration နှင့် dependency မတူ။ Port လုပ်ခြင်းနှင့် blind copy မတူ။ Design idea တစ်ခုဘယ်ကလာသလဲသိရန်လိုသလို, လက်ရှိ runtime ကဘယ်အရာပေါ်မူတည်နေသလဲကိုလည်းရှင်းရမည်။
 
-အကယ်၍ appv22 သည် Pi/Hermes folder များကို runtime ထဲမှတိုက်ရိုက် import လုပ်နေခဲ့လျှင် boundary မသန့်တော့။ စမ်းသပ် project တစ်ခုဖြစ်သော်လည်း ထို boundary ကို test ဖြင့်စစ်ထားခြင်းကောင်းသည်။ အကြောင်းမှာ agent runtime တစ်ခုတွင် "ဘယ်အရာက source of truth လဲ" ဟူသောမေးခွန်းသည် အမြဲအရေးကြီးသောကြောင့်ဖြစ်သည်။
+appv22 က Pi/Hermes folder တွေကို runtime ထဲက တိုက်ရိုက် import လုပ်နေရင် boundary မသန့်တော့ပါဘူး။ `tests/test_no_appv21_coupling.py` ဆိုတဲ့ test ရှိပါတယ်။ ဒါပေမယ့် သူ စစ်တာက `appv21` ဆိုတဲ့ စာလုံး source ထဲ ပါမပါပဲ ဖြစ်ပြီး Pi/Hermes import ကို မစစ်ပါဘူး။ ဒါကြောင့် "boundary ကို test နဲ့ စစ်ထားတယ်" လို့ ပြောရင် တစ်ဝက်ပဲ မှန်ပါတယ်။ Beginner အတွက် သင်ခန်းစာက ဒီမှာပါ။ Test နာမည်က ပြောတာနဲ့ test ကိုယ်တိုင် စစ်တာ တူရဲ့လား အမြဲ ပြန်ဖတ်ပါ။ အကြောင်းမှာ agent runtime တစ်ခုတွင် "ဘယ်အရာက source of truth လဲ" ဟူသောမေးခွန်းသည် အမြဲအရေးကြီးသောကြောင့်ဖြစ်သည်။
 
 ### OpenClaw hype ကို ဘယ်လိုဖတ်မလဲ
 

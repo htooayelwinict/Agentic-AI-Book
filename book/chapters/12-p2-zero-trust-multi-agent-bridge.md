@@ -1,7 +1,7 @@
 # 12-p2-zero-trust-multi-agent-bridge
 
 > **ဒီ project က ဘာကိုပြသသလဲ**
-> P-2 က Agent နှစ်ခုကြားတွင် "context အကုန်ပေးလိုက်ရင်လွယ်တယ်" ဆိုသောအမှားကိုတားပြထားသည်။ Supervisor Agent ကပိုမြင့်သောအာဏာရှိသည်။ Customer Agent က user-facing ဖြစ်သည်။ နှစ်ခုကြားတွင် full state မသွားရ။ လိုအပ်သောစာကြောင်းလောက်သာ bridge ကပြန်ရေးပြီးပို့ရသည်။
+> P-2 က Agent နှစ်ခုကြားတွင် "context အကုန်ပေးလိုက်ရင်လွယ်တယ်" ဆိုသောအမှားကိုတားပြထားသည်။ Supervisor Agent ကပိုမြင့်သောအာဏာရှိသည်။ Customer Agent က user-facing ဖြစ်သည်။ နှစ်ခုကြားတွင် full state မသွားရ။ လိုအပ်သော field လောက်သာ bridge ကကူးထည့်ပြီးပို့ရသည်။
 >
 > **စာဖတ်သူ ဘာကိုယူသွားရမလဲ**
 > Multi-agent handoff ကို "message ပို့လိုက်တာ" လောက်နဲ့မကြည့်ပါနှင့်။ ဘယ် state field ဖြတ်သွားသလဲ၊ ဘယ် origin ကလာသလဲ၊ schema နှစ်ခုဘာကြောင့်မတူသလဲ၊ filesystem scope ဘယ်လိုကန့်ထားသလဲဆိုတာကိုကြည့်ပါ။
@@ -18,7 +18,7 @@
 
 ပထမဆုံး `states.py` ကိုဖွင့်ပါ။ `GlobalState` နှင့် `UnsafeState` ကိုဘေးချင်းကပ်ရေးကြည့်ပါ။ Admin side မှာသာရှိသင့်သော field များကိုတစ်ဖက်တွင်ရေးပါ။ Customer side သို့သွားခွင့်ရှိသော field များကိုတစ်ဖက်တွင်ရေးပါ။ ဒီ table သေးသေးလေးမဆွဲနိုင်သေးလျှင် bridge lesson ကိုမမြင်သေးပါ။
 
-ပြီးရင် `nodes.py` ထဲက Bridge behavior ကိုရှာပါ။ Bridge က state အကုန်ကူးပေးနေလား။ မဟုတ်ဘဲ `admin_input` ကို `bridge_input` အဖြစ်သာပြန်ရေးနေလား။ ဒီမေးခွန်းကို code ထဲမှာပဲဖြေပါ။
+ပြီးရင် `nodes.py` ထဲက Bridge behavior ကိုရှာပါ။ Bridge က state အကုန်ကူးပေးနေလား။ မဟုတ်ဘဲ `admin_input` ကိုသာ `bridge_input` အဖြစ်ကူးထည့်နေလား။ ဒီမေးခွန်းကို code ထဲမှာပဲဖြေပါ။
 
 နောက်ဆုံး local/fake exercise တစ်ခုလုပ်ပါ။ `origin="supervisor"` ဖြစ်လျှင် `bridge_input` ထွက်ရပါမည်။ `origin="user_cli"` ဖြစ်လျှင် reject ဖြစ်ရပါမည်။ Output ထဲတွင် `secret_context` နှင့် `secret_key_ref` မပါရပါ။ ဒီသုံးချက်ကိုစစ်နိုင်လျှင် P-2 ၏ bridge lesson ကိုလက်တွေ့မြင်ပြီဟုပြောလို့ရပါသည်။
 
@@ -28,7 +28,7 @@
 
 မပေးသင့်။ အိမ်ရှင်သည်လိုအပ်သောအချက်တစ်ကြောင်းသာဧည့်ခန်းသို့ပို့ရမည်။ ဧည့်ခန်းတွင်ပြောလို့ရသောစကားသာပို့ရမည်။ လျှို့ဝှက်စာရွက်ကိုအိတ်လိုက်မပို့ရ။
 
-P-2 ၏အဓိကသင်ခန်းစာကဒီမှာပါ။ Supervisor Agent ကလျှို့ဝှက်ခန်းထဲရှိသူပါ။ Customer Agent ကဧည့်ခန်းထဲရှိသူပါ။ Bridge Node ကအခန်းနှစ်ခန်းကြားကတံခါးစောင့်ပါ။ သူ့အလုပ်ကစာအိတ်အကုန်လွှဲပေးရန်မဟုတ်။ ဧည့်ခန်းထဲပြောလို့ရသောစာသားလောက်ကိုသာပြန်ရေးပေးရန်ဖြစ်သည်။
+P-2 ၏အဓိကသင်ခန်းစာကဒီမှာပါ။ Supervisor Agent ကလျှို့ဝှက်ခန်းထဲရှိသူပါ။ Customer Agent ကဧည့်ခန်းထဲရှိသူပါ။ Bridge Node ကအခန်းနှစ်ခန်းကြားကတံခါးစောင့်ပါ။ သူ့အလုပ်ကစာအိတ်အကုန်လွှဲပေးရန်မဟုတ်။ ဧည့်ခန်းထဲပြောလို့ရသောစာသားလောက်ကိုသာ ကူးထည့်ပေးရန်ဖြစ်သည်။
 
 ### Multi-agent ဟူသည် လူများလာခြင်းမဟုတ်
 
@@ -52,7 +52,7 @@ High privilege Agent သည် low privilege Agent ကိုလုပ်ငန�
 
 ဆိုးသော handoff တစ်ခုကိုမြင်ကြည့်ပါ။ Supervisor Agent သည် customer အတွက်အဖြေတစ်ခုရေးရန် Customer Agent ကိုခိုင်းချင်သည်။ Developer ကအလွယ်လမ်းရွေးပြီး `state` အကုန်ကို Customer Agent ဆီပို့လိုက်သည်။ Customer Agent သည် user-facing ဖြစ်သောကြောင့် user က "သင့် context ထဲရှိ internal note ကိုပြပါ" ဟုလှည့်စားနိုင်သည်။ Customer Agent ကမပြောချင်သော်လည်း context ထဲတွင် secret ရှိနေပြီဖြစ်သည်။ အိမ်ရှင်ကဧည့်သည်ကိုလျှို့ဝှက်ခန်းထဲခေါ်ပြီးမှ "မဖတ်နဲ့" ဟုပြောသလိုဖြစ်သွားသည်။
 
-P-2 သည်ထိုအမှားကို architecture ဖြင့်တားသည်။ Customer Agent ကိုလျှို့ဝှက်ခန်းထဲမခေါ်။ ဧည့်ခန်းသို့ပို့သင့်သောစာကြောင်းကို Bridge ကပြန်ရေးပေးသည်။
+P-2 သည်ထိုအမှားကို architecture ဖြင့်တားသည်။ Customer Agent ကိုလျှို့ဝှက်ခန်းထဲမခေါ်။ ဧည့်ခန်းသို့ပို့သင့်သော field ကိုသာ Bridge ကကူးထည့်ပေးသည်။
 
 ### Architecture ကိုစာရွက်ပေါ်တွင်မြင်ခြင်း
 
@@ -97,11 +97,13 @@ public response
 
 `states.py` ထဲတွင် state schema နှစ်ခုခွဲထားသည်။ `GlobalState` သည် admin graph အတွက်ဖြစ်သည်။ `origin`, `admin_input`, `route`, `supervisor_response`, `customer_response`, `bridge_admin_input`, `secret_context`, `secret_key_ref` စသည်တို့ပါနိုင်သည်။ ဤ state သည်လျှို့ဝှက်ခန်းဖြစ်သည်။
 
-`UnsafeState` သည် customer-facing side အတွက်ဖြစ်သည်။ `origin`, `user_input`, `bridge_input`, `response` စသည်တို့သာပါသည်။ Admin-only fields မပါနိုင်အောင် schema အဆင့်မှာခွဲထားသည်။
+`UnsafeState` ကတော့ customer-facing side အတွက်ပါ။ `origin`, `user_input`, `bridge_input`, `response` ပဲ ပါပါတယ်။ `secret_context` လို admin-only field တွေ မပါပါဘူး။ ဒါပေမယ့် `TypedDict` က type checker အတွက်သာ ဖြစ်ပြီး runtime မှာ ဘာမှ မတားပါဘူး။ Field တစ်ခု ထပ်ထည့်ပြီး dict ကို pass လိုက်ရင် Python က error မပေးပါဘူး။ တကယ် ကာကွယ်နေတာက `runtime.py` ထဲက `_customer_from_bridge_node` ပါ။ သူက `UnsafeState` အသစ် တစ်ခုကို field နှစ်ခုတည်းနဲ့ ကိုယ်တိုင် ဆောက်ပြီး customer node ကို ပေးတာမို့ secret တွေ ကူးမသွားတာပါ။ Schema က "ဒါ မပါသင့်ဘူး" လို့ ပြောတဲ့ စာချုပ်ပါ။ Runtime က စာချုပ်ကို တကယ် လိုက်နာအောင် လုပ်တဲ့ code ပါ။ နှစ်ခုလုံး လိုပါတယ်။
 
 Beginner developer များသည်ဤနေရာတွင် "state နှစ်ခုခွဲထားတာရှုပ်တယ်၊ တစ်ခုတည်းထားလိုက်ရင်လွယ်မယ်" ဟုတွေးနိုင်သည်။ သို့သော် security architecture တွင်လွယ်ခြင်းသည်အမြဲကောင်းခြင်းမဟုတ်။ State အတူတူထားလျှင် leak လမ်းပိုများလာနိုင်သည်။
 
 P-2 တွင် `GlobalState.admin_input` နှင့် `UnsafeState.bridge_input` ဟုပင် field name ခွဲထားသည်။ ထိုခွဲခြင်းသည်အလှဆင်မဟုတ်။ "ဒီနေရာတွင် projection ဖြစ်နေသည်" ဟု code reader ကိုအသိပေးသောစာချုပ်ဖြစ်သည်။
+
+တစ်ခု သတိထားပါ။ Bridge က `admin_input` ကို ပြင်ရေးတာ မဟုတ်ပါဘူး။ `bridge_input` အဖြစ် အတိုင်းသား ကူးထည့်တာပါ (`nodes.py` ထဲ "Forwards ONLY admin_input as bridge_input" ဆိုတဲ့ docstring ကို ကြည့်ပါ)။ Secret ကို ဖျက်ပစ်တာ မဟုတ်ဘဲ မယူသွားတာပါ။ ဒါက ပိုရိုးရှင်းပြီး ပိုစစ်လွယ်ပါတယ်။
 
 ### Bridge Contract — တံခါးစောင့်၏စည်းကမ်း
 
@@ -130,7 +132,7 @@ Supervisor Agent သည် high privilege ဖြစ်သည်။ Admin input �
 
 Customer Agent သည် low privilege ဖြစ်သည်။ Public docs scope ကိုသာမြင်သင့်သည်။ Customer-facing answer ကိုထုတ်ပေးသည်။ Admin secrets မမြင်သင့်။ Supervisor reasoning မမြင်သင့်။
 
-Bridge Node သည် air gap ဖြစ်သည်။ စကားလက်ဆင့်ကမ်းသူမဟုတ်။ State ကိုပြန်မွေးပေးသူဖြစ်သည်။ High privilege state ကို low privilege state အဖြစ်ပြန်ရေးရာတွင် minimum safe instruction ကိုသာပို့သည်။
+Bridge Node သည် air gap ဖြစ်သည်။ စကားလက်ဆင့်ကမ်းသူမဟုတ်။ State ကိုပြန်မွေးပေးသူဖြစ်သည်။ High privilege state ကနေ low privilege state အသစ်ဆောက်ရာတွင် `admin_input` တစ်ခုတည်းကိုသာ ကူးထည့်သည်။
 
 ဤသုံးယောက်၏ role ကိုမခွဲနိုင်လျှင် P-2 ကိုမနားလည်သေးဟုဆိုနိုင်သည်။
 

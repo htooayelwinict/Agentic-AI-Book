@@ -63,18 +63,19 @@ Prompt သည်လုပ်နည်းညွှန်ကြားချက်�
 အလွယ်မှတ်ရန် -
 
 ```text
-Tool     = လုပ်
-Resource = ဖတ်
-Prompt   = ဘယ်လိုလုပ်
+Tool     = model က ခေါ်တယ်      (ဘာလုပ်မလဲ model ဆုံးဖြတ်)
+Resource = app/host က ထည့်တယ်   (ဘာ context ပေးမလဲ app ဆုံးဖြတ်)
+Prompt   = user က ရွေးတယ်       (ဘယ် template သုံးမလဲ user ဆုံးဖြတ်)
 ```
 
 ဥပမာ -
 
-- GitHub issue ကိုဖတ်ခြင်း = Resource
-- GitHub issue အသစ်ဖန်တီးခြင်း = Tool
-- Issue reply style guide = Prompt
+- Model က issue #42 ကို ကြည့်ချင်လို့ `get_issue` ခေါ်တာ = Tool (ဖတ်တာပဲ ဖြစ်ပေမယ့် Tool ပါ)
+- Model က issue အသစ် ဖွင့်တာ = Tool
+- Editor က ဖွင့်ထားတဲ့ file ကို context ထဲ ကြိုထည့်ပေးတာ = Resource
+- User က `/review` template ကို ရွေးတာ = Prompt
 
-ဤသုံးခုကိုရောသွားလျှင် security boundary ပျက်သည်။ Webpage content သည် Resource ဖြစ်သည်။ ၎င်းထဲတွင် "previous instruction မလိုက်နာပါနှင့်" ဟုရေးထားလျှင်လည်း Prompt မဟုတ်။ Data သာဖြစ်သည်။
+"ဖတ်/ရေး" နဲ့ မခွဲပါနဲ့။ ဘယ်သူက ဆုံးဖြတ်လဲ ဆိုတာနဲ့ ခွဲပါ။ Security အတွက် အရေးကြီးတာက Tool call တိုင်းကို model က ဆုံးဖြတ်တာမို့ Tool တွေမှာ permission ပြန်စစ်ရတယ် ဆိုတာပါ။ Webpage content ကတော့ ဘယ်လမ်းက ဝင်လာလာ data ပါ။ "previous instruction မလိုက်နာပါနဲ့" လို့ ရေးထားရင်လည်း instruction မဟုတ်ပါဘူး။
 
 ### Skill — စာရေးတော်အတွက် လက်စွဲစာအုပ်
 

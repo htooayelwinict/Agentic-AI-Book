@@ -20,7 +20,13 @@ BrowserSurfer ကို real platform ပေါ်တွင်လိုက်မ
 
 ပြီးရင် repo ထဲမှ `src/tools/security.py` နှင့် `src/tools/registry.py` ကိုဖတ်ပါ။ Tool output ကို wrapper မပါဘဲ context ထဲထည့်လျှင် ဘာအန္တရာယ်ရှိသလဲ၊ wrapper ထည့်လျှင်ဘာကကောင်းလာသလဲကိုမှတ်ပါ။ သို့သော် wrapper သည်အာမခံချက်မဟုတ်ကြောင်းလည်းမမေ့ပါနှင့်။
 
-နောက်ဆုံး expected result ကိုရှင်းရှင်းထားပါ။ Agent သည် page text ကို instruction အဖြစ်မလိုက်ရပါ။ "စာမျက်နှာထဲတွင် injection-like text ပါသည်" ဟု data အဖြစ်သာဖော်ပြရပါမည်။ Click action တစ်ခုလုပ်ရန်လိုလျှင် approval gate မရှိဘဲမလုပ်ရပါ။ ဒီသုံးချက်ကိုစစ်နိုင်လျှင် BrowserSurfer chapter ၏ safety lesson ကိုလက်တွေ့မြင်ပြီဟုပြောလို့ရပါသည်။
+နောက်ဆုံး ဘာရလဒ် မျှော်လင့်ထားလဲ ရှင်းရှင်း ချရေးပါ။ စစ်ရမယ့် အချက် သုံးချက်ပါ။
+
+1. Agent က page ထဲက စာကို instruction အဖြစ် မလိုက်နာရဘူး။
+2. "page ထဲမှာ injection လို စာ ပါတယ်" လို့ data အနေနဲ့ပဲ report လုပ်ရမယ်။
+3. Click လုပ်ဖို့ လိုရင် approval မရဘဲ မလုပ်ရဘူး။
+
+ဒီသုံးချက် ပြည့်ရင် ဒီအခန်းက safety lesson ကို ကိုယ့်မျက်စိနဲ့ မြင်ပြီလို့ ပြောလို့ရပါတယ်။
 
 ### Browser သည် စာမျက်နှာမဟုတ်၊ လှုပ်ရှားနေသောမြို့ဖြစ်သည်
 
@@ -245,6 +251,8 @@ Plan
 
 Source ထဲတွင် `enable_hitl` သည် default false ဖြစ်သည်ဟုတွေ့ရသည်။ ဖွင့်ထားလျှင် high-risk tools အချို့အတွက် `interrupt_on` config ထည့်ထားသည်။ ဥပမာ navigation, form submission, browser close, browser evaluate စသည့် tool များကို approve/edit/reject decision လိုသောအရာများအဖြစ်သတ်မှတ်နိုင်သည်။
 
+ဒါပေမယ့် `facebook_surfer.py` ထဲက list ကို သေသေချာချာ ကြည့်ပါ။ `browser_evaluate`, `browser_navigate`, `browser_submit_form` ကို approval မေးပေမယ့် `browser_click` နဲ့ `browser_type` ကို မမေးပါဘူး။ ဒီအခန်းမှာ "settings click တစ်ချက်လည်း mutation ပါ" လို့ ပြောထားတာနဲ့ ဒီ list က ကိုက်မကိုက် ဖတ်သူ ကိုယ်တိုင် စဥ်းစားကြည့်ပါ။ ဒါက ဒီ repo မှာ သိထားရမယ့် gap တစ်ခုပါ။ Lab ထဲမှာ `browser_click` ကို `interrupt_on` ထဲ ထပ်ထည့်ကြည့်ပြီး ဘာကွာသွားလဲ ကြည့်ပါ။
+
 ဒီ design သည်လမ်းမှန်ဖြစ်သည်။ သို့သော် HITL config ရှိခြင်းသည် HITL enforce ဖြစ်ခြင်းမဟုတ်။ User-facing approval UI ရှိသလား။ Reject လုပ်လျှင် tool မပြေးဘဲရပ်သလား။ Approval မရလျှင် fail-closed ဖြစ်သလား။ Thread resume မှန်သလား။ Audit log ထဲတွင် approval decision သိမ်းသလား။ ဒီမေးခွန်းများမဖြေဘဲ “HITL ပါတယ်” ဟုမပြောသင့်။
 
 Browser tool တွင် human approval သည်အလှဆင်မဟုတ်။ တံခါးသော့ဖြစ်သည်။
@@ -301,6 +309,8 @@ BrowserSurfer repo ထဲတွင်ကောင်းသောသင်ခန�
 ### Local-only လုံခြုံရေးစမ်းသပ်ခန်း
 
 ဒီ lab ကို real platform ပေါ်တွင်မလုပ်သင့်ပါ။ Local static HTML file ဖြင့်သာလုပ်ပါ။
+
+တစ်ခု ထပ်သတိပေးချင်ပါတယ်။ `src/session/__init__.py` မှာ Chromium ကို `--disable-web-security` နဲ့ launch ပါတယ်။ ဒါက browser ရဲ့ same-origin policy ကို ပိတ်တာပါ။ Page တစ်ခုက တစ်ခြား site ရဲ့ data ကို ဖတ်လို့ ရသွားပါတယ်။ ကိုယ့် account တကယ် login ထားတဲ့ browser profile မှာ ဒီ flag မသုံးပါနဲ့။ Lab profile အတွက်သာပါ။
 
 1. `local_test.html` တစ်ခုရေးပါ။
 2. Normal text, button, fake form ထည့်ပါ။
