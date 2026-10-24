@@ -1,4 +1,4 @@
-# 15-appv22-emerging-runtime-recovery-lab
+# အခန်း ၁၅ - appv22: Emerging Runtime Recovery Lab
 
 > **ဒီ project က ဘာကိုပြသသလဲ**
 > appv22 က agent runtime တစ်ခုကို လက်တွေ့စမ်းရင်း ဘယ်နေရာတွေမှာပြဿနာပေါ်တတ်သလဲဆိုတာပြသည်။ Pi နှင့် Hermes မှ idea အချို့ကို Python ဘက်တွင် prototype အဖြစ်ပြန်တည်ဆောက်စမ်းထားသည်။ Agent loop, coding tools, provider boundary, session persistence, context compaction, terminal UI, recovery tests များကိုတစ်နေရာတည်းတွင်စမ်းထားသော research workspace ပါ။

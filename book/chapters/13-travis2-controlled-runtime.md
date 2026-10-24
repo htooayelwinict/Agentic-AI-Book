@@ -1,4 +1,4 @@
-# 13-travis2-controlled-runtime
+# အခန်း ၁၃ - Travis-2: Controlled Runtime
 
 > **ဒီ runtime က ဘာကိုပြသသလဲ**
 > Travis-2 က model ရေးလာသော TypeScript Playwright code ကို `run_playwright_code` tool ထဲမှတစ်ဆင့် ဘောင်ခတ်ပြီး run စေသည်။ ဒီအခန်း၏အဓိကသင်ခန်းစာက "model က code ရေးတတ်တယ်" မဟုတ်ပါ။ Model ရေးလာသော code ကို ဘယ်နေရာမှာ run မလဲ၊ run မီဘာစစ်မလဲ၊ run ပြီး result ကိုဘယ်လိုဖတ်မလဲဆိုတာပါ။
@@ -10,7 +10,7 @@
 > Prompt ထဲတွင်သတိပေးထားရုံဖြင့် runtime ကိုမထိန်းနိုင်ပါ။ Travis-2 တွင် model-call limit, semantic loop detection, context editing, summarization, tool-output sanitization, skills injection/signing စသည်တို့ကို middleware အဖြစ်တပ်ထားသည်။ Policy ကို model response ထဲမှာမထားဘဲ execution path ထဲမှာထားရန်ကြိုးစားထားခြင်းပါ။
 >
 > **ဒီအခန်းတွင် မထည့်သည့်အရာ**
-> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ပြောတဲ့အခါ "default ဖွင့်လား ပိတ်လား" ကို ထည့်ပြောသွားပါမယ်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို v0.2 တွင်ဆက်ချဲ့မည်။
+> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ပြောတဲ့အခါ "default ဖွင့်လား ပိတ်လား" ကို ထည့်ပြောသွားပါမယ်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို ဒီအခန်းတွင် မထည့်ပါ။
 
 ### ဒီ case study ကို လက်တွေ့လိုက်ဖတ်နည်း
 
@@ -148,7 +148,7 @@ Structured result:
 
 ဤပုံတွင် user က `what is today` ဟုမေးထားသည်။ Travis-2 သည် date ကို model memory မှခန့်မှန်းမပြော။ Model က TypeScript Playwright test တစ်ခုရေးသည်။ ထို code ထဲတွင် `new Date().toString()` ကို run ပြီး current date/time ကို `stdout` ထဲသို့ print ထုတ်စေသည်။ ထို့နောက် ထို TypeScript ကို `run_playwright_code` tool မှ execute လုပ်သည်။
 
-ဤသည် Travis-2 design ၏အနှစ်သာရဖြစ်သည်။ Simple date question ဖြစ်သော်လည်း path သည် “model generates executable TypeScript -&gt; runtime executes through tool boundary -&gt; structured result returns -&gt; model summarizes” ဖြစ်သည်။ Model က တိုက်ရိုက် မဖြေ။
+ဤသည် Travis-2 design ၏အနှစ်သာရဖြစ်သည်။ Simple date question ဖြစ်သော်လည်း path သည် “model generates executable TypeScript -> runtime executes through tool boundary -> structured result returns -> model summarizes” ဖြစ်သည်။ Model က တိုက်ရိုက် မဖြေ။
 
 `run_playwright_code` result ကို `<tool_output_untrusted ...>` wrapper အတွင်းတွင်တွေ့ရသည်။ Result payload တွင် `ok`, `execution_ok`, `data_ok`, `warnings`, `exit_code`, `stdout`, `stderr`, `timed_out`, `test_file`, `setup_error` စသော fields များပါသည်။
 

@@ -1,4 +1,4 @@
-# 01-agentic-ai-basics
+# အခန်း ၁ - Agentic AI အခြေခံ
 
 ### buzzwords စကားလုံးများနှင့် လှည့်စားမှု
 

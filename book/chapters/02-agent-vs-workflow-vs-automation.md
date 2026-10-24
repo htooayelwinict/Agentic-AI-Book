@@ -1,4 +1,4 @@
-# 02-agent-vs-workflow-vs-automation
+# အခန်း ၂ - Automation, Workflow နှင့် Agent
 
 ### အလိုအလျောက်စနစ်နှင့် ကိုယ်စားလှယ်ကြားရှိ ချောက်ကမ္ဘာ
 
@@ -46,7 +46,7 @@ Agentic AI ၏ အနာဂတ်သည် ဤ Tool များကို မည
 
 ---
 
-**Source Notes &amp; Technical Facts for the Curious:**
+**Source Notes & Technical Facts for the Curious:**
 
 - **Deterministic vs. Non-deterministic:** Deterministic systems always produce the same output for a given input, while non-deterministic systems (like LLMs) can vary.
 - **Autonomy Levels:** From simple scripts to fully autonomous agents that can set their own sub-goals.

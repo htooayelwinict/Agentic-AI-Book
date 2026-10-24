@@ -1,4 +1,4 @@
-# 11-safety-sandbox-prompt-injection-tool-output
+# အခန်း ၁၁ - Safety: Sandbox, Prompt Injection, Tool Output
 
 ### စာဖတ်တတ်သောစက်သည် အဆိပ်စာလည်းဖတ်တတ်သည်
 

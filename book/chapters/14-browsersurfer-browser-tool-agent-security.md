@@ -1,4 +1,4 @@
-# 14-browsersurfer-browser-tool-agent-security
+# အခန်း ၁၄ - BrowserSurfer: Browser Tool Agent Security
 
 > **ဒီ browser agent က ဘာကိုပြသသလဲ**
 > BrowserSurfer Bot က browser ကို Agent လက်ထဲပေးလိုက်သောအခါ ဘာတွေတစ်ပြိုင်နက်စဉ်းစားရသလဲဆိုတာပြသည်။ DeepAgents runtime, ToolRegistry, Playwright tools, thread state, trajectory memory, RAG planning, reflection, metrics စသည်တို့အားလုံး browser action တစ်ခုနောက်ကွယ်တွင်ပါလာသည်။
@@ -92,7 +92,7 @@ MetricsMiddleware -> scoring -> PII redaction -> ReflectionAgent -> Qdrant
 
 ### DeepAgents သည် LangGraph ကိုဖုံးထားသောအလွှာ
 
-CHAPTER-7.md တွင်ပြောထားသကဲ့သို့ DeepAgents ကိုသုံးထားသော်လည်း graph thinking ပျောက်မသွားရ။ BrowserSurfer source ထဲတွင် raw `StateGraph` node/edge code များကို အများကြီးမတွေ့ရနိုင်။ အကြောင်းမှာ `create_deep_agent(...)` က LangGraph-style runtime skeleton ကို abstraction အဖြစ် ဖန်တီးပေးထားသောကြောင့်ဖြစ်သည်။
+DeepAgents ကိုသုံးထားသော်လည်း graph thinking ပျောက်မသွားရ။ BrowserSurfer source ထဲတွင် raw `StateGraph` node/edge code များကို အများကြီးမတွေ့ရနိုင်။ အကြောင်းမှာ `create_deep_agent(...)` က LangGraph-style runtime skeleton ကို abstraction အဖြစ် ဖန်တီးပေးထားသောကြောင့်ဖြစ်သည်။
 
 Beginner အတွက်ရိုးရိုးပြောလျှင် DeepAgents သည် “ကြိုတင်ဆောက်ထားသောအလုပ်ရုံ” ဖြစ်သည်။ သင်သည် model, tools, checkpointer, store, middleware, system prompt တို့ကိုပေးလိုက်သည်။ DeepAgents က LangGraph execution engine တစ်ခုကိုအောက်တွင်ဖန်တီးပေးသည်။ ထိုကြောင့် graph code မမြင်ရသော်လည်း graph behavior မရှိဟုမဆိုနိုင်။
 
@@ -158,7 +158,7 @@ Browser page သည် စာအုပ်စာမျက်နှာနှင့
 
 ဒီပုံတွင် metrics collection နှင့် RAG-based planning ဖွင့်ထားသည်ကိုမြင်ရသည်။ `Found 1 similar pattern(s)` ဟူသော signal သည် BrowserSurfer ကယခင် trajectory ကိုပြန်ကြည့်ပြီး planning ကိုကူညီနိုင်ကြောင်းပြသည်။ Developer အတွက် “ငါ့ Agent က အတွေ့အကြုံမှ သင်ယူနေပြီ” ဟူသောအချိန်ဖြစ်သည်။
 
-သို့သော် အတိတ်အောင်မြင်မှုသည် လက်ရှိ page အတွက် ဗျာဒိတ်တော်မဟုတ်။ UI ပြောင်းနိုင်သည်၊ ref များ stale ဖြစ်နိုင်သည်၊ ယခင် plan ထဲတွင် high-risk action hint ပါနိုင်သည်၊ current user intent နှင့် မတူနိုင်သည်။ ထို့ကြောင့် public book အတွက် အသေးစိတ် action plan ကိုဖယ်ထားသည်။ RAG planning ကို “အကြံပေးစာရွက်” အဖြစ်သာထားပါ။ Current page verifier, permission boundary, HITL gate, output sanitizer မပါလျှင် အတိတ်အောင်မြင်မှုသည်လက်ရှိအန္တရာယ်ဖြစ်နိုင်သည်။
+သို့သော် အတိတ်အောင်မြင်မှုသည် လက်ရှိ page အတွက် ဗျာဒိတ်တော်မဟုတ်။ UI ပြောင်းနိုင်သည်၊ ref များ stale ဖြစ်နိုင်သည်၊ ယခင် plan ထဲတွင် high-risk action hint ပါနိုင်သည်၊ current user intent နှင့် မတူနိုင်သည်။ ထို့ကြောင့် ဒီအခန်းတွင် အသေးစိတ် action plan ကို မထည့်ပါ။ RAG planning ကို “အကြံပေးစာရွက်” အဖြစ်သာထားပါ။ Current page verifier, permission boundary, HITL gate, output sanitizer မပါလျှင် အတိတ်အောင်မြင်မှုသည်လက်ရှိအန္တရာယ်ဖြစ်နိုင်သည်။
 
 ### State discipline
 
@@ -166,7 +166,7 @@ State discipline ဆိုရာတွင် `thread_id`, checkpointer, store �
 
 `MemorySaver` သည် conversation state ကို checkpoint လုပ်ပေးသည်။ Tool result, model messages, execution lineage များကို thread အလိုက်ပြန်ယူနိုင်စေသည်။ ဤသည် restart-proof database memory မဟုတ်နိုင်သော်လည်း graph execution အတွက်အရေးကြီးသော persistence ဖြစ်သည်။
 
-`InMemoryStore` သည် structured context storage အဖြစ်သုံးနိုင်သည်။ သို့သော်အမည်အတိုင်း memory ထဲတွင်ရှိသော store ဖြစ်သည်။ Durable production memory ဟုမယူသင့်ချေ။ CHAPTER-7.md တွင်ပြောထားသကဲ့သို့ checkpointer နှင့် store သည်တူသောအရာမဟုတ်။ Checkpointer သည် graph conversation lineage ကိုဆောင်သည်။ Store သည် context storage surface ဖြစ်နိုင်သည်။
+`InMemoryStore` သည် structured context storage အဖြစ်သုံးနိုင်သည်။ သို့သော်အမည်အတိုင်း memory ထဲတွင်ရှိသော store ဖြစ်သည်။ Durable production memory ဟုမယူသင့်ချေ။ Checkpointer နှင့် store သည် တူသောအရာ မဟုတ်။ Checkpointer သည် graph conversation lineage ကိုဆောင်သည်။ Store သည် context storage surface ဖြစ်နိုင်သည်။
 
 Browser session နှင့် graph thread state သည် သီးခြားအရာနှစ်ခုဖြစ်သည်။ `thread_id` ခွဲထားသည်ဆိုရုံဖြင့် browser page/session သည်အလိုအလျောက်ခွဲသွားသည်ဟုမယူသင့်ချေ။ Security analysis report တွင် shared/global browser session risk ကိုအထူးသတိပေးထားသည်။ Graph state ခွဲထားသော်လည်း browser session မခွဲထားလျှင် “စာအုပ်နှစ်အုပ်ရှိသော်လည်းတံခါးတစ်ခုပဲရှိ” သလိုဖြစ်နိုင်သည်။
 

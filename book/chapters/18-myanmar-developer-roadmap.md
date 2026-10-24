@@ -1,4 +1,4 @@
-# 18-myanmar-developer-roadmap
+# အခန်း ၁၈ - Myanmar Developer Roadmap
 
 ### အရာအားလုံးကို တစ်ပြိုင်နက် မလေ့လာပါနှင့်
 
@@ -81,5 +81,5 @@ Milestone များသည် ကိုယ်တိုင် မျက်စ�
 
 **စာဖတ်သူအတွက် Source Notes:**
 
-- Source သည် full v0.1 manuscript synthesis နှင့် repo-backed case studies လေးခုဖြစ်သည်။
+- Source သည် ဒီစာအုပ်၏ အခန်းများနှင့် repo-backed case study လေးခု ဖြစ်သည်။
 - Learning order သည် framework depth မတိုင်မီ mental model ကိုဦးစားပေးရန်စီထားခြင်းဖြစ်သည်။

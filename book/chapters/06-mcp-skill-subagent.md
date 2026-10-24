@@ -1,4 +1,4 @@
-# 06-mcp-skill-subagent
+# အခန်း ၆ - MCP, Skill နှင့် Sub-agent
 
 ### စကားလုံးများ များလာသောအခါ မျက်စိမလည်စေရန်
 
@@ -137,7 +137,7 @@ BrowserSurfer တွင် PlanningAgent နှင့် ReflectionAgent တိ�
 
 Skill များများရှိသည်ဆိုလျှင် မေးပါ — ထို Skill များကိုဘယ်သူရေးသနည်း။ Trusted လား။ Permission ဘယ်လောက်ရသလဲ။ Sandbox ရှိသလား။ Malicious instruction ပါလာနိုင်သလား။ Agent ကို message မှခိုင်းနိုင်သည်ဆိုလျှင် မေးပါ — command source ကိုဘယ်လို authenticate လုပ်သနည်း။ Broad integrations ရှိသည်ဆိုလျှင် မေးပါ — credentials ကိုဘယ်လို scope လုပ်ထားသနည်း။
 
-အချို့ online discussion များတွင် OpenClaw-like systems များကို Pi-style loop, TUI, provider abstraction pattern များနှင့်နှိုင်းတတ်ကြသည်။ သို့သော် source-level evidence မရှိလျှင် "OpenClaw သည် Pi ပဲ" ဟုအမှန်တရားအဖြစ်မရေးသင့်။ ဤစာအုပ်တွင်ထိုအရာကို hype-reading fun fact အဖြစ်သာသုံးမည်။ Pattern တူနိုင်သည်။ Direct lineage ကိုတော့ source ဖြင့်သာအတည်ပြုရမည်။ [SOURCE_NEEDED]
+အချို့ online discussion များတွင် OpenClaw-like systems များကို Pi-style loop, TUI, provider abstraction pattern များနှင့်နှိုင်းတတ်ကြသည်။ သို့သော် source-level evidence မရှိလျှင် "OpenClaw သည် Pi ပဲ" ဟုအမှန်တရားအဖြစ်မရေးသင့်။ ဤစာအုပ်တွင် ထိုနှိုင်းယှဥ်ချက်ကို pattern ဥပမာအဖြစ်သာ သုံးသည်။ Pattern တူနိုင်သည်။ Direct lineage ကိုတော့ source ဖြင့်သာ အတည်ပြုရမည်။
 
 ### နိဂုံး
 

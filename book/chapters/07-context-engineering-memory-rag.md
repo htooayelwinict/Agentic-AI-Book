@@ -1,4 +1,4 @@
-# 07-context-engineering-memory-rag
+# အခန်း ၇ - Context Engineering, Memory နှင့် RAG
 
 ### စကားညှိခြင်းမတတ်ဘဲ မှတ်ဉာဏ်အိမ်ကြီး မဆောက်ပါနှင့်
 
@@ -78,7 +78,7 @@ Context packet:
 - ARCHITECTURE-ROUTING.md excerpt
 - states.py field names
 - nodes.py bridge behavior
-- known [SOURCE_NEEDED] markers
+- known open questions
 ```
 
 Prompt သည် အလုပ်အမိန့် ဖြစ်သည်။ Context packet သည် အလုပ်စားပွဲပေါ် တင်ပေးသော စာရွက်ဖြစ်သည်။ နှစ်ခုလုံးမညီလျှင် စာရေးတော်သည် အလုပ်လုပ်နေသကဲ့သို့ ထင်ရပြီး အမှန်တွင် ခန့်မှန်းနေခြင်းသာ ဖြစ်နိုင်သည်။

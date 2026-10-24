@@ -1,4 +1,4 @@
-# 03-llm-tool-calling-function-calling
+# အခန်း ၃ - LLM Tool Calling
 
 ### စကားလုံးမှသည် လုပ်ဆောင်ချက်ဆီသို့
 
@@ -60,7 +60,7 @@ Software Engineering ရှုထောင့်မှ ကြည့်လျှ�
 
 ---
 
-**Source Notes &amp; Technical Facts for the Curious:**
+**Source Notes & Technical Facts for the Curious:**
 
 - **JSON Schema:** A vocabulary that allows you to annotate and validate JSON documents, used extensively in Tool Definitions.
 - **Zero-shot Tool Use:** The ability of a model to use a tool correctly based only on its description, without prior examples.

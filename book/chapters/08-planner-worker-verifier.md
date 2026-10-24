@@ -1,4 +1,4 @@
-# 08-planner-worker-verifier
+# အခန်း ၈ - Planner, Worker, Verifier
 
 ### အလုပ်တစ်ခုကို လူတစ်ယောက်တည်း မအပ်သင့်သောအခါ
 

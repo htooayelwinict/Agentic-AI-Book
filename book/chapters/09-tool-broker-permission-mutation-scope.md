@@ -1,4 +1,4 @@
-# 09-tool-broker-permission-mutation-scope
+# အခန်း ၉ - Tool Broker, Permission နှင့် Mutation Scope
 
 ### လူမိုက်အား ဓားမအပ်မိစေရန်
 

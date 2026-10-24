@@ -1,4 +1,4 @@
-# 12-p2-zero-trust-multi-agent-bridge
+# အခန်း ၁၂ - P-2: Zero-Trust Multi-agent Bridge
 
 > **ဒီ project က ဘာကိုပြသသလဲ**
 > P-2 က Agent နှစ်ခုကြားတွင် "context အကုန်ပေးလိုက်ရင်လွယ်တယ်" ဆိုသောအမှားကိုတားပြထားသည်။ Supervisor Agent ကပိုမြင့်သောအာဏာရှိသည်။ Customer Agent က user-facing ဖြစ်သည်။ နှစ်ခုကြားတွင် full state မသွားရ။ လိုအပ်သော field လောက်သာ bridge ကကူးထည့်ပြီးပို့ရသည်။
@@ -9,8 +9,8 @@
 > **State boundary ဘာကြောင့်အရေးကြီးသလဲ**
 > Secret မြင်ခွင့်ရှိသော Agent နှင့် user-facing Agent တို့ full state မျှဝေလိုက်လျှင် အန္တရာယ်ကချက်ချင်းကြီးလာသည်။ Prompt injection တစ်ကြောင်း၊ logic bug တစ်ခုတည်းနဲ့ internal note ထွက်သွားနိုင်သည်။
 >
-> **ဘာကို v0.2 သို့ချန်ထားသလဲ**
-> Full code walkthrough, security test အသေးစိတ်, implementation file တစ်ခုချင်းစီကို v0.2 တွင်ဆက်ချဲ့မည်။ ဒီအခန်းမှာတော့ P-2 ကိုဖတ်ရမည့်အဓိကမျက်စိကိုအရင်ပေးထားသည်။
+> **ဒီအခန်းတွင် ဘာမပါသလဲ**
+> Full code walkthrough နှင့် security test အသေးစိတ်ကို ဒီအခန်းတွင် မထည့်ပါ။ P-2 ကို ဖတ်ရမည့် အဓိက မျက်စိကိုသာ ပေးထားသည်။
 
 ### ဒီ case study ကို လက်တွေ့လိုက်ဖတ်နည်း
 
@@ -204,7 +204,7 @@ P-2 ၏ကောင်းချက်ပထမမှာ blast radius လျှ�
 
 Projection သည် full solution မဟုတ်။ `admin_input` ကိုယ်တိုင်တွင် secret ပါနေပါက Bridge သည်ထို string ကိုပို့နိုင်သည်။ ထို့ကြောင့် content sanitization, supervisor-side summary, admin UX warning လိုနိုင်သည်။
 
-Supervisor classifier ၏ route decision မှားလျှင် bridge ဖြတ်သင့်/မဖြတ်သင့် ဆုံးဖြတ်ချက်ပါ မှားနိုင်သည်။ README နှင့် implementation ကြား docs drift ရှိ/မရှိစစ်ရမည်။ [SYNC_MISMATCH] ဖြစ်နိုင်သောနေရာများကို source audit ထဲတွင်မှတ်ထားသင့်သည်။
+Supervisor classifier ၏ route decision မှားလျှင် bridge ဖြတ်သင့်/မဖြတ်သင့် ဆုံးဖြတ်ချက်ပါ မှားနိုင်သည်။ README နှင့် implementation ကြား docs drift ရှိ/မရှိစစ်ရမည်။ README နှင့် code ကွဲနေသော နေရာများကို source audit ထဲတွင် မှတ်ထားသင့်သည်။
 
 Scoped filesystem သည် path traversal, symlink, absolute path, unicode path edge cases များအတွက် test လိုသည်။ Sandbox ကိုအပြည့်အဝယုံကြည်သောစိတ်မထားသင့်။
 
@@ -251,4 +251,4 @@ Bridge သည် တံခါးစောင့် ဖြစ်သည်။ Stat
 - **ဖတ်ထားသော source map:** `README.md`, `docs/ARCHITECTURE-ROUTING.md`, `src/multi_agent_app/runtime.py`, `src/multi_agent_app/states.py`, `src/multi_agent_app/nodes.py`, `src/multi_agent_app/classifier.py`
 - **အဓိက lesson:** `GlobalState.admin_input -> UnsafeState.bridge_input` projection ဖြစ်သည်။ Full state handoff မလုပ်ခြင်းကဒီ case study ၏အသည်းနှလုံးဖြစ်သည်။
 - **Security concept:** Separate state schema နှင့် scoped filesystem access သည် low-privilege side သို့ exposure လျှော့ပေးသည်။
-- **ဆက်စစ်ရန်:** Classifier/docs drift, sensitive admin input အတွက် sanitizer behavior, path traversal/symlink edge cases များကို v0.2 တွင်စစ်ရန်လိုသေးသည်။
+- **ဆက်စစ်ရန်:** Classifier/docs drift, sensitive admin input အတွက် sanitizer behavior, path traversal/symlink edge cases များကို ဆက်စစ်ရန် လိုသေးသည်။

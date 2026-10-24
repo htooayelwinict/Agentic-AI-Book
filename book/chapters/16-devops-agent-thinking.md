@@ -1,4 +1,4 @@
-# 16-devops-agent-thinking
+# အခန်း ၁၆ - DevOps Agent Thinking
 
 ### Cloud ထဲတွင် အမှားတစ်ခု၏ တန်ဖိုး
 
@@ -36,7 +36,7 @@ DevOps agent ကိုစတင်ရာတွင် read-only tasks မှစ�
 - CI failure summary။
 - Terraform plan explanation။
 - Cloud log summary။
-- Runbook Q&amp;A။
+- Runbook Q&A။
 - Incident timeline draft။
 - Pull request risk checklist။
 - Cost report explanation။
@@ -150,8 +150,8 @@ Terraform နှင့် Agent ချိတ်မည်ဆိုပါက read-
 
 Terraform plan verifier တွင်အောက်ပါ signals ထည့်နိုင်သည်။
 
-- Destroy count &gt; 0။
-- Replacement count &gt; 0။
+- Destroy count > 0။
+- Replacement count > 0။
 - Public ingress added။
 - IAM wildcard permission။
 - Unencrypted storage။
@@ -279,5 +279,5 @@ Beginner developer အနေဖြင့် DevOps agent ကိုစမည်�
 **စာဖတ်သူအတွက် Source Notes:**
 
 - **Repo-backed lessons:** P-2 မှ privilege separation, Travis-2 မှ sandboxed executable tool runtime, BrowserSurfer မှ untrusted tool output, appv22 မှ recovery engineering ကိုယူထားသည်။
-- **DevOps terms:** Terraform, AWS, CI/CD တို့ကို educational examples အဖြစ်သုံးထားသည်။ Terraform plan/apply, AWS IAM/CloudTrail, GitHub Actions concept များကို official docs ဖြင့် v0.1 အတွက်စစ်ထားသည်။ Provider-specific deep command walkthrough များကို v0.2 တွင်သာချဲ့မည်။
+- **DevOps terms:** Terraform, AWS, CI/CD တို့ကို educational examples အဖြစ်သုံးထားသည်။ Terraform plan/apply, AWS IAM/CloudTrail, GitHub Actions concept များကို official docs ဖြင့် စစ်ထားသည်။ Provider-specific deep command walkthrough များကို v0.2 တွင်သာချဲ့မည်။
 - **Safety position:** Read-only first ဖြစ်သည်။ Mutation လုပ်ရန် approval, audit, rollback thinking, narrow credentials လိုသည်။

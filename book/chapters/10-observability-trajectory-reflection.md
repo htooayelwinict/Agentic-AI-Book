@@ -1,4 +1,4 @@
-# 10-observability-trajectory-reflection
+# အခန်း ၁၀ - Observability, Trajectory နှင့် Reflection
 
 ### စာရေးတော်မှားသောအခါ ဘယ်ခြေရာကိုကြည့်မလဲ
 

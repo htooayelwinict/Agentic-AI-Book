@@ -1,4 +1,4 @@
-# 17-mini-labs
+# အခန်း ၁၇ - Mini Labs
 
 ### စာဖတ်ပြီးရပ်လျှင် စာရေးတော်၏လက်ကို မမြင်ရ
 
@@ -90,7 +90,7 @@ Repo lesson: Travis-2 result quality, P-2 scoped filesystem.
 
 Goal: Tool output သည် instruction မဟုတ်ကြောင်းလက်တွေ့မြင်ရန်။
 
-ဒီ lab သည် reader review ထဲက "ဖတ်ရခက်ပြီး လက်တွေ့မလုပ်တတ်" ဆိုသောပြဿနာကိုဖြေရှင်းရန်အရေးကြီးပါသည်။ Output ထဲကစာကို data အဖြစ်ဖတ်ရမလား၊ instruction အဖြစ်လိုက်ရမလားကိုလက်တွေ့ခွဲကြည့်ပါ။
+ဒီ lab က "ဖတ်တော့ နားလည်တယ်၊ လက်တွေ့ မလုပ်တတ်ဘူး" ဆိုတဲ့ ပြဿနာကို ဖြေရှင်းပေးပါတယ်။ Output ထဲကစာကို data အဖြစ်ဖတ်ရမလား၊ instruction အဖြစ်လိုက်ရမလားကိုလက်တွေ့ခွဲကြည့်ပါ။
 
 Build:
 
@@ -331,7 +331,7 @@ Trace/telemetry ရှိသလဲ။
 
 Known gaps ဘာတွေလဲ။
 
-v0.2 fix task ဘာရေးမလဲ။
+နောက်တစ်ဆင့် fix task ဘာရေးမလဲ။
 
 ဤ worksheet ကို P-2, Travis-2, BrowserSurfer, appv22 တို့တွင်တစ်ခုချင်းစီဖြည့်ပါ။
 
