@@ -28,15 +28,15 @@
 
 မပေးသင့်။ အိမ်ရှင်သည်လိုအပ်သောအချက်တစ်ကြောင်းသာဧည့်ခန်းသို့ပို့ရမည်။ ဧည့်ခန်းတွင်ပြောလို့ရသောစကားသာပို့ရမည်။ လျှို့ဝှက်စာရွက်ကိုအိတ်လိုက်မပို့ရ။
 
-P-2 ၏အဓိကသင်ခန်းစာကဒီမှာပါ။ Supervisor Agent ကလျှို့ဝှက်ခန်းထဲရှိသူပါ။ Customer Agent ကဧည့်ခန်းထဲရှိသူပါ။ Bridge Node ကအခန်းနှစ်ခန်းကြားကတံခါးစောင့်ပါ။ သူ့အလုပ်ကစာအိတ်အကုန်လွှဲပေးရန်မဟုတ်။ ဧည့်ခန်းထဲပြောလို့ရသောစာသားလောက်ကိုသာ ကူးထည့်ပေးရန်ဖြစ်သည်။
+Supervisor Agent က လျှို့ဝှက်ခန်းထဲ ရှိသူ၊ Customer Agent က ဧည့်ခန်းထဲ ရှိသူ၊ Bridge Node က အခန်းနှစ်ခန်းကြားက တံခါးစောင့်ပါ။ သူ့အလုပ်က ဧည့်ခန်းထဲ ပြောလို့ရသော စာသားလောက်ကိုသာ ကူးထည့်ပေးရန် ဖြစ်ပါသည်။
 
-### Multi-agent ဟူသည် လူများလာခြင်းမဟုတ်
+### Multi-agent ၏ အနှစ်သာရ
 
 Beginner များသည် multi-agent ဟုကြားလျှင် Agent အများကြီးထားခြင်းကိုသာစိတ်ဝင်စားတတ်သည်။ Planner Agent, Worker Agent, Critic Agent, Customer Agent, Admin Agent စသည်ဖြင့်နာမည်များများရှိလျှင်စနစ်ကြီးတစ်ခုဟုထင်တတ်သည်။ သို့သော် Agent များများရှိခြင်းသည် architecture ကောင်းခြင်းမဟုတ်။
 
-Agent တစ်ယောက်မှတစ်ယောက်သို့ဘာသွားသနည်း။ ဘယ် context သွားသနည်း။ ဘယ် secret ပါသွားနိုင်သနည်း။ ဘယ် tool scope ပါသွားသနည်း။ ဘယ် state field ဖြတ်သွားသနည်း။ ဒီမေးခွန်းများကိုမဖြေနိုင်လျှင် multi-agent system ဆိုတာ လူများသော်လည်းစည်းကမ်းမရှိသောရုံးတစ်ရုံးနှင့်တူသွားပါသည်။
+Agent တစ်ယောက်မှ တစ်ယောက်သို့ ဘာသွားသနည်း။ ဘယ် context၊ ဘယ် secret၊ ဘယ် tool scope၊ ဘယ် state field ဖြတ်သွားသည်ကို တစ်ခုချင်း ပြောနိုင်ရမည်။ ဒီအချက်များကို မပြောနိုင်လျှင် multi-agent system ဆိုတာ လူများသော်လည်းစည်းကမ်းမရှိသောရုံးတစ်ရုံးနှင့်တူသွားပါသည်။
 
-P-2 ၏အလှသည် Agent များစွာရှိခြင်းမဟုတ်။ Agent များကြား state ကိုမယုံခြင်းဖြစ်သည်။ Zero trust ဆိုသည်မှာ "ဘယ်သူမှမယုံ" ဟုကြွေးကြော်ခြင်းမဟုတ်။ Trust boundary ဖြတ်တိုင်း minimum data သာပေးခြင်း၊ origin ကိုစစ်ခြင်း၊ schema ကိုခွဲခြင်း၊ tool scope ကိုကန့်သတ်ခြင်းဖြစ်သည်။
+P-2 ၏ အလှသည် Agent များကြား state ကို မယုံခြင်းတွင် ရှိသည်။ Zero trust ဆိုသည်မှာ trust boundary ဖြတ်တိုင်း minimum data သာ ပေးခြင်း၊ origin ကို စစ်ခြင်း၊ schema ကို ခွဲခြင်း၊ tool scope ကို ကန့်သတ်ခြင်း ဖြစ်သည်။
 
 ### ပြဿနာကိုအရင်ဆောက်ကြည့်ပါ
 
@@ -91,7 +91,7 @@ Customer Agent
 public response
 ```
 
-ဒီပုံတွင်အရေးကြီးဆုံးအရာမှာ Bridge Node ဖြစ်သည်။ Bridge သည် pipe မဟုတ်။ State အကုန်ကူးပေးသောပိုက်တစ်ချောင်းမဟုတ်။ Bridge သည် projection boundary ဖြစ်သည်။ High privilege state မှ low privilege state သို့လိုအပ်သောစာကြောင်းတစ်ကြောင်းသာပြန်မွေးပေးသည်။
+ဒီပုံတွင်အရေးကြီးဆုံးအရာမှာ Bridge Node ဖြစ်သည်။ Bridge သည် state အကုန် ကူးပေးသော pipe မဟုတ်။ Projection boundary ဖြစ်သည်။ High privilege state မှ low privilege state သို့ လိုအပ်သော field တစ်ခုသာ ပြန်မွေးပေးသည်။
 
 ### GlobalState နှင့် UnsafeState
 
@@ -101,13 +101,13 @@ public response
 
 Beginner developer များသည်ဤနေရာတွင် "state နှစ်ခုခွဲထားတာရှုပ်တယ်၊ တစ်ခုတည်းထားလိုက်ရင်လွယ်မယ်" ဟုတွေးနိုင်သည်။ သို့သော် security architecture တွင်လွယ်ခြင်းသည်အမြဲကောင်းခြင်းမဟုတ်။ State အတူတူထားလျှင် leak လမ်းပိုများလာနိုင်သည်။
 
-P-2 တွင် `GlobalState.admin_input` နှင့် `UnsafeState.bridge_input` ဟုပင် field name ခွဲထားသည်။ ထိုခွဲခြင်းသည်အလှဆင်မဟုတ်။ "ဒီနေရာတွင် projection ဖြစ်နေသည်" ဟု code reader ကိုအသိပေးသောစာချုပ်ဖြစ်သည်။
+P-2 တွင် `GlobalState.admin_input` နှင့် `UnsafeState.bridge_input` ဟုပင် field name ခွဲထားသည်။ ထိုခွဲခြင်းသည် "ဒီနေရာတွင် projection ဖြစ်နေသည်" ဟု code reader ကို အသိပေးသော စာချုပ် ဖြစ်သည်။
 
 တစ်ခု သတိထားပါ။ Bridge က `admin_input` ကို ပြင်ရေးတာ မဟုတ်ပါဘူး။ `bridge_input` အဖြစ် အတိုင်းသား ကူးထည့်တာပါ (`nodes.py` ထဲ "Forwards ONLY admin_input as bridge_input" ဆိုတဲ့ docstring ကို ကြည့်ပါ)။ Secret ကို ဖျက်ပစ်တာ မဟုတ်ဘဲ မယူသွားတာပါ။ ဒါက ပိုရိုးရှင်းပြီး ပိုစစ်လွယ်ပါတယ်။
 
-### Bridge Contract — တံခါးစောင့်၏စည်းကမ်း
+### Bridge Contract
 
-Bridge contract ကိုရိုးရိုးရေးလျှင်ဤသို့ဖြစ်သည်။
+Bridge contract သည် တံခါးစောင့်၏ စည်းကမ်းစာအုပ် ဖြစ်သည်။ ရိုးရိုးရေးလျှင်ဤသို့ဖြစ်သည်။
 
 ```text
 Input:
@@ -122,7 +122,7 @@ If origin != "supervisor":
   reject
 ```
 
-`nodes.py` ထဲရှိ `BridgeNode.invoke()` သည် origin စစ်သည်။ Supervisor မဟုတ်လျှင် Bridge ကိုဖြတ်ခွင့်မပေး။ ဤသည်ရိုးရှင်းသော်လည်းအရေးကြီးသည်။ User graph မှတိုက်ရိုက် Bridge ကိုခေါ်၍ admin route ကိုကျော်တက်ခြင်းမဖြစ်စေရန်ဖြစ်သည်။
+`nodes.py` ထဲရှိ `BridgeNode.invoke()` သည် origin စစ်သည်။ Supervisor မဟုတ်လျှင် Bridge ကိုဖြတ်ခွင့်မပေး။ ဤ စစ်ဆေးမှု ရိုးရှင်းသော်လည်း user graph မှ တိုက်ရိုက် Bridge ကို ခေါ်၍ admin route ကို ကျော်တက်ခြင်းကို တားပေးသည်။
 
 Bridge output သည် `UnsafeState` ဖြစ်သည်။ `secret_context` မပါ။ `secret_key_ref` မပါ။ Supervisor internal response မပါ။ Customer side အတွက်လိုသော `bridge_input` သာပါသည်။ Bridge သည် LLM မဖြစ်သင့်။ "Secret မပို့ပါနဲ့" ဟု model ကိုတောင်းဆိုခြင်းထက် deterministic code-level projection ကပိုခိုင်မာသည်။
 
@@ -132,7 +132,7 @@ Supervisor Agent သည် high privilege ဖြစ်သည်။ Admin input �
 
 Customer Agent သည် low privilege ဖြစ်သည်။ Public docs scope ကိုသာမြင်သင့်သည်။ Customer-facing answer ကိုထုတ်ပေးသည်။ Admin secrets မမြင်သင့်။ Supervisor reasoning မမြင်သင့်။
 
-Bridge Node သည် air gap ဖြစ်သည်။ စကားလက်ဆင့်ကမ်းသူမဟုတ်။ State ကိုပြန်မွေးပေးသူဖြစ်သည်။ High privilege state ကနေ low privilege state အသစ်ဆောက်ရာတွင် `admin_input` တစ်ခုတည်းကိုသာ ကူးထည့်သည်။
+Bridge Node သည် air gap ဖြစ်သည်။ State ကို ပြန်မွေးပေးသူ ဖြစ်သည်။ High privilege state ကနေ low privilege state အသစ်ဆောက်ရာတွင် `admin_input` တစ်ခုတည်းကိုသာ ကူးထည့်သည်။
 
 ဤသုံးယောက်၏ role ကိုမခွဲနိုင်လျှင် P-2 ကိုမနားလည်သေးဟုဆိုနိုင်သည်။
 
@@ -150,11 +150,11 @@ Execution plane:
   model loop, tools, filesystem, response writing
 ```
 
-ဒီခွဲခြင်းကအရေးကြီးသည်။ Execution plane ထဲတွင် model မှားသော်လည်း control plane boundary ကြောင့် secret leakage blast radius လျှော့နိုင်သည်။ ဒါကို "လုံးဝလုံခြုံသည်" ဟုမဆိုရ။ "Logic bug တစ်ခုသည် security breach ဖြစ်မသွားစေရန် boundary ကူညီနိုင်သည်" ဟုမှတ်ရမည်။
+Execution plane ထဲတွင် model မှားသော်လည်း control plane boundary ကြောင့် secret leakage blast radius ကို လျှော့နိုင်သည်။ ဒါကို "လုံးဝလုံခြုံသည်" ဟုမဆိုရ။ "Logic bug တစ်ခုသည် security breach ဖြစ်မသွားစေရန် boundary ကူညီနိုင်သည်" ဟုမှတ်ရမည်။
 
-### Scoped Filesystem — `/` ဟုမြင်သော်လည်း ကမ္ဘာမတူ
+### Scoped Filesystem
 
-P-2 တွင် DeepAgents filesystem backends ကို virtual mode ဖြင့် scoped လုပ်ထားသည်။ Supervisor worker အတွက် real `./admin` directory ကို virtual `/` အဖြစ်မြင်စေသည်။ Customer worker အတွက် real `./docs` directory ကို virtual `/` အဖြစ်မြင်စေသည်။
+Worker နှစ်ခုလုံး `/` ကို မြင်သော်လည်း ကမ္ဘာ မတူ။ P-2 တွင် DeepAgents filesystem backends ကို virtual mode ဖြင့် scoped လုပ်ထားသည်။ Supervisor worker အတွက် real `./admin` directory ကို virtual `/` အဖြစ်မြင်စေသည်။ Customer worker အတွက် real `./docs` directory ကို virtual `/` အဖြစ်မြင်စေသည်။
 
 Agent နှစ်ခုလုံးက `/` ဟုမြင်နိုင်သည်။ သို့သော်တကယ်မြင်သောကမ္ဘာကွဲသည်။ Supervisor ၏ `/` သည် admin scope ဖြစ်သည်။ Customer ၏ `/` သည် public docs scope ဖြစ်သည်။
 
@@ -204,11 +204,11 @@ P-2 ၏ကောင်းချက်ပထမမှာ blast radius လျှ�
 
 Projection သည် full solution မဟုတ်။ `admin_input` ကိုယ်တိုင်တွင် secret ပါနေပါက Bridge သည်ထို string ကိုပို့နိုင်သည်။ ထို့ကြောင့် content sanitization, supervisor-side summary, admin UX warning လိုနိုင်သည်။
 
-Classifier behavior သည်အရေးကြီးသည်။ Supervisor route decision မှားလျှင် bridge ဖြတ်သင့်/မဖြတ်သင့်ဆုံးဖြတ်ချက်မှားနိုင်သည်။ README နှင့် implementation ကြား docs drift ရှိ/မရှိစစ်ရမည်။ [SYNC_MISMATCH] ဖြစ်နိုင်သောနေရာများကို source audit ထဲတွင်မှတ်ထားသင့်သည်။
+Supervisor classifier ၏ route decision မှားလျှင် bridge ဖြတ်သင့်/မဖြတ်သင့် ဆုံးဖြတ်ချက်ပါ မှားနိုင်သည်။ README နှင့် implementation ကြား docs drift ရှိ/မရှိစစ်ရမည်။ [SYNC_MISMATCH] ဖြစ်နိုင်သောနေရာများကို source audit ထဲတွင်မှတ်ထားသင့်သည်။
 
 Scoped filesystem သည် path traversal, symlink, absolute path, unicode path edge cases များအတွက် test လိုသည်။ Sandbox ကိုအပြည့်အဝယုံကြည်သောစိတ်မထားသင့်။
 
-Customer Agent ကို read-only ထားခြင်းသည်ကောင်းသည်။ သို့သော် public docs search အတွက် safe search wrapper လိုနိုင်သည်။ Security နှင့် usability ကိုအတူစဉ်းစားရမည်။
+Customer Agent ကို read-only ထားသော်လည်း public docs search အတွက် safe search wrapper လိုနိုင်သည်။ Security နှင့် usability ကို အတူ စဉ်းစားရမည်။
 
 ### Design Pattern များကိုနာမည်တပ်ခြင်း
 
@@ -237,11 +237,11 @@ P-2 ကိုဖတ်ပြီးကိုယ်တိုင်စစ်ရန�
 5. `GlobalState` နှင့် `UnsafeState` fields ကို table ဆွဲပြီး ဘယ် field က bridge ဖြတ်ခွင့်ရှိ/မရှိခွဲပါ။
 6. Customer Agent ကို search capability ပေးမည်ဆိုလျှင် read-only safe wrapper ဘယ်လိုရေးမလဲစဉ်းစားပါ။
 
-### နိဂုံး — တံတားကောင်းသည် အကုန်မသယ်
+### နိဂုံး
 
-P-2 ၏သင်ခန်းစာကိုတစ်ကြောင်းတည်းပြောရလျှင် ဤသို့ဖြစ်သည်။ High privilege Agent နှင့် low privilege Agent ကြား full state မပေးပါနှင့်။ Minimum safe instruction သာ project လုပ်ပါ။
+တံတားကောင်းသည် အကုန် မသယ်။ P-2 ၏ သင်ခန်းစာကို တစ်ကြောင်းတည်း ပြောရလျှင် ဤသို့ ဖြစ်သည်။ High privilege Agent နှင့် low privilege Agent ကြား full state မပေးပါနှင့်။ Minimum safe instruction သာ project လုပ်ပါ။
 
-Bridge သည်ပိုက်မဟုတ်။ တံခါးစောင့်ဖြစ်သည်။ State schema mismatch သည်အဆင်မပြေသောအရာမဟုတ်။ Security feature ဖြစ်နိုင်သည်။ Scoped filesystem သည် prompt warning ထက်ပိုခိုင်မာသော boundary ဖြစ်နိုင်သည်။ Control plane နှင့် execution plane ကိုခွဲထားခြင်းသည် model/tool loop ၏အမှားများကိုအကန့်အသတ်ထဲထားနိုင်သည်။
+Bridge သည် တံခါးစောင့် ဖြစ်သည်။ State schema mismatch သည် security feature ဖြစ်နိုင်သည်။ Scoped filesystem သည် prompt warning ထက်ပိုခိုင်မာသော boundary ဖြစ်နိုင်သည်။ Control plane နှင့် execution plane ကိုခွဲထားခြင်းသည် model/tool loop ၏အမှားများကိုအကန့်အသတ်ထဲထားနိုင်သည်။
 
 စာဖတ်သူသည် P-2 ကိုဖတ်ပြီး "Agent နှစ်ယောက်ဆက်သွယ်တယ်" ဟုသာမှတ်လျှင်အဓိကသင်ခန်းစာလွတ်သွားမည်။ "ဘယ် state များမသွားသင့်သလဲ" ဟုမေးတတ်လျှင်တော့ P-2 ၏တံတားကိုတကယ်မြင်လာပြီ။
 

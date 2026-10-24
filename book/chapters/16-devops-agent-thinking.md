@@ -1,18 +1,18 @@
 # 16-devops-agent-thinking
 
-### Cloud သည် ကစားကွင်းမဟုတ်
+### Cloud ထဲတွင် အမှားတစ်ခု၏ တန်ဖိုး
 
-Agentic AI ကို DevOps ထဲသုံးမည်ဆိုလျှင်စိတ်လှုပ်ရှားစရာများစွာရှိသည်။ Agent သည် CI logs ကိုဖတ်နိုင်သည်။ Terraform plan ကိုရှင်းပြနိုင်သည်။ CloudWatch log အရှည်ကြီးကိုအကျဉ်းချုပ်နိုင်သည်။ Runbook ဖတ်ပြီး next step အကြံပြုနိုင်သည်။ Pull request failure ကို file/line ဖြင့်ချိတ်နိုင်သည်။ Cost anomaly အကြောင်း report ထုတ်နိုင်သည်။
+Agentic AI ကို DevOps ထဲသုံးမည်ဆိုလျှင်စိတ်လှုပ်ရှားစရာများစွာရှိသည်။ Agent သည် CI logs ကို ဖတ်နိုင်သည်၊ Terraform plan ကို ရှင်းပြနိုင်သည်၊ CloudWatch log အရှည်ကြီးကို အကျဉ်းချုပ်နိုင်သည်၊ runbook ဖတ်ပြီး next step အကြံပြုနိုင်သည်၊ pull request failure ကို file/line ဖြင့် ချိတ်နိုင်သည်၊ cost anomaly အကြောင်း report ထုတ်နိုင်သည်။
 
-သို့သော် DevOps သည် ကစားကွင်းမဟုတ်။ Terraform apply မှားလျှင် ပိုက်ဆံ မလိုလားအပ်သောနေရာများအတွက် ကုန်သွားနိုင်သည်။ AWS permission မှားလျှင် resource leak ဖြစ်နိုင်သည်။ CI log ထဲမှ secret ထွက်သွားနိုင်သည်။ Production database ကိုမတော်တဆထိနိုင်သည်။ DNS record တစ်ကြောင်းမှားလျှင် service တစ်ခုလုံးပျောက်နိုင်သည်။
+သို့သော် DevOps ထဲတွင် ကစားကွင်းလို စမ်းလို့မရ။ Terraform apply မှားလျှင် ပိုက်ဆံ မလိုလားအပ်သောနေရာများအတွက် ကုန်သွားနိုင်သည်။ AWS permission မှားလျှင် resource leak ဖြစ်နိုင်သည်။ CI log ထဲမှ secret ထွက်သွားနိုင်သည်။ Production database ကိုမတော်တဆထိနိုင်သည်။ DNS record တစ်ကြောင်းမှားလျှင် service တစ်ခုလုံးပျောက်နိုင်သည်။
 
-ထို့ကြောင့် DevOps Agent Thinking ဆိုတာ "Agent ကို cloud tool ပေးလိုက်မယ်" ဆိုသောအတွေးမဟုတ်ပါ။ Permission, read/write separation, human approval, audit log, rollback, blast radius, source evidence တို့ကိုအရင်စဉ်းစားခြင်းဖြစ်ပါသည်။
+ထို့ကြောင့် DevOps Agent Thinking ဆိုတာ Agent ကို cloud tool မပေးမီ permission, read/write separation, human approval, audit log, rollback, blast radius, source evidence တို့ကို အရင် စဉ်းစားခြင်း ဖြစ်ပါသည်။
 
-ဒီအခန်းသည် production manual မဟုတ်ပါ။ Beginner-friendly engineer handbook အဖြစ် DevOps agent ကိုဘယ်လိုစဉ်းစားရမလဲဆိုတာသင်ပေးရန်ဖြစ်ပါသည်။
+ဒီအခန်းသည် beginner-friendly engineer handbook အဖြစ် DevOps agent ကို ဘယ်လို စဉ်းစားရမလဲ ဆိုတာ သင်ပေးရန် ဖြစ်ပါသည်။ Production manual အဆင့် အသေးစိတ်ကို ဒီအခန်းတွင် မမျှော်လင့်ပါနှင့်။
 
 ### ဒီအခန်းကို လက်တွေ့လိုက်ဖတ်နည်း
 
-DevOps case ကို real cloud account ဖြင့်မစပါနှင့်။ Fake CI log သို့မဟုတ် fake Terraform plan တစ်ခုဖြင့်စပါ။ ဒီအခန်း၏ practice goal က deploy လုပ်ရန်မဟုတ်ပါ။ Read-only evidence ကိုဖတ်ပြီး safe report ထုတ်နိုင်ရန်ဖြစ်ပါသည်။
+DevOps case ကို real cloud account ဖြင့်မစပါနှင့်။ Fake CI log သို့မဟုတ် fake Terraform plan တစ်ခုဖြင့်စပါ။ ဒီအခန်း၏ practice goal က read-only evidence ကို ဖတ်ပြီး safe report ထုတ်နိုင်ရန် ဖြစ်ပါသည်။ Deploy လုပ်ခြင်းကို ဒီအခန်းတွင် မလေ့ကျင့်ပါ။
 
 အနည်းဆုံး exercise တစ်ခုကိုဒီလိုလုပ်နိုင်သည်။ `sample-ci.log` ထဲတွင် failing test name, assertion error, fake secret-looking string, နှင့် prompt-injection-like sentence တစ်ကြောင်းထည့်ပါ။ Agent/tool သည် log ကို data အဖြစ်သာဖတ်ရပါမည်။ Secret-looking string ကို redact လုပ်ရပါမည်။ Final report တွင် failing test name, evidence line, likely cause, manual next command တို့ပါရပါမည်။ Auto-fix, auto-commit, deploy action မပါရပါ။
 
@@ -62,7 +62,7 @@ Deployment, secret rotation, production database, DNS, IAM, and destructive comm
 
 Beginner project တွင် mutating DevOps tools ကို Agent ထဲမထည့်သင့်။ အရင်ဆုံး read-only assistant, verifier, reporter အဖြစ်တည်ဆောက်ပါ။ စာရေးတော်ကိုနန်းတော်မြေပုံဖတ်ခိုင်းပါ။ နန်းတော်တံခါးဖွင့်သော့ကိုမပေးသေးပါနှင့်။
 
-### P-2 သင်ခန်းစာ — Internal Note နှင့် Public Message ကြားတံတား
+### P-2 သင်ပေးသော Internal Note နှင့် Public Message ကြား တံတား
 
 Incident response တွင် internal diagnosis ကို public status update အဖြစ်ပြောင်းရန်လိုနိုင်သည်။ Internal note ထဲတွင် hostnames, internal IP, customer-specific detail, secret-like values, unfinished diagnosis ပါနိုင်သည်။ Public message ထဲတွင်ထိုအရာများမပါသင့်။
 
@@ -85,11 +85,11 @@ Public Status Agent
   - customer-safe language
 ```
 
-အရေးကြီးသည်မှာ internal state အကုန် public status agent ဆီမပို့ရန်ဖြစ်သည်။ Public update ထုတ်ရန်လိုသောအချက်များကိုသာ project လုပ်ပါ။ P-2 မှသင်ရသည့် state boundary သည် DevOps comms တွင်အလွန်အသုံးဝင်သည်။
+Internal state အကုန်ကို public status agent ဆီ မပို့ပါနှင့်။ Public update ထုတ်ရန် လိုသော အချက်များကိုသာ project လုပ်ပါ။ P-2 မှသင်ရသည့် state boundary သည် DevOps comms တွင်အလွန်အသုံးဝင်သည်။
 
-### Travis-2 သင်ခန်းစာ — Command Run သွားသည်ဆို၍ အလုပ်ပြီးမဟုတ်
+### Travis-2 သင်ပေးသော Run ပြီးနောက် Evidence စစ်ဆေးမှု
 
-DevOps agent သည် flexible tool use လိုနိုင်သည်။ Logs ဖတ်ရမည်။ GitHub Actions failure ဖတ်ရမည်။ Terraform plan parse လုပ်ရမည်။ သို့သော် command တစ်ကြောင်း run သွားသည်ဆိုရုံနှင့်အလုပ်ပြီးပြီဟုမဆိုရ။ Travis-2 မှယူရမည့်သင်ခန်းစာမှာ အလုပ်သမားကိုအလုပ်ခန်းထဲသို့ပို့ပြီး ပြန်လာသောအထောက်အထားကိုစစ်ရန်ဖြစ်သည်။ Docker sandbox ထဲတွင် script run စေခြင်းသည် DevOps task များအတွက်လည်းစဉ်းစားစရာကောင်းသော boundary ဖြစ်သည်။
+DevOps agent သည် flexible tool use လိုနိုင်သည်။ Logs ဖတ်ရမည်။ GitHub Actions failure ဖတ်ရမည်။ Terraform plan parse လုပ်ရမည်။ သို့သော် command တစ်ကြောင်း run သွားသည်ဆိုရုံနှင့်အလုပ်ပြီးပြီဟုမဆိုရ။ Travis-2 သည် အလုပ်သမားကို အလုပ်ခန်းထဲသို့ ပို့ပြီး ပြန်လာသော အထောက်အထားကို စစ်သည်။ Docker sandbox ထဲတွင် script run စေခြင်းသည် DevOps task များအတွက်လည်းစဉ်းစားစရာကောင်းသော boundary ဖြစ်သည်။
 
 ```text
 run_analysis
@@ -98,19 +98,19 @@ run_analysis
   -> finalize_report
 ```
 
-Travis-2 မှယူရမည့်အရေးကြီးဆုံးအချက်တစ်ခုမှာ `execution_ok` နှင့် `data_ok` ခွဲခြင်းဖြစ်သည်။ CI log fetch command အောင်မြင်သော်လည်း relevant error မတွေ့ပါက `data_ok=false` ဖြစ်သင့်သည်။ Terraform plan parse အောင်မြင်သော်လည်း destroy count မထုတ်နိုင်ပါက failure ဖြစ်သင့်သည်။ အင်ဂျင်နီယာအလုပ်တွင် "ပြေးသွားသည်" နှင့် "အသုံးဝင်သောအဖြေပြန်ရသည်" သည်မတူ။
+Travis-2 သည် `execution_ok` နှင့် `data_ok` ကို ခွဲထားသည်။ CI log fetch command အောင်မြင်သော်လည်း relevant error မတွေ့ပါက `data_ok=false` ဖြစ်သင့်သည်။ Terraform plan parse အောင်မြင်သော်လည်း destroy count မထုတ်နိုင်ပါက failure ဖြစ်သင့်သည်။ အင်ဂျင်နီယာအလုပ်တွင် "ပြေးသွားသည်" နှင့် "အသုံးဝင်သောအဖြေပြန်ရသည်" သည်မတူ။
 
-DevOps agent တွင် "command ran successfully" သည် "analysis correct" မဟုတ်။ Shell exit code 0 သည်အမှန်တရား၏တံဆိပ်မဟုတ်။ Evidence စစ်ရမည်။
+DevOps agent တွင် "command ran successfully" နှင့် "analysis correct" သည် သီးခြား အခြေအနေ နှစ်ခု ဖြစ်သည်။ Shell exit code 0 ရပြီးနောက်လည်း evidence ကို ဆက်စစ်ရမည်။
 
-### BrowserSurfer သင်ခန်းစာ — Log နှင့် Issue Comment ကိုမယုံပါနှင့်
+### BrowserSurfer သင်ပေးသော Untrusted Log နှင့် Issue Comment
 
-BrowserSurfer မှသင်ခန်းစာသည် browser တစ်ခုတည်းအတွက်မဟုတ်။ DevOps world တွင်လည်း untrusted text အများကြီးရှိသည်။ CI log ထဲတွင် malicious-looking instruction ပါနိုင်သည်။ GitHub issue comment ထဲတွင် model ကိုလမ်းလွဲစေသောစာပါနိုင်သည်။ Terraform plan output ထဲတွင် secret-like values ပါနိုင်သည်။ Alert description ထဲတွင် external user input ပါနိုင်သည်။
+BrowserSurfer ၏ သင်ခန်းစာသည် DevOps world အထိ ရောက်သည်။ DevOps တွင်လည်း untrusted text အများကြီး ရှိသည်။ CI log ထဲတွင် malicious-looking instruction ပါနိုင်သည်။ GitHub issue comment ထဲတွင် model ကိုလမ်းလွဲစေသောစာပါနိုင်သည်။ Terraform plan output ထဲတွင် secret-like values ပါနိုင်သည်။ Alert description ထဲတွင် external user input ပါနိုင်သည်။
 
 ထို့ကြောင့် DevOps agent တွင် tool output ကို data အဖြစ်သာကိုင်ရမည်။
 
 လိုအပ်သော safety pieces:
 
-- Untrusted log wrapper။ ဤနေရာတွင် wrapper ဆိုသည်မှာ log ကို "instruction မဟုတ်၊ untrusted data" ဟုအကာအကွယ်အိတ်ဖြင့်ပတ်ပေးခြင်းဖြစ်သည်။ ၎င်းတစ်ခုတည်းဖြင့်ဘေးကင်းသွားခြင်းမဟုတ်။
+- Untrusted log wrapper။ ဤနေရာတွင် wrapper ဆိုသည်မှာ log ကို "instruction မဟုတ်၊ untrusted data" ဟုအကာအကွယ်အိတ်ဖြင့်ပတ်ပေးခြင်းဖြစ်သည်။ Wrapper တစ်ခုတည်းဖြင့် ဘေးကင်းမသွားသေး။
 - Secret redaction။
 - Command allowlist။
 - Read-only credentials။
@@ -121,11 +121,11 @@ BrowserSurfer မှသင်ခန်းစာသည် browser တစ်ခု
 
 DevOps agent သည် logs ဖတ်နိုင်သော်လည်း logs ကိုအမိန့်အဖြစ်မယူသင့်ချေ။
 
-### appv22 သင်ခန်းစာ — Incident သည် Context ကိုပြည့်စေတတ်သည်
+### appv22 သင်ပေးသော Context Overflow Recovery
 
 DevOps task များတွင် context အရှည်ကြီးများလာတတ်သည်။ Incident logs, CI output, Terraform plan, cloud inventory, runbook docs, Slack thread, GitHub issue, dashboard alert တို့အားလုံးတစ်ခါတစ်ရံတစ်ပြိုင်နက်လိုသည်။ Context overflow ဖြစ်နိုင်သည်။ Provider error ဖြစ်နိုင်သည်။ Tool output cap ထိနိုင်သည်။
 
-appv22 မှယူရမည့်သင်ခန်းစာမှာ recovery engineering ဖြစ်သည်။ Context compaction, overflow recovery, faux/offline provider tests, tool-loop guardrails, session persistence, terminal status တို့ကိုစဉ်းစားပါ။ ဤနေရာတွင် terminal status ဆိုသည်မှာ command line ထဲတွင် agent ဘာလုပ်နေသလဲ၊ ဘယ်အဆင့်ရောက်နေသလဲ user ကိုပြသောအခြေအနေပြစာများဖြစ်သည်။ DevOps agent သည် "command run and answer" မဟုတ်။ Failure ဖြစ်လျှင်ဘာလုပ်မလဲဆိုတာပါ runtime design ထဲရှိရမည်။
+appv22 သည် recovery engineering ကို သင်ပေးသည်။ Context compaction, overflow recovery, faux/offline provider tests, tool-loop guardrails, session persistence, terminal status တို့ကိုစဉ်းစားပါ။ ဤနေရာတွင် terminal status ဆိုသည်မှာ command line ထဲတွင် agent ဘာလုပ်နေသလဲ၊ ဘယ်အဆင့်ရောက်နေသလဲ user ကိုပြသောအခြေအနေပြစာများဖြစ်သည်။ DevOps agent ၏ runtime design ထဲတွင် command run ပြီး answer ပေးခြင်းသာမက failure ဖြစ်လျှင် ဘာလုပ်မလဲ ဆိုတာပါ ရှိရမည်။
 
 ### Terraform Agent Thinking
 
@@ -162,7 +162,7 @@ Agent သည် plan ကိုရှင်းပြနိုင်သည်။ A
 
 ### AWS Agent Thinking
 
-AWS tools ကို Agent ပေးမည်ဆိုပါက IAM scope အရေးကြီးသည်။ Full admin credential မပေးပါနှင့်။ Read-only role မှစပါ။ Service-specific policy သုံးပါ။ Session duration ကန့်သတ်ပါ။ CloudTrail audit log သုံးပါ။
+AWS tools ကို Agent ပေးမည်ဆိုပါက IAM scope ကို အရင် ကျဉ်းပါ။ Full admin credential မပေးပါနှင့်။ Read-only role မှစပါ။ Service-specific policy သုံးပါ။ Session duration ကန့်သတ်ပါ။ CloudTrail audit log သုံးပါ။
 
 Read-only AWS tasks:
 
@@ -235,7 +235,7 @@ tools:
     approval: required
 ```
 
-ဤ YAML သည် illustrative example ဖြစ်သည်။ Actual implementation မဟုတ်။ အဓိကသင်ခန်းစာမှာ tools ကို mode, approval, credential scope အလိုက်ခွဲရန်ဖြစ်သည်။
+ဤ YAML သည် illustrative example သာ ဖြစ်သည်။ Tools ကို mode, approval, credential scope အလိုက် ခွဲထားပုံကို ကြည့်ပါ။
 
 ### Beginner အတွက် Architecture
 
@@ -266,9 +266,9 @@ Agent flow:
 5. BrowserSurfer style prompt injection test ကို fake/local CI log ထဲထည့်ပြီး wrapper မရှိ/ရှိ version နှိုင်းပါ။
 6. appv22 style faux provider ဖြင့် DevOps agent tests ကို network မလိုဘဲ run ပါ။ Faux provider ဆိုသည်မှာ real model API မခေါ်ဘဲ test အတွက်ပြန်ဖြေသော provider အတုဖြစ်သည်။
 
-### နိဂုံး — Cloud Agent သည် စာရေးတော်သာမဟုတ်၊ အာဏာကိုင်သူဖြစ်သည်
+### နိဂုံး
 
-DevOps Agent Thinking သည် cloud tool များပေးခြင်းမဟုတ်။ Read-only first, least privilege, approval-gated mutation, evidence-based verifier, audit log, redaction, recovery engineering တို့ပေါင်းစပ်ခြင်းဖြစ်သည်။
+Cloud ထဲ ရောက်သော Agent သည် စာရေးတော်သာမက အာဏာကိုင်သူလည်း ဖြစ်သွားသည်။ DevOps Agent Thinking သည် cloud tool များပေးခြင်းမဟုတ်။ Read-only first, least privilege, approval-gated mutation, evidence-based verifier, audit log, redaction, recovery engineering တို့ပေါင်းစပ်ခြင်းဖြစ်သည်။
 
 P-2 သည် privilege separation ကို သင်ပေးသည်။ Travis-2 သည် model ရေးလာသော code ကို sandbox/tool-result contract ဖြင့်ထိန်းသည့် runtime စည်းကမ်းကို သင်ပေးသည်။ BrowserSurfer သည် external tool output risk ကို သင်ပေးသည်။ appv22 သည် recovery engineering ကို သင်ပေးသည်။
 
