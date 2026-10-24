@@ -97,6 +97,27 @@ After: ဒါကို Software Engineering မှာ Non-deterministic လိ�
 
 Pronoun: `ကျွန်တော်တို့` is the default in technical prose. If a chapter already uses `ကျွန်ုပ်တို့` throughout, keep it consistent within that chapter.
 
+## Machine-Prose Patterns To Avoid
+
+These shapes are fine once per chapter. Repeated, they make prose read as generated no matter how good the Burmese is. Search for them before opening a PR.
+
+| Pattern | How to spot it | Fix |
+|---|---|---|
+| Negation reflex: `X မဟုတ်။ Y ဖြစ်သည်။` | Search `မဟုတ်။` | Keep the one that carries the chapter thesis. State the rest positively. |
+| Negation headings: `### Metrics သည် ဂဏန်းသေတ္တာမဟုတ်` | Read the headings alone | Name the thing, not what it is not. |
+| Em-dash subtitle headings: `### Thing — clever gloss` | Search `^###.* — ` | Heading is the thing. The gloss becomes the first sentence under it. |
+| Staccato inventories: `A ရှိသည်။ B ရှိသည်။ C ရှိသည်။` | Three or more two-word sentences in a row | One sentence with commas, or a bulleted list. |
+| Rhetorical question chains: `…သလား။ …သလား။ …သလား။` | Three or more questions back to back | One question, then say what good looks like. |
+| Telling the reader how to feel: `ဤအချက်သည် အရေးကြီးသည်။`, `သင်ခန်းစာကဒီမှာပါ။` | Search `အရေးကြီးသည်။`, `သင်ခန်းစာက` | Cut the sentence. The next sentence should show it. |
+| Praise-then-pivot: `ဒီ design သည်လမ်းမှန်ဖြစ်သည်။ သို့သော်…` | Search `ဖြစ်သည်။ သို့သော်` | Say what is wrong directly. |
+| Closing flourish: `…ပင် ဖြစ်ပေတော့သည်။` | Search `ဖြစ်ပေတော့သည်` | End on the fact. |
+| Blockquote TL;DR at the top of a chapter | `>` in the first ten lines | Either every chapter has one written as a real paragraph, or none do. |
+| Bold-term-colon bullets carrying prose: `- **Term:** two full sentences` | Count `- **` per chapter | Glossary and Source Notes only. Prose goes in a paragraph. |
+
+Two searches find most of it: `မဟုတ်။` and three `သလား။` in a row.
+
+Chapter 04 has none of these and is the reference.
+
 ## Suggesting Chapter Edits
 
 The author voice matters. For large prose changes:
