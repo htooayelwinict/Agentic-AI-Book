@@ -1,4 +1,4 @@
-# 05-agent-harness
+# အခန်း ၅ - Agent Harness
 
 ### ဦးနှောက်နှင့်လက်များရှိရုံဖြင့် မလုံလောက်ခြင်း
 
@@ -10,7 +10,7 @@ Harness ဆိုသည်မှာ Agent Loop ကိုပတ်လည်မှ
 
 Beginner အနေနှင့် Harness ကို model ၏ အပြင်ဘက်က control layer လို့ အရင်မှတ်နိုင်သည်။ Model က "ဘာလုပ်ချင်တယ်" ဆိုတာကို ပြောပြသည်။ Harness က "လုပ်ခွင့်ရှိလား၊ ဘယ် tool နဲ့လုပ်မလဲ၊ log ဘယ်လိုသိမ်းမလဲ၊ risk ကြီးရင် လူကိုမေးမလား" ဆိုတာကို ထိန်းထားပေးသည်။
 
-### Harness သည် Framework နာမည်မဟုတ်
+### Harness နှင့် Framework ကွာခြားပုံ
 
 လူအများသည် Harness ဟူသောစကားလုံးကို framework တစ်ခု၏နာမည်ဟုထင်တတ်ကြသည်။ LangGraph သုံးလျှင် Harness ရပြီ၊ DeepAgents သုံးလျှင် Harness ရပြီ၊ LangChain middleware ထည့်လျှင် Harness ရပြီဟုအလွယ်ယူဆတတ်ကြသည်။ ဤယူဆချက်သည်အန္တရာယ်ရှိသည်။ Framework သည်အဆောက်အအုံဆောက်ရန်အတွက် သံချောင်းနှင့်သစ်သားပေးနိုင်သည်။ သို့သော်အိမ်၏ပုံစံ၊ တိုင်ခိုင်မာမှု၊ မီးဘေးလုံခြုံရေးတို့ကိုအင်ဂျင်နီယာကဆုံးဖြတ်ရသည်။
 
@@ -24,7 +24,7 @@ Demo harness နှင့် real harness ကိုခွဲမြင်ပါ�
 
 Harness ၏ပထမဆုံးအလုပ်မှာ **Context ကိုစီမံခြင်း** ဖြစ်သည်။ Model သည် context ထဲရှိသောအရာကိုသာမြင်နိုင်သည်။ User request, system prompt, tool description, retrieved docs, memory, skill file, browser snapshot, error log စသည်တို့အားလုံးသည် context ဖြစ်နိုင်သည်။ Context မကောင်းပါက Model ကောင်းသော်လည်း Agent မကောင်းနိုင်။
 
-ဒုတိယအလုပ်မှာ **Tool Permission ကိုထိန်းခြင်း** ဖြစ်သည်။ Model က Tool Call တစ်ခုထုတ်နိုင်သည်။ သို့သော် ထို Tool ကိုတကယ် run ခွင့်ရှိမရှိ Runtime ကစစ်ရမည်။ "မလုပ်ပါနှင့်" ဟု prompt ထဲရေးထားခြင်းသည် permission မဟုတ်။ Tool Broker ကတားနိုင်မှ permission ဖြစ်သည်။
+ဒုတိယအလုပ်မှာ **Tool Permission ကိုထိန်းခြင်း** ဖြစ်သည်။ Model က Tool Call တစ်ခုထုတ်နိုင်သည်။ သို့သော် ထို Tool ကိုတကယ် run ခွင့်ရှိမရှိ Runtime ကစစ်ရမည်။ Permission ဆိုသည်မှာ Tool Broker က တကယ်တားနိုင်ခြင်း ဖြစ်သည်။ "မလုပ်ပါနှင့်" ဟု prompt ထဲ ရေးထားရုံဖြင့် permission မရသေး။
 
 Tool Broker ဆိုတာ model နှင့် tools ကြားက gatekeeper ဖြစ်သည်။ Model က tool ခေါ်ချင်တိုင်း ချက်ချင်း run မလုပ်ဘဲ၊ ထို tool ကို ဒီ user၊ ဒီ task၊ ဒီ permission scope အတွက် ခွင့်ပြုထားသလားဆိုတာကို စစ်ပေးသောအပိုင်းဖြစ်သည်။
 
@@ -51,7 +51,7 @@ User Request
 ```
 
 ### repo ဥပမာများ
-အောက်ဖော်ပြပါ ဥပမာများသည် ကျွန်ုပ်စာရေးသူကိုယ်တိုင်တည်ဆောက်ထားသော (vibe code ထားသော) program repo များဖြစ်သည်။ ယင်းတို့ကိုအသုံးပြုပြီး Agentic AI နှင့်ပက်သက်သော အစိတ်အပိုင်းများ မည်သို့မည်ပုံ အကြမ်းဖျဥ်းတည်ဆောက်ထားပုံ လိုအပ်သော sdk နှင့် modules များအသုံးပြုထားပုံတို့ကို တတ်နိုင်သလောက် ရှေ့ဆက်အခန်းများတွင် ဆက်လက်ရှင်းပြသွားမည်ဖြစ်သည်။ 
+အောက်ဖော်ပြပါ ဥပမာများသည် ကျွန်ုပ်စာရေးသူကိုယ်တိုင်တည်ဆောက်ထားသော (vibe code ထားသော) program repo များဖြစ်သည်။ ယင်းတို့ကိုအသုံးပြုပြီး Agentic AI နှင့်ပက်သက်သော အစိတ်အပိုင်းများ မည်သို့မည်ပုံ အကြမ်းဖျဉ်းတည်ဆောက်ထားပုံ လိုအပ်သော sdk နှင့် modules များအသုံးပြုထားပုံတို့ကို တတ်နိုင်သလောက် ရှေ့ဆက်အခန်းများတွင် ဆက်လက်ရှင်းပြသွားမည်ဖြစ်သည်။ 
 
 > Beginner အနေနှင့် ဒီ repo examples တွေကိုဖတ်ရာတွင် class name, tool name, middleware name, module name တွေကို အလွတ်မှတ်ရန်မလိုပါ။ "ဒီ Harness က ဘာကိုထိန်းထားတာလဲ၊ ဘယ် risk ကိုကာထားတာလဲ၊ Model ကို ဘယ်ဘောင်ထဲမှာ အလုပ်လုပ်စေတာလဲ" ဆိုတဲ့မေးခွန်းတွေကိုပဲ အရင်လိုက်ပါ။
 
@@ -71,11 +71,11 @@ Customer / UnsafeState
 
 ဒီနေရာတွင် Harness ၏အလုပ်မှာ secret များကို "မပြောနဲ့" ဟု prompt ထဲတွင်တားခြင်းမဟုတ်ဘဲ၊ low-privilege side က မမြင်သင့်သော state ကို အစကတည်းက မပို့ခြင်းဖြစ်သည်။
 
-ဤသည်မှာ Harness ၏အကောင်းဆုံးဥပမာတစ်ခုဖြစ်သည်။ Model ကို "secret မပြောပါနှင့်" ဟုပြောခြင်းမဟုတ်။ Secret ကိုမြင်ခွင့်မပေးခြင်းဖြစ်သည်။ Customer Agent ကို admin files မဖတ်ပါနှင့်ဟုပြောခြင်းမဟုတ်။ `/docs` scope ကိုသာမြင်စေခြင်းဖြစ်သည်။ P-2 ၏သင်ခန်းစာမှာ Security သည် prompt မဟုတ်၊ architecture ဖြစ်သည်ဟုဆိုနိုင်သည်။
+ဤသည်မှာ Harness ၏အကောင်းဆုံးဥပမာတစ်ခုဖြစ်သည်။ Model ကို "secret မပြောပါနှင့်" ဟု ပြောမည့်အစား secret ကို မြင်ခွင့်ပင် မပေးခြင်း ဖြစ်သည်။ Customer Agent ကို admin files မဖတ်ရန် ပြောမည့်အစား `/docs` scope ကိုသာ မြင်စေခြင်း ဖြစ်သည်။ P-2 ၏သင်ခန်းစာမှာ Security သည် prompt မဟုတ်၊ architecture ဖြစ်သည်ဟုဆိုနိုင်သည်။
 
 ### Travis-2 ထဲက Harness
 
-Travis-2 တွင် Harness ကို graph တစ်ခုတည်းအဖြစ်မမြင်သင့်။ Harness သည် graph အလှဆင်မဟုတ်။ အဓိကစက်ခန်းမှာ `run_playwright_code` tool ဖြစ်သည်။ Agent ရေးသော TypeScript Playwright စာရွက်ကို workspace ထဲရေးသည်။ လိုအပ်လျှင် AST validation တံခါးစောင့်ဖြတ်သည်။ ထို့နောက် host runner သို့မဟုတ် Docker sandbox runner ထဲတွင် run စေပြီး structured result ပြန်ယူသည်။ Outer LangGraph StateGraph နှင့် middleware stack သည် ထိုစက်ခန်းကိုပတ်လည်မှထိန်းသောဘောင်များဖြစ်သည်။
+Travis-2 တွင် Harness ကို graph တစ်ခုတည်းအဖြစ်မမြင်သင့်။ အဓိကစက်ခန်းမှာ `run_playwright_code` tool ဖြစ်သည်။ Agent ရေးသော TypeScript Playwright စာရွက်ကို workspace ထဲရေးသည်။ လိုအပ်လျှင် AST validation တံခါးစောင့်ဖြတ်သည်။ ထို့နောက် host runner သို့မဟုတ် Docker sandbox runner ထဲတွင် run စေပြီး structured result ပြန်ယူသည်။ Outer LangGraph StateGraph နှင့် middleware stack သည် ထိုစက်ခန်းကိုပတ်လည်မှထိန်းသောဘောင်များဖြစ်သည်။
 
 > အဓိကမှတ်ရန် — Travis-2 မှာ Harness ဆိုတာ graph တစ်ခုတည်းမဟုတ်ပါ။ Tool runner, validation, sandbox, state, middleware, budget, telemetry စတာတွေကို ပေါင်းပြီး Agent ကို ဘယ်လိုအလုပ်လုပ်ခွင့်ပေးမလဲ၊ ဘယ်အချိန်ရပ်မလဲ၊ ဘယ်လိုပြန်စစ်မလဲ ဆိုတာကို ထိန်းသော control layer ဖြစ်သည်။
 
@@ -99,7 +99,7 @@ BrowserSurfer Bot တွင် Harness သည်ပို၍အရေးကြ�
 
 appv22 သည် အနည်းငယ် advanced ဖြစ်သော emerging runtime recovery lab ဖြစ်သည်။ ၎င်းကို final worker kernel ဟုမခေါ်ရ။ သို့သော် Harness တည်ဆောက်ရာတွင်ဘာတွေပါလာနိုင်သနည်းဆိုတာကိုကောင်းစွာမြင်စေသည်။ `agent/` တွင် loop နှင့် guardrails ရှိသည်။ `ai/` တွင် model provider များနှင့်ဆက်သွယ်ရာအခန်းရှိသည်။ Provider ဆိုသည်မှာ model ကိုတကယ်ခေါ်ပေးသော service layer ဖြစ်သည်။ `coding_agent/` တွင် session/tools/prompts ရှိသည်။ `compaction/` တွင် Hermes-style context compaction ရှိသည်။ `tui/` တွင် terminal ပေါ်မှ user-facing မျက်နှာပြင်ရှိသည်။
 
-appv22 မှသင်ရမည့်အချက်မှာ Harness သည် runtime အရိုးတန်းဖြစ်လာနိုင်ခြင်းဖြစ်သည်။ Agent loop, provider error recovery, context overflow handling, tool-loop guardrails, session persistence, terminal status, tests စသည်တို့ကိုအတူတကွစဉ်းစားရသည်။ သို့သော် project သည် recovery lab ဖြစ်သောကြောင့် partial/gap/risk status များကိုဖုံးမထားရ။ Engineering honesty သည် Harness ၏အစိတ်အပိုင်းတစ်ခုပင် ဖြစ်သည်။
+appv22 မှသင်ရမည့်အချက်မှာ Harness သည် runtime အရိုးတန်းဖြစ်လာနိုင်ခြင်းဖြစ်သည်။ Agent loop, provider error recovery, context overflow handling, tool-loop guardrails, session persistence, terminal status, tests စသည်တို့ကိုအတူတကွစဉ်းစားရသည်။ သို့သော် project သည် recovery lab ဖြစ်သောကြောင့် partial/gap/risk status များကိုဖုံးမထားရ။ Engineering honesty သည် Harness ၏ အစိတ်အပိုင်းတစ်ခု ဖြစ်သည်။
 
 Harness safety ကို အလွယ်မှတ်ရန် အောက်ပါအချက်များကို အရင်ကြည့်နိုင်သည်။
 
@@ -137,9 +137,9 @@ Agent repository တစ်ခုကိုဖတ်သောအခါ အော�
 
 ဤမေးခွန်းများသည် Agentic AI ကို demo အဆင့်မှ engineering အဆင့်သို့ခေါ်ဆောင်သွားသောမေးခွန်းများဖြစ်သည်။
 
-### နိဂုံး - စက်ကိုလွှတ်မထားဘဲ ထိန်းကျောင်းခြင်း
+### နိဂုံး
 
-Agent Harness သည် Agent ကိုနှေးကွေးစေရန်ထားသော အတားအဆီးမဟုတ်။ Agent ကိုယုံကြည်ရသောအလုပ်သမားဖြစ်လာစေရန်ထားသော ထိန်းကျောင်းရေးစနစ်ဖြစ်သည်။ လူမိုက်အားဓားပေးပြီးတံခါးပိတ်ထားခြင်းသည်အန္တရာယ်ဖြစ်သည်။ သို့သော်လက်သမားအားကိရိယာပေးပြီး လုပ်ငန်းခွင်စည်းကမ်း၊ safety gear, supervisor, measurement tools ပေးခြင်းသည်အလုပ်ဖြစ်သည်။
+Agent Harness သည် စက်ကို လွှတ်မထားဘဲ ထိန်းကျောင်းသော စနစ်ဖြစ်သည်။ Agent ကို နှေးစေရန် မဟုတ်ဘဲ ယုံကြည်ရသော အလုပ်သမား ဖြစ်လာစေရန် ထားသည်။ လူမိုက်အားဓားပေးပြီးတံခါးပိတ်ထားခြင်းသည်အန္တရာယ်ဖြစ်သည်။ သို့သော်လက်သမားအားကိရိယာပေးပြီး လုပ်ငန်းခွင်စည်းကမ်း၊ safety gear, supervisor, measurement tools ပေးခြင်းသည်အလုပ်ဖြစ်သည်။
 
 Agentic AI တွင်လည်းထိုအတိုင်းပင်ဖြစ်သည်။ Loop သည် Agent ကို အလုပ်ဆက်လုပ်စေသည်။ Harness သည် ထိုအလုပ်ကို သတ်မှတ်ထားသောဘောင်ထဲတွင် ထိန်းထားပေးသည်။ နောက်အခန်းများတွင် ကျွန်ုပ်တို့သည် Harness ၏အစိတ်အပိုင်းများဖြစ်သော MCP, Skill, Sub-agent, Prompt Engineering, Context Engineering, Tool Broker, Observability, Safety စသည်တို့ကိုတစ်ခုချင်းစီဖွင့်ကြည့်မည်။
 

@@ -1,4 +1,4 @@
-# 06-mcp-skill-subagent
+# အခန်း ၆ - MCP, Skill နှင့် Sub-agent
 
 ### စကားလုံးများ များလာသောအခါ မျက်စိမလည်စေရန်
 
@@ -24,9 +24,9 @@ Skill     = Agent ဖတ်သော instruction/manual
 Sub-agent = Main Agent က task ခွဲပေးသော worker
 ```
 
-### MCP — ပြင်ပကမ္ဘာသို့ ဆက်သွယ်သော လမ်းတံတား
+### MCP
 
-LLM သည်အခန်းထဲတွင်ထိုင်နေသော စာရေးတော် နှင့် တူသည်။ သူသည်စာရေးတတ်သည်၊ အကြံပေးတတ်သည်၊ pattern များကိုခန့်မှန်းတတ်သည်။ သို့သော် ပြင်ပကမ္ဘာနှင့်မချိတ်ထားပါက file မဖတ်နိုင်၊ database မကြည့်နိုင်၊ GitHub issue မသိနိုင်၊ calendar မကြည့်နိုင်၊ internal docs မရှာနိုင်။ ထိုပြင်ပကမ္ဘာနှင့်ချိတ်ပေးရန် Tool များလိုသည်။ Tool များနှင့်ချိတ်ရာတွင် app တစ်ခုချင်းစီအတွက် custom integration များရေးနေရလျှင် အလွန်ရှုပ်ထွေးလာသည်။
+MCP သည် စာရေးတော်ကို ပြင်ပကမ္ဘာနှင့် ဆက်သွယ်ပေးသော လမ်းတံတား ဖြစ်သည်။ LLM သည်အခန်းထဲတွင်ထိုင်နေသော စာရေးတော် နှင့် တူသည်။ သူသည်စာရေးတတ်သည်၊ အကြံပေးတတ်သည်၊ pattern များကိုခန့်မှန်းတတ်သည်။ သို့သော် ပြင်ပကမ္ဘာနှင့်မချိတ်ထားပါက file မဖတ်နိုင်၊ database မကြည့်နိုင်၊ GitHub issue မသိနိုင်၊ calendar မကြည့်နိုင်၊ internal docs မရှာနိုင်။ ထိုပြင်ပကမ္ဘာနှင့်ချိတ်ပေးရန် Tool များလိုသည်။ Tool များနှင့်ချိတ်ရာတွင် app တစ်ခုချင်းစီအတွက် custom integration များရေးနေရလျှင် အလွန်ရှုပ်ထွေးလာသည်။
 
 နေ့စဉ်အလုပ်တစ်ခုနဲ့စကြည့်ပါ။ သင်သည် Agent ကို "မနက်ဖြန် team meeting အတွက် ပြင်ဆင်ပေးပါ" ဟုခိုင်းသည်ဆိုပါစို့။ Agent သည် calendar ကို ဖတ်ရမည်။ GitHub issue များကိုကြည့်ရမည်။ Project docs ထဲက milestone ကိုရှာရမည်။ Meeting note template တစ်ခုယူရမည်။ အရာတိုင်းအတွက် integration အသစ်ရေးနေရလျှင် Agent တစ်ခုတည်ဆောက်ခြင်းထက်တံတားဆောက်ခြင်းကအချိန်ပိုကုန်သွားမည်။ MCP သည်ထိုတံတားများကိုစည်းကမ်းတစ်ခုအောက်တွင်ချိတ်ပေးရန်ကြိုးစားသောနည်းဖြစ်သည်။
 
@@ -63,20 +63,21 @@ Prompt သည်လုပ်နည်းညွှန်ကြားချက်�
 အလွယ်မှတ်ရန် -
 
 ```text
-Tool     = လုပ်
-Resource = ဖတ်
-Prompt   = ဘယ်လိုလုပ်
+Tool     = model က ခေါ်တယ်      (ဘာလုပ်မလဲ model ဆုံးဖြတ်)
+Resource = app/host က ထည့်တယ်   (ဘာ context ပေးမလဲ app ဆုံးဖြတ်)
+Prompt   = user က ရွေးတယ်       (ဘယ် template သုံးမလဲ user ဆုံးဖြတ်)
 ```
 
 ဥပမာ -
 
-- GitHub issue ကိုဖတ်ခြင်း = Resource
-- GitHub issue အသစ်ဖန်တီးခြင်း = Tool
-- Issue reply style guide = Prompt
+- Model က issue #42 ကို ကြည့်ချင်လို့ `get_issue` ခေါ်တာ = Tool (ဖတ်တာပဲ ဖြစ်ပေမယ့် Tool ပါ)
+- Model က issue အသစ် ဖွင့်တာ = Tool
+- Editor က ဖွင့်ထားတဲ့ file ကို context ထဲ ကြိုထည့်ပေးတာ = Resource
+- User က `/review` template ကို ရွေးတာ = Prompt
 
-ဤသုံးခုကိုရောသွားလျှင် security boundary ပျက်သည်။ Webpage content သည် Resource ဖြစ်သည်။ ၎င်းထဲတွင် "previous instruction မလိုက်နာပါနှင့်" ဟုရေးထားလျှင်လည်း Prompt မဟုတ်။ Data သာဖြစ်သည်။
+"ဖတ်/ရေး" နဲ့ မခွဲပါနဲ့။ ဘယ်သူက ဆုံးဖြတ်လဲ ဆိုတာနဲ့ ခွဲပါ။ Security အတွက် အရေးကြီးတာက Tool call တိုင်းကို model က ဆုံးဖြတ်တာမို့ Tool တွေမှာ permission ပြန်စစ်ရတယ် ဆိုတာပါ။ Webpage content ကတော့ ဘယ်လမ်းက ဝင်လာလာ data ပါ။ "previous instruction မလိုက်နာပါနဲ့" လို့ ရေးထားရင်လည်း instruction မဟုတ်ပါဘူး။
 
-### Skill — စာရေးတော်အတွက် လက်စွဲစာအုပ်
+### Skill
 
 Skill ဟူသည် Agent အတွက် domain-specific လက်စွဲစာအုပ်ဖြစ်သည်။ Agent ကိုအရာအားလုံးအမြဲမှတ်ထားစေရန်မကြိုးစားဘဲ၊ လိုအပ်သောအချိန်မှ `SKILL.md` ကဲ့သို့သော file ကိုဖတ်စေခြင်းဖြစ်သည်။ Cook တစ်ယောက်သည် ဟင်းချက်တိုင်း recipe book အုပ်လုံးကိုမဖတ်။ လိုသော recipe ကိုဖတ်သည်။ Agent တွင်လည်း ထိုသဘောပင်။
 
@@ -110,7 +111,7 @@ Context window ဆိုတာ model လက်ရှိမြင်နိုင�
 
 သို့သော် `AGENTS.md` နှင့် `SKILL.md` ကိုအမြဲအပြည့်ထည့်ထားရမည်ဟုမဆိုလို။ Context window သည်အကန့်အသတ်ရှိသည်။ ထို့ကြောင့် အရေးကြီးသော rule များကို priority ပေး၍ထည့်ရမည်။ Large skill file များကိုလိုအပ်သောအချိန်မှဖတ်စေခြင်းကပိုကောင်းနိုင်သည်။ အရေးကြီးသောအချက်မှာ ထိုဖိုင်များသည် "စာရွက်စာတမ်း" မဟုတ်ဘဲ "runtime instruction source" ဖြစ်ကြောင်းသိထားရန်ဖြစ်သည်။
 
-### Sub-agent — အလုပ်ခွဲပေးသော အငယ်စားလက်ထောက်
+### Sub-agent
 
 Sub-agent ဆိုသည်မှာ Main Agent မှတာဝန်ခွဲပေးသော Worker Agent ဖြစ်သည်။ Main Agent သည် project တစ်ခုလုံးကိုကိုင်ထားပြီး၊ Sub-agent ကို "ဒီ folder ကိုဖတ်ပြီး summary ထုတ်ပေးပါ" သို့မဟုတ် "ဒီ error ကိုရှာပေးပါ" ဟုတာဝန်ခွဲနိုင်သည်။ Sub-agent သည် fresh context ဖြင့်စနိုင်သည်။ Tool scope ကိုခွဲထားနိုင်သည်။ Output format ကို contract ချထားနိုင်သည်။
 
@@ -132,15 +133,15 @@ BrowserSurfer တွင် PlanningAgent နှင့် ReflectionAgent တိ�
 
 ယနေ့ခေတ်တွင် OpenClaw ကဲ့သို့သော self-hosted agent system များအကြောင်း hype များစွာရှိသည်။ Messaging interface, local gateway, skills library, broad integrations စသည့်စကားလုံးများကြားရသည်။ လူအများက "Agent ကို message ပို့လိုက်ရုံဖြင့်အလုပ်လုပ်သွားပြီ" ဟုစိတ်လှုပ်ရှားကြသည်။ သို့သော်အင်ဂျင်နီယာတစ်ယောက်အနေဖြင့် hype ကို feature list အဖြစ်မဖတ်ပါနှင့်။ Boundary list အဖြစ်ဖတ်ပါ။
 
-ဤ section ကို optional public context အဖြစ်ဖတ်ပါ။ OpenClaw, Pi, TUI, provider abstraction စသောနာမည်များကို အလွတ်မှတ်ရန်မလို။ အဓိကသင်ခန်းစာမှာ hype claim တစ်ခုကိုတွေ့သောအခါ source နှင့် boundary ကိုပြန်မေးရန်ဖြစ်သည်။
+ဤ section ကို optional public context အဖြစ်ဖတ်ပါ။ OpenClaw, Pi, TUI, provider abstraction စသောနာမည်များကို အလွတ်မှတ်ရန်မလို။ Hype claim တစ်ခုကို တွေ့သောအခါ source နှင့် boundary ကို ပြန်မေးတတ်ရန်သာ လိုသည်။
 
 Skill များများရှိသည်ဆိုလျှင် မေးပါ — ထို Skill များကိုဘယ်သူရေးသနည်း။ Trusted လား။ Permission ဘယ်လောက်ရသလဲ။ Sandbox ရှိသလား။ Malicious instruction ပါလာနိုင်သလား။ Agent ကို message မှခိုင်းနိုင်သည်ဆိုလျှင် မေးပါ — command source ကိုဘယ်လို authenticate လုပ်သနည်း။ Broad integrations ရှိသည်ဆိုလျှင် မေးပါ — credentials ကိုဘယ်လို scope လုပ်ထားသနည်း။
 
-အချို့ online discussion များတွင် OpenClaw-like systems များကို Pi-style loop, TUI, provider abstraction pattern များနှင့်နှိုင်းတတ်ကြသည်။ သို့သော် source-level evidence မရှိလျှင် "OpenClaw သည် Pi ပဲ" ဟုအမှန်တရားအဖြစ်မရေးသင့်။ ဤစာအုပ်တွင်ထိုအရာကို hype-reading fun fact အဖြစ်သာသုံးမည်။ Pattern တူနိုင်သည်။ Direct lineage ကိုတော့ source ဖြင့်သာအတည်ပြုရမည်။ [SOURCE_NEEDED]
+အချို့ online discussion များတွင် OpenClaw-like systems များကို Pi-style loop, TUI, provider abstraction pattern များနှင့်နှိုင်းတတ်ကြသည်။ သို့သော် source-level evidence မရှိလျှင် "OpenClaw သည် Pi ပဲ" ဟုအမှန်တရားအဖြစ်မရေးသင့်။ ဤစာအုပ်တွင် ထိုနှိုင်းယှဉ်ချက်ကို pattern ဥပမာအဖြစ်သာ သုံးသည်။ Pattern တူနိုင်သည်။ Direct lineage ကိုတော့ source ဖြင့်သာ အတည်ပြုရမည်။
 
-### နိဂုံး - လမ်း၊ စာအုပ်၊ လက်ထောက်
+### နိဂုံး
 
-MCP သည်လမ်းတံတားဖြစ်သည်။ Skill သည်လက်စွဲစာအုပ်ဖြစ်သည်။ Sub-agent သည်အငယ်စားလက်ထောက်ဖြစ်သည်။ သုံးခုလုံးသည် Agent ကိုပိုစွမ်းအားမြင့်စေသည်။ သို့သော် သုံးခုလုံးသည် trust boundary မရှိပါကအန္တရာယ်တိုးစေသည်။
+MCP သည် လမ်းတံတား၊ Skill သည် လက်စွဲစာအုပ်၊ Sub-agent သည် အငယ်စားလက်ထောက် ဖြစ်သည်။ သုံးခုလုံးသည် Agent ကိုပိုစွမ်းအားမြင့်စေသည်။ သို့သော် သုံးခုလုံးသည် trust boundary မရှိပါကအန္တရာယ်တိုးစေသည်။
 
 စာဖတ်သူအနေဖြင့် နာမည်များကိုအလွတ်ကျက်ရန်မလို။ မေးခွန်းသုံးခုကိုသာအမြဲမေးပါ။ "ဒီအရာက Agent ကို ဘာလုပ်ခွင့်ပေးသလဲ"။ "ဒီအရာက Agent ကို ဘာဖတ်ခွင့်ပေးသလဲ"။ "ဒီအရာက Agent ကို ဘာကိုမှတ်ထားစေသလဲ"။ ထိုမေးခွန်းများမေးတတ်လာလျှင် MCP, Skill, Sub-agent တို့သည် buzzwords မဟုတ်တော့ဘဲ အင်ဂျင်နီယာကိရိယာများဖြစ်လာလိမ့်မည်။
 

@@ -1,4 +1,4 @@
-# 13-travis2-controlled-runtime
+# အခန်း ၁၃ - Travis-2: Controlled Runtime
 
 > **ဒီ runtime က ဘာကိုပြသသလဲ**
 > Travis-2 က model ရေးလာသော TypeScript Playwright code ကို `run_playwright_code` tool ထဲမှတစ်ဆင့် ဘောင်ခတ်ပြီး run စေသည်။ ဒီအခန်း၏အဓိကသင်ခန်းစာက "model က code ရေးတတ်တယ်" မဟုတ်ပါ။ Model ရေးလာသော code ကို ဘယ်နေရာမှာ run မလဲ၊ run မီဘာစစ်မလဲ၊ run ပြီး result ကိုဘယ်လိုဖတ်မလဲဆိုတာပါ။
@@ -10,7 +10,7 @@
 > Prompt ထဲတွင်သတိပေးထားရုံဖြင့် runtime ကိုမထိန်းနိုင်ပါ။ Travis-2 တွင် model-call limit, semantic loop detection, context editing, summarization, tool-output sanitization, skills injection/signing စသည်တို့ကို middleware အဖြစ်တပ်ထားသည်။ Policy ကို model response ထဲမှာမထားဘဲ execution path ထဲမှာထားရန်ကြိုးစားထားခြင်းပါ။
 >
 > **ဒီအခန်းတွင် မထည့်သည့်အရာ**
-> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool sanitization, safe summarization, skill signing တို့သည် configuration ပေါ်မူတည်သော controls များဖြစ်သည်။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို v0.2 တွင်ဆက်ချဲ့မည်။
+> Travis-2 ကို production အဆင့်အသုံးချရန်အဆင်သင့်ဖြစ်ပြီဟုမကြေညာပါ။ Docker sandbox, AST validation, tool-output sanitization, safe summarization, skill signing တို့က configuration ပေါ် မူတည်ပါတယ်။ အရေးကြီးတာက `.env.example` ထဲမှာ `TRAVIS2_CODE_VALIDATION_ENABLED=false` နဲ့ `TRAVIS2_TOOL_SANITIZATION_ENABLED=false` ဖြစ်ပြီး `agent.py` ထဲ default တွေကလည်း `False` ပါ။ ဆိုလိုတာက repo ကို clone ပြီး ချက်ချင်း run ရင် ဒီ control နှစ်ခု အလုပ်မလုပ်ပါဘူး။ ဒီအခန်းမှာ control တစ်ခုချင်းစီ ဖတ်တဲ့အခါ default ဖွင့်လား ပိတ်လား ကို `.env.example` ထဲမှာ ပြန်စစ်ပါ။ Full handover manual, test review, middleware internals, Playwright skill inventory တို့ကို ဒီအခန်းတွင် မထည့်ပါ။
 
 ### ဒီ case study ကို လက်တွေ့လိုက်ဖတ်နည်း
 
@@ -57,7 +57,7 @@ Travis-2 မှာအဲ့ဒီသဘောကို prototype အဖြစ်
 
 Vibe coding လုပ်ဖူးသူများသတိထားမိနိုင်သည်။ အရင်က coding agent တချို့သည် read tool ကိုအကြိမ်ကြိမ်ခေါ်တတ်သည်။ နောက်ပိုင်းတွင်တော့ `rg`, `awk`, `perl`, small bash script စသည်တို့ဖြင့်လိုသော result ကိုတစ်ခါတည်းဆွဲထုတ်လာတတ်သည်။ အဲ့ဒီနေရာမှာလည်း PTC ၏အခြေခံစိတ်ကူးကိုတွေ့နိုင်သည်။ Natural language ping-pong ထက် code ကတစ်ခါတည်း scan, filter, summarize လုပ်နိုင်သောအခါ tool workflow ကို code ဘက်ရွှေ့လိုက်ခြင်းဖြစ်သည်။
 
-ဒါပေမဲ့ Travis-2 ကို production-grade PTC runtime ဟုမယူပါနှင့်။ ဒီ repo သည် prototype case study ဖြစ်သည်။ သင်ခန်းစာမှာ PTC ဆိုသောနာမည်ကိုအလွတ်မှတ်ရန်မဟုတ်။ Model ရေးလာသော code ကို run စေမည်ဆိုလျှင် sandbox, validation, timeout, output schema, data quality check, audit trail တို့လိုသည်ဟုမြင်ရန်ဖြစ်သည်။ Code generation အားသာချက်ကိုသုံးနိုင်သည်။ သို့သော် harness မရှိလျှင် အားသာချက်သည်အန္တရာယ်ဖြစ်သွားနိုင်သည်။
+ဒါပေမဲ့ Travis-2 ကို production-grade PTC runtime ဟုမယူပါနှင့်။ ဒီ repo သည် prototype case study ဖြစ်သည်။ ယူသွားရမည့် အချက်မှာ model ရေးလာသော code ကို run စေမည် ဆိုလျှင် sandbox, validation, timeout, output schema, data quality check, audit trail တို့ လိုသည် ဆိုသော အချက် ဖြစ်သည်။ Harness မရှိလျှင် code generation ၏ အားသာချက်သည် အန္တရာယ် ဖြစ်သွားနိုင်သည်။
 
 ### ဗိသုကာပုံကို အရင်မြင်ခြင်း
 
@@ -148,7 +148,7 @@ Structured result:
 
 ဤပုံတွင် user က `what is today` ဟုမေးထားသည်။ Travis-2 သည် date ကို model memory မှခန့်မှန်းမပြော။ Model က TypeScript Playwright test တစ်ခုရေးသည်။ ထို code ထဲတွင် `new Date().toString()` ကို run ပြီး current date/time ကို `stdout` ထဲသို့ print ထုတ်စေသည်။ ထို့နောက် ထို TypeScript ကို `run_playwright_code` tool မှ execute လုပ်သည်။
 
-ဤသည် Travis-2 design ၏အနှစ်သာရဖြစ်သည်။ Simple date question ဖြစ်သော်လည်း path သည် “model answers directly” မဟုတ်။ Path သည် “model generates executable TypeScript -&gt; runtime executes through tool boundary -&gt; structured result returns -&gt; model summarizes” ဖြစ်သည်။
+ဤသည် Travis-2 design ၏အနှစ်သာရဖြစ်သည်။ Simple date question ဖြစ်သော်လည်း path သည် “model generates executable TypeScript -> runtime executes through tool boundary -> structured result returns -> model summarizes” ဖြစ်သည်။ Model က တိုက်ရိုက် မဖြေ။
 
 `run_playwright_code` result ကို `<tool_output_untrusted ...>` wrapper အတွင်းတွင်တွေ့ရသည်။ Result payload တွင် `ok`, `execution_ok`, `data_ok`, `warnings`, `exit_code`, `stdout`, `stderr`, `timed_out`, `test_file`, `setup_error` စသော fields များပါသည်။
 
@@ -160,7 +160,7 @@ Structured result:
 - Wrapper သည် guarantee မဟုတ်သော်လည်း model-facing boundary marker ဖြစ်သည်။
 - `ok` သည် `execution_ok && data_ok` ဖြစ်ရမည်။
 
-### `run_playwright_code` — Tool စာချုပ်
+### `run_playwright_code` Tool စာချုပ်
 
 `src/travis_2/tools.py` တွင် Travis-2 ၏ browser/data automation interface သည် `run_playwright_code` ဖြစ်သည်။ ၎င်းကို LangChain `StructuredTool` အဖြစ် expose လုပ်ထားသည်။
 
@@ -203,9 +203,9 @@ retrieval_success = execution_ok == true
 
 ဤသည် Travis-2 ၏အဓိက semantic validation lesson ဖြစ်သည်။ “run ပြီးသွားပြီ” နှင့် “အသုံးဝင်သော data ရပြီ” ကိုမရောသင့်ချေ။
 
-### Docker Sandbox Mode — run သည့်နေရာကို ခွဲထားခြင်း
+### Docker Sandbox Mode
 
-Travis-2 တွင် host Playwright mode နှင့် Docker sandbox mode နှစ်မျိုးရှိသည်။ Host mode သည် setup ပိုလွယ်သော်လည်း generated Playwright code သည် host workspace ပေါ်တွင်မောင်းသည်။ Docker mode ကိုဖွင့်ထားလျှင် execution boundary ပိုကောင်းသည်။
+Docker sandbox mode သည် code run သည့် နေရာကို host နှင့် ခွဲထားခြင်း ဖြစ်သည်။ Travis-2 တွင် host Playwright mode နှင့် Docker sandbox mode နှစ်မျိုးရှိသည်။ Host mode သည် setup ပိုလွယ်သော်လည်း generated Playwright code သည် host workspace ပေါ်တွင်မောင်းသည်။ Docker mode ကိုဖွင့်ထားလျှင် execution boundary ပိုကောင်းသည်။
 
 ```env
 TRAVIS2_SANDBOX_MODE=docker
@@ -227,7 +227,7 @@ TRAVIS2_SANDBOX_IMAGE=travis2-playwright:latest
 | sandbox network                              | သီးခြား Docker network path သုံးရန်                        |
 
 
-ဤ boundary သည် direct host execution ထက် risk ကိုလျှော့သည်။ Risk အားလုံးကိုဖယ်ရှားပေးခြင်းမဟုတ်။ Workspace သည် read-write mount ဖြစ်နေဆဲဖြစ်သည်။ Network ကိုဖွင့်ထားနိုင်သည်။ Container image integrity သည်အရေးကြီးနေဆဲဖြစ်သည်။ Docker ကို formal safety proof အဖြစ်မယူသင့်ချေ။
+ဤ boundary သည် direct host execution ထက် risk ကို လျှော့သော်လည်း risk အချို့ ကျန်နေသေးသည်။ Workspace သည် read-write mount ဖြစ်နေဆဲ ဖြစ်သည်၊ network ကို ဖွင့်ထားနိုင်သည်၊ container image integrity ကိုလည်း ဆက်စစ်ရသည်။ Docker ကို formal safety proof အဖြစ်မယူသင့်ချေ။
 
 မှန်ကန်သော claim သည်အောက်ပါအတိုင်းဖြစ်သည်။
 
@@ -236,9 +236,9 @@ Docker sandbox mode သည် generated Playwright execution အတွက် iso
 ၎င်းသည် control layer ဖြစ်ပြီး complete security guarantee မဟုတ်။
 ```
 
-### Optional AST Validation — code မမောင်းမီ စစ်ခြင်း
+### Optional AST Validation
 
-TypeScript AST validation ကိုအောက်ပါ setting ဖြင့်ထိန်းသည်။
+AST validation သည် code မမောင်းမီ စစ်ဆေးသော gate ဖြစ်သည်။ TypeScript AST validation ကိုအောက်ပါ setting ဖြင့်ထိန်းသည်။
 
 ```env
 TRAVIS2_CODE_VALIDATION_ENABLED=true
@@ -246,9 +246,9 @@ TRAVIS2_CODE_VALIDATION_ENABLED=true
 
 `src/travis_2/validators/code_validator.py` သည် Node.js validator script ကိုခေါ်ပြီး `ValidationResult` ကိုပြန်ပေးသည်။ Node.js သို့မဟုတ် validator dependencies မရှိလျှင် validation သည် `ok=True, skipped=True` ဖြင့် skip ဖြစ်နိုင်သည်။
 
-ဤအချက်သည် accuracy အတွက်အရေးကြီးသည်။ AST validation သည်အမြဲ active ဖြစ်သည်ဟုမရေးသင့်ချေ။ ၎င်းသည် configurable gate ဖြစ်သည်။
+AST validation သည် configurable gate ဖြစ်သည်။ အမြဲ active ဖြစ်သည်ဟု မရေးသင့်ချေ။
 
-AST validation သည် execution မလုပ်မီ banned syntax pattern များကိုရှာနိုင်သည်။ Plain string matching ထက်ပိုကောင်းသော်လည်း runtime behavior လုံခြုံကြောင်းသက်သေမပြနိုင်။ Dynamic behavior, remote page content, network response, data relevance တို့အားလုံးကိုအပြည့်မသိနိုင်။ ထို့ကြောင့် sandboxing, structured result interpretation, middleware policy, stdout relevance review တို့နှင့်တွဲသုံးရသည်။
+AST validation က code မ run ခင် ပိတ်ထားတဲ့ syntax pattern တွေကို ရှာပေးပါတယ်။ String matching ထက် ပိုကောင်းပါတယ်။ ဒါပေမယ့် run လိုက်ရင် ဘာဖြစ်မလဲ ဆိုတာကိုတော့ မသိနိုင်ပါဘူး။ Remote page က ဘာပြန်လာမလဲ၊ network response ထဲ ဘာပါမလဲ၊ ဒါတွေ code ဖတ်ရုံနဲ့ မမြင်ရပါဘူး။ ဒါကြောင့် AST validation တစ်ခုတည်းနဲ့ မလုံလောက်ဘဲ sandbox, middleware policy, structured result ပြန်ဖတ်ခြင်း, stdout review တွေနဲ့ တွဲသုံးရပါတယ်။
 
 ### Websearch နှင့် Playwright Skills
 
@@ -260,11 +260,11 @@ Travis-2 သည် runtime skills များကို `travis2_skills/` မှ
 
 ဤ skills များသည် runtime recipe နှင့် result interpretation rules များကိုသတ်မှတ်သည်။ ဥပမာ Playwright skill တွင် `execution_ok=true` ဖြစ်ပြီး `data_ok=false` ဖြစ်လျှင် retrieval success ဟုမပြောသင့်ချေဟုသတ်မှတ်ထားသည်။ Websearch skill သည် search-engine policy နှင့် web lookup behavior အတွက် recipe များကိုသတ်မှတ်သည်။
 
-Skills များသည် tool generation မတိုင်မီ model behavior ကိုသက်ရောက်စေသောကြောင့်အရေးကြီးသည်။ ထို့ကြောင့် skills သည် policy surface ၏အစိတ်အပိုင်းဖြစ်သည်။ Travis-2 တွင် `src/travis_2/utils/skill_signing.py` နှင့် `scripts/sign_skills.py` မှတစ်ဆင့် HMAC skill signing support ရှိသည်။ Signing required ဖြစ်လျှင် tampered သို့မဟုတ် unsigned skill ကို reject လုပ်နိုင်သည်။ Signing optional ဖြစ်လျှင် runtime သည် warning ထုတ်ပြီးဆက် load လုပ်နိုင်သည်။
+Skills များသည် tool generation မတိုင်မီ model behavior ကို သက်ရောက်စေသောကြောင့် policy surface ၏ အစိတ်အပိုင်း ဖြစ်သည်။ Travis-2 တွင် `src/travis_2/utils/skill_signing.py` နှင့် `scripts/sign_skills.py` မှတစ်ဆင့် HMAC skill signing support ရှိသည်။ Signing required ဖြစ်လျှင် tampered သို့မဟုတ် unsigned skill ကို reject လုပ်နိုင်သည်။ Signing optional ဖြစ်လျှင် runtime သည် warning ထုတ်ပြီးဆက် load လုပ်နိုင်သည်။
 
-### `AgentState` — runtime ၏ မှတ်တမ်းစာအုပ်
+### `AgentState`
 
-`src/travis_2/utils/state.py` သည် `AgentState` ကို define လုပ်ထားသည်။ ၎င်းသည် outer graph state schema ဖြစ်သည်။
+`AgentState` သည် runtime ၏ မှတ်တမ်းစာအုပ် ဖြစ်သည်။ `src/travis_2/utils/state.py` သည် `AgentState` ကို define လုပ်ထားသည်။ ၎င်းသည် outer graph state schema ဖြစ်သည်။
 
 အရေးကြီးသော fields များမှာ -
 
@@ -289,9 +289,9 @@ Skills များသည် tool generation မတိုင်မီ model beha
 
 အရေးကြီးသော failure mode တစ်ခုမှာ inner runtime နှင့် outer graph ကြား schema mismatch ဖြစ်သည်။ Middleware က `policy_action` ထုတ်သော်လည်း inner runtime result ထဲတွင်ထို field မကျန်ခဲ့လျှင် outer `evaluate_node` သည် `replan` သို့ route မခွဲနိုင်။ ထို့ကြောင့် middleware အသုံးပြုသော state fields များသည် runtime/graph boundary ကိုဖြတ်သန်းနိုင်ကြောင်းသေချာစစ်ရမည်။
 
-### Reducer-safe message sync — စာဟောင်းမပွားစေရန်
+### Reducer-safe message sync
 
-LangGraph သည် `messages` အတွက် reducer semantics ကိုသုံးသည်။ Travis-2 သည် `add_messages` ကိုသုံးသောကြောင့် node outputs များသည် state ကိုအစားထိုးခြင်းမဟုတ်ဘဲ merge လုပ်ခြင်းဖြစ်သည်။
+Reducer-safe message sync ၏ ရည်ရွယ်ချက်မှာ စာဟောင်း မပွားစေရန် ဖြစ်သည်။ LangGraph သည် `messages` အတွက် reducer semantics ကိုသုံးသည်။ Travis-2 သည် `add_messages` ကိုသုံးသောကြောင့် node outputs များသည် state ကိုအစားထိုးခြင်းမဟုတ်ဘဲ merge လုပ်ခြင်းဖြစ်သည်။
 
 `src/travis_2/utils/nodes.py` implements `_calculate_message_delta(...)`:
 
@@ -302,13 +302,13 @@ else:
     return [RemoveMessage(REMOVE_ALL_MESSAGES), *updated_messages]
 ```
 
-ဤအချက်သည် summarization သို့မဟုတ် context editing ကြောင့် inner runtime history ပြန်ရေးနိုင်သောကြောင့်အရေးကြီးသည်။ Outer graph က rewritten history ကိုမျက်စိမှိတ် append လုပ်လျှင် duplicate state သို့မဟုတ် stale messages ဖြစ်နိုင်သည်။ `RemoveMessage` မသုံးဘဲ history ကိုမျက်စိမှိတ် replace လုပ်လျှင် reducer behavior ကြောင့် old entries များကျန်နိုင်သည်။
+Summarization သို့မဟုတ် context editing ကြောင့် inner runtime history ကို ပြန်ရေးနိုင်သည်။ Outer graph က rewritten history ကိုမျက်စိမှိတ် append လုပ်လျှင် duplicate state သို့မဟုတ် stale messages ဖြစ်နိုင်သည်။ `RemoveMessage` မသုံးဘဲ history ကိုမျက်စိမှိတ် replace လုပ်လျှင် reducer behavior ကြောင့် old entries များကျန်နိုင်သည်။
 
-Reducer-safe synchronization သည် formatting detail မဟုတ်။ Correctness requirement ဖြစ်သည်။
+Reducer-safe synchronization သည် correctness requirement ဖြစ်သည်။
 
-### Middleware Policy Plane — prompt အပြင်ဘက်က စည်းကမ်း
+### Middleware Policy Plane
 
-`src/travis_2/utils/middleware.py` သည် default middleware stack ကိုတည်ဆောက်သည်။ ထို stack တွင်အောက်ပါ controls များပါသည်။
+Middleware သည် prompt အပြင်ဘက်တွင် ထားသော စည်းကမ်း ဖြစ်သည်။ `src/travis_2/utils/middleware.py` သည် default middleware stack ကိုတည်ဆောက်သည်။ ထို stack တွင်အောက်ပါ controls များပါသည်။
 
 - filesystem confinement
 - model call limits
@@ -337,9 +337,9 @@ tool result
 
 ဒီ design သည် loop governance ကို model self-reflection အပေါ်မထားတော့။ Model က “ငါ loop ဖြစ်နေပြီ” ဟုဝန်ခံရန်မလို။ Runtime telemetry က repeated tool/input signatures နှင့် empty-result streaks များကို detect လုပ်နိုင်သည်။
 
-### Outer Graph Routing — ဘယ်နေရာသို့ ဆက်သွားမလဲ
+### Outer Graph Routing
 
-Travis-2 outer graph တွင် primary nodes လေးခုရှိသည်။
+Outer graph routing သည် node တစ်ခု ပြီးလျှင် ဘယ်နေရာသို့ ဆက်သွားမည်ကို ဆုံးဖြတ်သည်။ Travis-2 outer graph တွင် primary nodes လေးခုရှိသည်။
 
 ```text
 START -> run_agent -> evaluate
@@ -358,7 +358,7 @@ Node တစ်ခုချင်းစီ၏တာဝန်များမှာ
 | `finalize`  | `last_output` ကို publish လုပ်သည်                      |
 
 
-Graph သည် Playwright execution engine မဟုတ်။ ၎င်းသည် inner runtime နှင့် tool execution ပတ်ပတ်လည်ရှိ deterministic control route ဖြစ်သည်။
+Graph သည် inner runtime နှင့် tool execution ပတ်ပတ်လည်ရှိ deterministic control route ဖြစ်သည်။ Playwright execution ကိုယ်တိုင်ကို graph က မလုပ်။
 
 ### ပြန်စစ်ရမည့် Failure Modes
 
@@ -412,9 +412,9 @@ if warnings contains blocking items:
 
 Case 3 သာ retrieval success ဖြစ်သင့်သည်။ Case 1 နှင့် 2 သည် caveat သို့မဟုတ် replan မပါဘဲ normal final answer မထုတ်သင့်။
 
-### နိဂုံး — run သွားခြင်းနှင့် data ရခြင်း မတူ
+### နိဂုံး
 
-Travis-2 သည် model-generated Playwright execution အတွက် controlled runtime design ကိုပြသသည်။
+Code run သွားခြင်းနှင့် data ရခြင်း မတူ။ Travis-2 သည် model-generated Playwright execution အတွက် controlled runtime design ကိုပြသသည်။
 
 ဒီအခန်းမှယူရမည့် engineering lesson များမှာ -
 

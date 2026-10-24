@@ -1,23 +1,12 @@
-# 19-references
+# အခန်း ၁၉ - ကိုးကားချက်များ
 
 စာအုပ်တစ်အုပ်တွင် ကိုးကားချက်များသည် အလှဆင်မဟုတ်ပါ။ စာဖတ်သူက "ဒီစကားကို ဘယ်ကယူထားသလဲ" ဟုမေးနိုင်ရပါမည်။ ထို့ကြောင့် ဒီအခန်းတွင် မူရင်းစာကြမ်းအခြေခံများ၊ case study repo များ၊ နှင့် ဆက်ဖတ်ရန် official/public reference များကိုခွဲထားသည်။
 
-ဒီစာအုပ်၏ case study အခန်းများသည် အောက်ပါ public repo များကိုအခြေခံထားသည်။ Framework နှင့် tool အကြောင်းများအတွက်တော့ official documentation များကို ဆက်ဖတ်ရန်လမ်းကြောင်းအဖြစ်ထည့်ထားသည်။ မသေချာသေးသော public hype claim များကို စာအုပ်ထဲတွင်အတည်ပြုထားသလိုမရေးဘဲ `[SOURCE_NEEDED]` ဟုသာထားသည်။
+ဒီစာအုပ်၏ case study အခန်းများသည် အောက်ပါ public repo များကိုအခြေခံထားသည်။ Framework နှင့် tool အကြောင်းများအတွက်တော့ official documentation များကို ဆက်ဖတ်ရန်လမ်းကြောင်းအဖြစ်ထည့်ထားသည်။ မသေချာသေးသော public hype claim များကို စာအုပ်ထဲတွင် အတည်ပြုထားသလို မရေးပါ။
 
 ### မူရင်းစာကြမ်းအခြေခံများ
 
-- `BOOK.md`
-- `THANKYOU_NOTE.md`
-- `CHAPTER-1.md`
-- `agent_harness_vs_loop_report_my.md`
-- `agent_harness_vs_loop_report.md`
-- `agent_harness_vs_loop_report.pdf`
-- `CHAPTER-6.md`
-- `CHAPTER-7.md`
-- `prompts`
-- `models`
-
-ဒီစာကြမ်းများသည် စာရေးသူ၏အသံ၊ ရည်ရွယ်ချက်၊ ကျေးဇူးတင်စာ၊ Agentic AI အခြေခံရှင်းလင်းချက်၊ Agent Loop/Harness report, Travis-2 နှင့် BrowserSurfer မူရင်းအခန်းများအတွက် အခြေခံအဖြစ်သုံးထားသော မှတ်တမ်းများဖြစ်သည်။
+ဒီစာအုပ်သည် စာရေးသူ၏ မူရင်း manuscript note များ၊ ကျေးဇူးတင်စာ၊ Agentic AI အခြေခံ ရှင်းလင်းချက်၊ Agent Loop/Harness report နှင့် Travis-2, BrowserSurfer မူရင်း အခန်းကြမ်းများကို အခြေခံ၍ ပြန်လည် စီစဉ် ရေးသားထားသည်။ ကျေးဇူးတင်စာမှလွဲ၍ ထိုစာကြမ်းများသည် repo ထဲတွင် မပါပါ။ စာအုပ်ရေးရာတွင် သုံးခဲ့သော prompt များနှင့် model စာရင်းကိုတော့ repo ၏ `prompts` နှင့် `models` folder များတွင် ကြည့်နိုင်သည်။
 
 ### Case Study အတွက် Public Repo များ
 
@@ -67,4 +56,4 @@
 - OpenClaw safety analysis: [https://arxiv.org/abs/2604.04759](https://arxiv.org/abs/2604.04759)
 - OpenClaw vulnerability taxonomy: [https://arxiv.org/abs/2603.27517](https://arxiv.org/abs/2603.27517)
 
-Pi နှင့် Hermes ၏ public site/repo များကို Chapter 15 အတွက် context source များအဖြစ် သုံးထားသည်။ OpenClaw/Pi ဆက်စပ်မှုအတွက် OpenClaw ၏ third-party notice ကိုလည်း စစ်ထားသည်။ ထို notice အရ OpenClaw ၏ implementation portions အချို့သည် Pi/pi-mono မှ adapted လုပ်ထားပြီး `@earendil-works/pi-tui` dependency ရှိကြောင်း ဖော်ပြနိုင်သည်။ သို့သော် "OpenClaw is just Pi" ဟူသောအပြောမျိုးကတော့ ဘောင်မဝင်ချေ။ စာအုပ်အတွင်း၌ source မပြည့်သေးသော claim များကို `[SOURCE_NEEDED]` အဖြစ်သာထားသည်။
+Pi နှင့် Hermes ၏ public site/repo များကို Chapter 15 အတွက် context source များအဖြစ် သုံးထားသည်။ OpenClaw/Pi ဆက်စပ်မှုအတွက် OpenClaw ၏ third-party notice ကိုလည်း စစ်ထားသည်။ ထို notice အရ OpenClaw ၏ implementation portions အချို့သည် Pi/pi-mono မှ adapted လုပ်ထားပြီး `@earendil-works/pi-tui` dependency ရှိကြောင်း ဖော်ပြနိုင်သည်။ သို့သော် "OpenClaw is just Pi" ဟူသောအပြောမျိုးကတော့ ဘောင်မဝင်ချေ။ စာအုပ်အတွင်း၌ source မပြည့်သေးသော claim များကို အတည်ပြုထားသလို မရေးပါ။

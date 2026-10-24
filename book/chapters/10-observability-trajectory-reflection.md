@@ -1,14 +1,14 @@
-# 10-observability-trajectory-reflection
+# အခန်း ၁၀ - Observability, Trajectory နှင့် Reflection
 
 ### စာရေးတော်မှားသောအခါ ဘယ်ခြေရာကိုကြည့်မလဲ
 
-လူတစ်ယောက်အမှားလုပ်လျှင် "သူမှားသွားသည်" ဟုသာပြောခြင်းဖြင့်အလုပ်မပြီး။ ဘယ်အဆင့်တွင်မှားသနည်း။ အမိန့်ကို နားလည်မှုမှားသလား။ ကိရိယာမှားသုံးသလား။ ရလဒ်ကိုမဖတ်ဘဲအဖြေထုတ်သလား။ အလုပ်ပြီးသွားပြီဟုထင်သော်လည်းအမှန်တွင် data မရသေးသလား။ ထိုမေးခွန်းများကိုမဖြေနိုင်လျှင် နောက်တစ်ကြိမ်လည်းအတူတူမှားမည်။
+လူတစ်ယောက်အမှားလုပ်လျှင် "သူမှားသွားသည်" ဟုသာပြောခြင်းဖြင့်အလုပ်မပြီး။ ဘယ်အဆင့်တွင် မှားသနည်း ဆိုသည်ကို သိရန်လိုသည်။ အမိန့်ကို နားလည်မှု မှားခြင်း၊ ကိရိယာ မှားသုံးခြင်း၊ ရလဒ်ကို မဖတ်ဘဲ အဖြေထုတ်ခြင်း၊ data မရသေးဘဲ အလုပ်ပြီးပြီဟု ထင်ခြင်း စသည်တို့ထဲက ဘယ်အရာလဲ ဆိုသည်ကို ခွဲမြင်ရမည်။ ထိုအရာကို မခွဲနိုင်လျှင် နောက်တစ်ကြိမ်လည်း အတူတူ မှားမည်။
 
 Agentic AI တွင်ဤပြဿနာပိုကြီးသည်။ Agent တစ်ခုသည်လူနှင့်စကားပြောသည်။ Planner output ထုတ်သည်။ Tool ခေါ်သည်။ Tool result ဖတ်သည်။ Replan လုပ်သည်။ Memory သုံးသည်။ Final answer ရေးသည်။ ထိုအဆင့်များထဲမှတစ်ခုခုမှားနိုင်သည်။ Final answer တစ်ခုတည်းကြည့်လျှင် အမှား၏အရင်းအမြစ်မမြင်နိုင်။
 
 ထို့ကြောင့် **Observability** လိုသည်။ Observability ဆိုသည်မှာ log ရိုက်ထားခြင်းသက်သက်မဟုတ်။ System အတွင်းဘာဖြစ်သွားသည်ကို နောက်မှအထောက်အထားဖြင့်ပြန်ကြည့်နိုင်အောင်တည်ဆောက်ခြင်းဖြစ်သည်။
 
-### Trajectory — စာရေးတော်ဖြတ်သန်းသွားသောလမ်း
+### Trajectory
 
 Trajectory ဆိုသည်မှာ Agent တစ်ခု task တစ်ခုလုပ်စဉ် ဖြတ်သန်းသွားသောလမ်းကြောင်းဖြစ်သည်။
 
@@ -24,7 +24,7 @@ User goal
   -> verifier result
 ```
 
-ဤလမ်းကြောင်းကို မြင်မှ debugging လုပ်နိုင်သည်။ Model က tool မှားရွေးသလား။ Tool result empty ဖြစ်သော်လည်း model ကသေချာဟန်ဖြင့်အဖြေထုတ်သလား။ Same tool ကိုထပ်ခါထပ်ခါခေါ်သလား။ Browser page ထဲမှ untrusted text ကို instruction အဖြစ်လိုက်သလား။ Replan ဖြစ်သင့်သည့်နေရာတွင် finalize ဖြစ်သလား။ Trajectory သည် ဤမေးခွန်းများကိုဖြေရန်အခြေခံစာရွက်စာတမ်းဖြစ်သည်။
+ဤလမ်းကြောင်းကို မြင်မှ debugging လုပ်နိုင်သည်။ ဒီ run ဘယ်နေရာတွင် လွဲသွားသနည်း။ Trajectory ထဲတွင် ရှာရမည့် failure အမျိုးအစားများမှာ tool မှားရွေးခြင်း၊ tool result empty ဖြစ်နေသော်လည်း model က သေချာဟန်ဖြင့် အဖြေထုတ်ခြင်း၊ same tool ကို ထပ်ခါထပ်ခါ ခေါ်ခြင်း၊ browser page ထဲမှ untrusted text ကို instruction အဖြစ် လိုက်ခြင်း၊ replan ဖြစ်သင့်သည့် နေရာတွင် finalize ဖြစ်ခြင်း တို့ဖြစ်သည်။ Trajectory သည် ဤအမှားများကို ခွဲမြင်ရန် အခြေခံ စာရွက်စာတမ်း ဖြစ်သည်။
 
 Agent တစ်ခုတွင် final answer သာသိမ်းထားခြင်းသည် လူတစ်ယောက်သွားခဲ့သောခရီးစဉ်အတွက်နောက်ဆုံးဓာတ်ပုံတစ်ပုံသာသိမ်းထားခြင်းနှင့်တူသည်။ ချိုင့်ထဲဘယ်နေရာမှာကျသလဲသိချင်လျှင်လမ်းကြောင်းလိုသည်။
 
@@ -34,7 +34,7 @@ Final answer တစ်ခုတည်းကြည့်လျှင် "မှ�
 
 ### BrowserSurfer ထဲက ခြေရာခံစနစ်
 
-BrowserSurfer Bot သည် browser tool agent ဖြစ်သောကြောင့် trajectory အလွန်အရေးကြီးသည်။ Browser tool သည် real page ကိုမြင်နိုင်သည်။ Click လုပ်နိုင်သည်။ Navigation side effect ရှိနိုင်သည်။ ထို့ကြောင့် "အဖြေထုတ်နိုင်သလား" ထက် "အလုပ်လုပ်စဉ်ဘာတွေထိသွားသလဲ" ကိုမြင်ရမည်။
+BrowserSurfer Bot သည် browser tool agent ဖြစ်သောကြောင့် trajectory ကို မလွှတ်ဘဲ လိုက်ကြည့်ရသည်။ Browser tool သည် real page ကို မြင်နိုင်သည်၊ click လုပ်နိုင်သည်၊ navigation side effect လည်း ရှိနိုင်သည်။ ထို့ကြောင့် "အဖြေထုတ်နိုင်သလား" ထက် "အလုပ်လုပ်စဉ်ဘာတွေထိသွားသလဲ" ကိုမြင်ရမည်။
 
 Repo ထဲတွင် `TrajectoryCallbackHandler` သည် LangChain callback အဖြစ် tool start, tool end, tool error များကိုဖမ်းနိုင်သောနေရာဖြစ်သည်။ Tool latency, result length, empty result, repeated tool input, same tool streak စသည်တို့ကို signal အဖြစ်မြင်နိုင်သည်။ Metrics layer သည် trajectory ကို score လုပ်ရန်ကြိုးစားသည်။ Tool success, latency, token usage, outcome စသည်တို့ကိုတွက်နိုင်သည်။
 
@@ -74,7 +74,7 @@ Agentic AI တွင် model output သည်ပြောင်းလဲနိ�
 
 ### Reflection ကို ဘယ်လောက်ယုံမလဲ
 
-Reflection ဆိုသည်မှာ run ပြီးနောက်ပြန်လည်ဆင်ခြင်ခြင်းဖြစ်သည်။ Model-based ReflectionAgent တစ်ခုသည် trajectory ကိုဖတ်ပြီး successful patterns, failed patterns, future suggestions ထုတ်နိုင်သည်။ ဤအရာသည်အသုံးဝင်သည်။ သို့သော် reflection သည်အမှန်တရားမဟုတ်။ Hypothesis ဖြစ်သည်။
+Reflection ဆိုသည်မှာ run ပြီးနောက်ပြန်လည်ဆင်ခြင်ခြင်းဖြစ်သည်။ Model-based ReflectionAgent တစ်ခုသည် trajectory ကိုဖတ်ပြီး successful patterns, failed patterns, future suggestions ထုတ်နိုင်သည်။ Reflection ထုတ်ပေးသော pattern များသည် စစ်ဆေးရန် ကျန်နေသေးသော hypothesis များ ဖြစ်သည်။
 
 ကောင်းသော reflection သည် exact evidence ကိုညွှန်ပြသည်။
 
@@ -90,9 +90,9 @@ Reflection ဆိုသည်မှာ run ပြီးနောက်ပြန�
 
 မကောင်းသော reflection သည်အလှပြောသက်သက်ဖြစ်သည်။ "Agent did well", "Need improve planning" စသည့်ယေဘုယျစကားများသည် debugging အတွက်အသုံးမဝင်။ Reflection ကို memory ထဲသိမ်းမည်ဆိုပါကပိုပြီးသတိထားရမည်။ Evidence မပါသော reflection သည်အနာဂတ် agent ကိုလမ်းမှားစေနိုင်သည်။
 
-### Metrics သည် ဂဏန်းသေတ္တာမဟုတ်
+### Metrics ကို ဘယ်လိုဖတ်မလဲ
 
-Metrics များသည်အသုံးဝင်သည်။ သို့သော်ဂဏန်းသည်အမှန်တရားမဟုတ်။ မီးအိမ်တစ်လုံးကဲ့သို့လမ်းကိုအလင်းပေးနိုင်သော်လည်းလမ်းအစားမလျှောက်ပေးနိုင်။ Tool success rate မြင့်နိုင်သည်။ Task success နည်းနိုင်သည်။ Latency နည်းနိုင်သည်။ Verification မရှိသဖြင့်အမှားများနိုင်သည်။ Token usage နည်းနိုင်သည်။ Context မလုံလောက်နိုင်သည်။
+Metrics သည် မီးအိမ်တစ်လုံးကဲ့သို့ လမ်းကို အလင်းပေးသော်လည်း လမ်းအစား မလျှောက်ပေးနိုင်။ Tool success rate မြင့်နေသော်လည်း task success နည်းနိုင်သည်။ Latency နည်းနေသော်လည်း verification မရှိသဖြင့် အမှားများနိုင်သည်။ Token usage နည်းနေသော်လည်း context မလုံလောက်နိုင်သည်။
 
 Metrics ကိုဘုရင်မထားပါနှင့်။ Metrics ကိုအချက်ပြမီးအဖြစ်သုံးပါ။ Engineer ၏အလုပ်မှာထိုအချက်ပြမီးများကိုအဓိပ္ပာယ်ဖတ်ပြီး trajectory နှင့် evidence ထဲပြန်ဝင်စစ်ရန်ဖြစ်သည်။
 
@@ -135,7 +135,7 @@ BrowserSurfer တွင် PII redaction utility ရှိခြင်းသည�
 
 P-2 တွင်လည်း bridge crossing ကိုမြင်နိုင်ရန်လိုသည်။ သို့သော် trace ထဲတွင် secret fields မထည့်သင့်ချေ။ "Bridge crossed, origin verified, secret fields dropped" ကဲ့သို့ metadata သိမ်းခြင်းကပိုသင့်တော်သည်။
 
-### Mini Lab — JSONL ခြေရာခံမှတ်တမ်းရေးပါ
+### Mini Lab: JSONL ခြေရာခံမှတ်တမ်း
 
 Toy agent loop တစ်ခုတွင် JSONL trajectory log ထည့်ပါ။
 
@@ -157,9 +157,9 @@ Raw args မသိမ်းပါနှင့်။ Long result အကုန်�
 
 နောက်တစ်ဆင့်တွင် reflection function တစ်ခုရေးပါ။ Trajectory ကိုဖတ်ပြီး failure point, evidence, next action သုံးခုသာထုတ်ပါ။ Evidence မရှိသော reflection ကို reject လုပ်ပါ။ ဒီလေ့ကျင့်ခန်းက agent debugging ကိုခံစားချက်မှအထောက်အထားသို့ပြောင်းစေသည်။
 
-### နိဂုံး — အမှားကိုမြင်နိုင်ခြင်းသည် ဉာဏ်၏တစ်ဝက်
+### နိဂုံး
 
-Observability သည် Agent ကိုမျက်စိတပ်ပေးခြင်းဖြစ်သည်။ Trajectory သည် Agent ဖြတ်သန်းသွားသောလမ်းကြောင်းဖြစ်သည်။ Reflection သည် run ပြီးနောက်သင်ခန်းစာထုတ်ခြင်းဖြစ်သည်။ Metrics သည် signal ဖြစ်သည်။ Test သည် behavior ကိုဖမ်းထားသောစာချုပ်ဖြစ်သည်။
+အမှားကို မြင်နိုင်ခြင်းသည် ဉာဏ်၏ တစ်ဝက် ဖြစ်သည်။ Observability သည် Agent ကို မျက်စိ တပ်ပေးသည်၊ trajectory သည် Agent ဖြတ်သန်းသွားသော လမ်းကြောင်းကို ပြသည်၊ reflection သည် run ပြီးနောက် သင်ခန်းစာ ထုတ်သည်၊ metrics သည် signal ပေးသည်၊ test သည် behavior ကို စာချုပ်ဖြင့် ဖမ်းထားသည်။
 
 သို့သော် trace, metric, reflection တို့ကိုလည်းမယုံကြည်လွန်းပါနှင့်။ ၎င်းတို့သည် privacy risk ဖြစ်နိုင်သည်။ Evidence မပါလျှင်လမ်းလွဲနိုင်သည်။ Session scope မခွဲလျှင် user တစ်ယောက်၏ခြေရာသည်အခြား user အတွက်အဆိပ်ဖြစ်နိုင်သည်။
 

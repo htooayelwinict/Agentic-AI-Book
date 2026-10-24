@@ -1,10 +1,10 @@
-# 17-mini-labs
+# အခန်း ၁၇ - Mini Labs
 
 ### စာဖတ်ပြီးရပ်လျှင် စာရေးတော်၏လက်ကို မမြင်ရ
 
-Agentic AI ကို စာအုပ်ဖတ်ရုံဖြင့်မကျွမ်းကျင်နိုင်ပါ။ Code ရေးကြည့်ရပါမည်။ Tool boundary စမ်းရပါမည်။ Prompt injection test ထည့်ကြည့်ရပါမည်။ Memory leak ဘယ်လိုဖြစ်နိုင်သလဲမြင်ရပါမည်။ Replan loop ကိုကိုယ်တိုင်လက်ဖြင့်မြင်ရပါမည်။ ဒါပေမဲ့ beginner အနေဖြင့် real browser account, real cloud account, production secrets များနှင့်မစသင့်ပါ။ Local safe lab များမှစပါ။
+Agentic AI ကို စာအုပ်ဖတ်ရုံဖြင့်မကျွမ်းကျင်နိုင်ပါ။ Code ရေးကြည့်ရမယ်၊ tool boundary စမ်းရမယ်၊ prompt injection test ထည့်ကြည့်ရမယ်၊ memory leak ဘယ်လို ဖြစ်နိုင်သလဲ မြင်ရမယ်၊ replan loop ကို ကိုယ်တိုင် လက်ဖြင့် မြင်ရမယ်။ ဒါပေမဲ့ beginner အနေဖြင့် real browser account, real cloud account, production secrets များနှင့်မစသင့်ပါ။ Local safe lab များမှစပါ။
 
-ဒီ lab များသည် production system မဟုတ်ပါ။ သင်ခန်းစာများပါ။ Lab တစ်ခုစီတွင် pattern တစ်ခုသာမှတ်ပါ။
+ဒီ lab များသည် သင်ခန်းစာ အတွက်သာ ရေးထားပါသည်။ Lab တစ်ခုစီတွင် pattern တစ်ခုသာ မှတ်ပါ။
 
 ```text
 Build -> Safe Failure Test -> Fix -> Reflect
@@ -12,7 +12,7 @@ Build -> Safe Failure Test -> Fix -> Reflect
 
 Build ဆိုတာ စနစ်ငယ်တစ်ခုဆောက်ခြင်းပါ။ Safe Failure Test ဆိုတာ local/fake environment ထဲတွင်အန္တရာယ်ကိုထည့်ကြည့်ခြင်းပါ။ Fix ဆိုတာ boundary ထည့်ပြီး ပြန်ထိန်းခြင်းပါ။ Reflect ဆိုတာ ဘာသင်လိုက်သလဲကို ပြန်ရေးခြင်းပါ။
 
-### Lab 1 — Toy Agent Loop
+### Lab 1: Toy Agent Loop
 
 Goal: Agent Loop ကိုအခြေခံမှနားလည်ရန်။
 
@@ -46,7 +46,7 @@ Tool run အောင်မြင်ခြင်းနှင့် task success 
 
 Repo lesson: Travis-2 loop detection, appv22 tool guardrails.
 
-### Lab 2 — Tool Broker
+### Lab 2: Tool Broker
 
 Goal: Permission သည် prompt မဟုတ်ကြောင်းနားလည်ရန်။
 
@@ -86,11 +86,11 @@ Tool result schema တွင် `execution_ok`, `data_ok`, `warnings` ထည့�
 
 Repo lesson: Travis-2 result quality, P-2 scoped filesystem.
 
-### Lab 3 — Tool Output ထဲက အဆိပ်စာ
+### Lab 3: Tool Output ထဲက အဆိပ်စာ
 
 Goal: Tool output သည် instruction မဟုတ်ကြောင်းလက်တွေ့မြင်ရန်။
 
-ဒီ lab သည် reader review ထဲက "ဖတ်ရခက်ပြီး လက်တွေ့မလုပ်တတ်" ဆိုသောပြဿနာကိုဖြေရှင်းရန်အရေးကြီးပါသည်။ Output ထဲကစာကို data အဖြစ်ဖတ်ရမလား၊ instruction အဖြစ်လိုက်ရမလားကိုလက်တွေ့ခွဲကြည့်ပါ။
+ဒီ lab က "ဖတ်တော့ နားလည်တယ်၊ လက်တွေ့ မလုပ်တတ်ဘူး" ဆိုတဲ့ ပြဿနာကို ဖြေရှင်းပေးပါတယ်။ Output ထဲကစာကို data အဖြစ်ဖတ်ရမလား၊ instruction အဖြစ်လိုက်ရမလားကိုလက်တွေ့ခွဲကြည့်ပါ။
 
 Build:
 
@@ -116,7 +116,7 @@ Final answer တွင် "source content says..." ဟု data အဖြစ်�
 
 Repo lesson: BrowserSurfer raw snapshot risk, `src/tools/security.py`.
 
-### Lab 4 — P-2 Style Bridge
+### Lab 4: P-2 Style Bridge
 
 Goal: High privilege state မှ low privilege state သို့ minimum projection သာပေးရန်။
 
@@ -154,7 +154,7 @@ Secret fields မပါကြောင်း test ရေးပါ။
 
 Repo lesson: P-2 Zero-Trust Bridge.
 
-### Lab 5 — Travis-2 Style Controlled Runtime
+### Lab 5: Travis-2 Style Controlled Runtime
 
 Goal: Outer graph + inner runtime pattern နားလည်ရန်။
 
@@ -185,7 +185,7 @@ Final answer မထုတ်ခင် `data_ok` စစ်ပါ။
 
 Repo lesson: Travis-2 `run_agent/evaluate/replan/finalize`.
 
-### Lab 6 — Context Compaction
+### Lab 6: Context Compaction
 
 Goal: Context ကြီးလာသောအခါအရေးကြီးသောအရာမပျောက်အောင်လျှော့ရန်။
 
@@ -215,7 +215,7 @@ Important fields: user goal, decisions, file paths, tests, unresolved TODOs က�
 
 Repo lesson: appv22 Hermes-style compaction.
 
-### Lab 7 — Real Platform မသုံးသော Browser Agent Safety
+### Lab 7: Real Platform မသုံးသော Browser Agent Safety
 
 Goal: Browser tools အန္တရာယ်ကို safe local environment တွင်မြင်ရန်။
 
@@ -247,7 +247,7 @@ Action audit log ထည့်ပါ။
 
 Repo lesson: BrowserSurfer security analysis.
 
-### Lab 8 — Trajectory and Reflection
+### Lab 8: Trajectory and Reflection
 
 Goal: Agent run တစ်ခုကိုနောက်မှဖတ်နိုင်ရန်။
 
@@ -275,7 +275,7 @@ Reflection function တစ်ခုရေးပြီး evidence မရှိ�
 
 Repo lesson: BrowserSurfer TrajectoryCallbackHandler, appv22 tests/faux provider. Faux provider ဆိုသည်မှာ real model API မခေါ်ဘဲ test အတွက် ပြန်ဖြေသော provider အတုဖြစ်သည်။
 
-### Lab 9 — DevOps Read-only Assistant
+### Lab 9: DevOps Read-only Assistant
 
 Goal: DevOps agent ကို read-only first အဖြစ်စတင်ရန်။
 
@@ -305,7 +305,7 @@ No auto-fix, no auto-commit policy ထားပါ။
 
 Repo lesson: DevOps chapter + BrowserSurfer/P-2 safety.
 
-### Lab 10 — Case Study Review Worksheet
+### Lab 10: Case Study Review Worksheet
 
 Goal: Repo တစ်ခုကို engineer အဖြစ်ဖတ်ရန်။
 
@@ -331,17 +331,17 @@ Trace/telemetry ရှိသလဲ။
 
 Known gaps ဘာတွေလဲ။
 
-v0.2 fix task ဘာရေးမလဲ။
+နောက်တစ်ဆင့် fix task ဘာရေးမလဲ။
 
 ဤ worksheet ကို P-2, Travis-2, BrowserSurfer, appv22 တို့တွင်တစ်ခုချင်းစီဖြည့်ပါ။
 
 ### Lab လုံခြုံရေးစည်းကမ်းများ
 
-ဒီ labs များတွင် real credentials မသုံးပါနှင့်။ Real platform account မသုံးပါနှင့်။ Real cloud mutation မလုပ်ပါနှင့်။ Local files, fake logs, dummy HTML, fake provider များဖြင့်သာစမ်းပါ။ Secret-looking strings ကို fake values သာသုံးပါ။
+ဒီ labs များတွင် real credentials, real platform account, real cloud mutation တို့ကို လုံးဝ မသုံးပါနှင့်။ Local files, fake logs, dummy HTML, fake provider များဖြင့်သာစမ်းပါ။ Secret-looking strings ကို fake values သာသုံးပါ။
 
-### နိဂုံး — Lab သည် စာအုပ်ကို လက်ဖြင့်ဖတ်ခြင်း
+### နိဂုံး
 
-Mini labs များသည် ဤစာအုပ်၏သင်ခန်းစာများကိုလက်တွေ့မြင်စေသည်။ Loop, Harness, MCP/Skill/Sub-agent, Prompt/Context/RAG, Planner/Worker/Verifier, Tool Broker, Observability, Safety, P-2 bridge, Travis-2 runtime, BrowserSurfer hardening, appv22 recovery, DevOps read-only thinking တို့ကိုလက်ဖြင့်စမ်းနိုင်သည်။
+Lab သည် စာအုပ်ကို လက်ဖြင့် ဖတ်ခြင်း ဖြစ်သည်။ Mini labs များသည် ဤစာအုပ်၏သင်ခန်းစာများကိုလက်တွေ့မြင်စေသည်။ Loop, Harness, MCP/Skill/Sub-agent, Prompt/Context/RAG, Planner/Worker/Verifier, Tool Broker, Observability, Safety, P-2 bridge, Travis-2 runtime, BrowserSurfer hardening, appv22 recovery, DevOps read-only thinking တို့ကိုလက်ဖြင့်စမ်းနိုင်သည်။
 
 စာဖတ်သူသည် lab များကိုအကုန်ပြီးမှသာ agent expert ဖြစ်သွားမည်မဟုတ်။ သို့သော် lab တစ်ခုချင်းစီပြီးတိုင်း "AI ကလုပ်သွားတယ်" ဟူသောအမြင်မှ "ဘယ် boundary ကဘာကိုထိန်းထားသလဲ" ဟူသော engineer အမြင်သို့တဖြည်းဖြည်းပြောင်းလာမည်။
 
