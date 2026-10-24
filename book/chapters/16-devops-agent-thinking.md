@@ -279,5 +279,5 @@ Beginner developer အနေဖြင့် DevOps agent ကိုစမည်�
 **စာဖတ်သူအတွက် Source Notes:**
 
 - **Repo-backed lessons:** P-2 မှ privilege separation, Travis-2 မှ sandboxed executable tool runtime, BrowserSurfer မှ untrusted tool output, appv22 မှ recovery engineering ကိုယူထားသည်။
-- **DevOps terms:** Terraform, AWS, CI/CD တို့ကို educational examples အဖြစ်သုံးထားသည်။ Terraform plan/apply, AWS IAM/CloudTrail, GitHub Actions concept များကို official docs ဖြင့် စစ်ထားသည်။ Provider-specific deep command walkthrough များကို v0.2 တွင်သာချဲ့မည်။
+- **DevOps terms:** Terraform, AWS, CI/CD တို့ကို educational examples အဖြစ်သုံးထားသည်။ Terraform plan/apply, AWS IAM/CloudTrail, GitHub Actions concept များကို official docs ဖြင့် စစ်ထားသည်။ Provider-specific deep command walkthrough များကို ဒီအခန်းတွင် မထည့်ပါ။
 - **Safety position:** Read-only first ဖြစ်သည်။ Mutation လုပ်ရန် approval, audit, rollback thinking, narrow credentials လိုသည်။
